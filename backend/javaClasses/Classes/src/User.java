@@ -56,23 +56,23 @@ public class User {
 
     //Constructors :
     private User(){
-        firstname = "FIRST NAME NOT SET YET";
-        lastname = "LAST NAME NOT SET YET";
-        profilePictureURL = "PROFILE PICTURE NOT SET YET";
-        theme = Theme.LIGHT;
-        joinedDate = LocalDateTime.now();
-        lastUsernameChangeTime = LocalDateTime.now();
-        totalListeningDuration = LocalTime.of(0,0,0);
+        this.firstname = "FIRST NAME NOT SET YET";
+        this.lastname = "LAST NAME NOT SET YET";
+        this.profilePictureURL = "PROFILE PICTURE NOT SET YET";
+        this.theme = Theme.LIGHT;
+        this.joinedDate = LocalDateTime.now();
+        this.lastUsernameChangeTime = LocalDateTime.now();
+        this.totalListeningDuration = LocalTime.of(0,0,0);
 
-        playlists = new ArrayList<>();
-        likedSongs = new ArrayList<>();
-        likedPlayLists = new ArrayList<>();
-        followers = new ArrayList<>();
-        followings = new ArrayList<>();
-        likedGenres = new ArrayList<>();
-        playedSongs = new LinkedList<>();
-        queue = new LinkedList<>();
-        musics = new TreeSet<>();
+        this.playlists = new ArrayList<>();
+        this.likedSongs = new ArrayList<>();
+        this.likedPlayLists = new ArrayList<>();
+        this.followers = new ArrayList<>();
+        this.followings = new ArrayList<>();
+        this.likedGenres = new ArrayList<>();
+        this.playedSongs = new LinkedList<>();
+        this.queue = new LinkedList<>();
+        this.musics = new TreeSet<>();
     }
     public User(String username , String password , String email){
         this();
@@ -149,7 +149,7 @@ public class User {
     }
 
     public boolean follow(User user) {
-        if (user.isAccountPrivate()) return false;
+        if (user == null || user.isAccountPrivate()) return false;
         else {
             followings.add(user);
             user.getFollowers().add(this);
@@ -158,7 +158,7 @@ public class User {
     }
 
     public boolean unfollow(User user){
-        if(!this.getFollowings().contains(user)) return false;
+        if(user == null || !this.getFollowings().contains(user)) return false;
         else {
             this.getFollowings().remove(user);
             user.getFollowers().remove(this);
@@ -167,7 +167,7 @@ public class User {
     }
 
     public boolean removeFollower(User user){
-        if(!this.getFollowers().contains(user)) return false;
+        if(user == null || !this.getFollowers().contains(user)) return false;
         else{
             this.getFollowers().remove(user);
             user.getFollowings().remove(user);
@@ -175,12 +175,16 @@ public class User {
         }
     }
 
-    public void addToMusics(Music music){
-        musics.add(music);
+    public boolean addToMusics(Music music){
+        if(music == null) return false;
+        else {
+            musics.add(music);
+            return true;
+        }
     }
 
     public boolean removeFromMusics(Music music){
-        if(!musics.contains(music)) return false ;
+        if(music == null || !musics.contains(music)) return false ;
         else {
             musics.remove(music);
             return true ;
@@ -188,7 +192,7 @@ public class User {
     }
 
     public boolean likeSong(Music music){
-        if(this.getLikedSongs().contains(music)){
+        if(music == null || this.getLikedSongs().contains(music)){
             this.getLikedSongs().remove(music);
             return false;
         } else {
@@ -201,7 +205,7 @@ public class User {
         // Playlist constructor needed
     }*/
     public boolean deletePlaylist(Playlist playlist){
-        if(!playlists.contains(playlist)) return false ;
+        if(playlist == null || !playlists.contains(playlist)) return false ;
         else {
             playlists.add(playlist) ;
             return true ;
@@ -233,6 +237,7 @@ public class User {
     } // ghavi
 
     public boolean likePlaylist(Playlist playlist){
+        if(playlist == null) return false;
         if(this.getLikedPlayLists().contains(playlist)){
             this.getLikedPlayLists().remove(playlist);
             return false;
@@ -243,7 +248,7 @@ public class User {
     }
 
     public boolean likeGenres(List<Genre> genres){
-        if(genres.isEmpty()) return false ;
+        if(genres== null || genres.isEmpty()) return false ;
         else{
             likedGenres.addAll(genres) ;
             return true ;
@@ -257,8 +262,12 @@ public class User {
         }
     }
 
-    public void addToQueue(Music music){
-        queue.add(music) ;
+    public boolean addToQueue(Music music){
+        if(music == null) return false;
+        else {
+            queue.add(music);
+            return true;
+        }
     }
 
     //Equals and HashCode :

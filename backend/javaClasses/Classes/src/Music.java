@@ -41,18 +41,18 @@ public class Music {
     //Constructors :
 
     private Music() {
-        name = "NAME NOT SET!";
-        icon = "ICON NOT SET YET!";
-        QRCode = "QR Code NOT SET YET";
-        lyrics = "LYRICS NOT SET YET";
+        this.name = "NAME NOT SET!";
+        this.icon = "ICON NOT SET YET!";
+        this.QRCode = "QR Code NOT SET YET";
+        this.lyrics = "LYRICS NOT SET YET";
 
-        duration = LocalTime.of(0, 0, 0);
+        this.duration = LocalTime.of(0, 0, 0);
 
-        genres = new ArrayList<>();
-        artists = new ArrayList<>();
-        comments = new HashMap<>();
+        this.genres = new ArrayList<>();
+        this.artists = new ArrayList<>();
+        this.comments = new HashMap<>();
 
-        dateSongAddedToDataBase = LocalDateTime.now();
+        this.dateSongAddedToDataBase = LocalDateTime.now();
     }
     public Music(String name , LocalTime duration){
         this() ;
