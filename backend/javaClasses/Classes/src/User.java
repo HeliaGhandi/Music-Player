@@ -51,7 +51,7 @@ public class User {
     //private File log ;
 
 
-    //Constructors
+    //Constructors :
     private User(){
         firstname = "NO FIRST NAME FOUND!" ;
         lastname = "NO LAST NAME FOUND!" ;
@@ -205,7 +205,7 @@ public class User {
     }
 
 
-    //Equals and HashCode
+    //Equals and HashCode :
 
     @Override
     public boolean equals(Object o) {
