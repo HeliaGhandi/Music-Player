@@ -79,6 +79,12 @@ public class Music {
         this.name = name ;
         this.duration = LocalTime.of(hour , minutes , seconds) ;
     }
+
+    /**
+     *
+     * @param name name of the song
+     * @param minutes total minutes of the song (for example for two minutes song it will be 2 and for 2 hour song it will be 120)
+     */
     public Music(String name , int minutes){
         this();
         if(!isMusicNameValid(name)){

@@ -103,6 +103,11 @@ public class User {
         this.password = password ;
         this.email = email ;
     }
+    /**
+     *
+     * @param username (see isUsernameValid)
+     * @param password must be more than 8 chars - lowercase and uppercase chars and also letters (see isPasswordValid)
+     */
     public User(String username , String password){
         this();
         if (!isUsernameValid(username)) {
@@ -115,6 +120,10 @@ public class User {
         this.password = password;
         this.email = "NO EMAIL FOUND" ;
     }
+    /**
+     *
+     * @param username (see isUsernameValid)
+     */
     public User(String username){
         this();
         if (!isUsernameValid(username)) {
