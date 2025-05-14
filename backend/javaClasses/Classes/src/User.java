@@ -56,9 +56,9 @@ public class User {
 
     //Constructors :
     private User(){
-        firstname = "NO FIRST NAME FOUND!";
-        lastname = "NO LAST NAME FOUND!";
-        profilePictureURL = "NO PROFILE PICTURE FOUND!";
+        firstname = "FIRST NAME NOT SET YET";
+        lastname = "LAST NAME NOT SET YET";
+        profilePictureURL = "PROFILE PICTURE NOT SET YET";
         theme = Theme.LIGHT;
         joinedDate = LocalDateTime.now();
         lastUsernameChangeTime = LocalDateTime.now();
