@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 public class User {
     //Properties :
     private String username;
-    private String firstname;
+    private String firstname ;
     private String lastname;
     private String email;
     private String password;
@@ -26,14 +26,16 @@ public class User {
     private boolean isVerified = false;
     private boolean canShareSongWithUser = true;
     private boolean is2faVerified = false;
+    private boolean isAccountPrivate = false;
 
+    private Set<Music> musics;
     private List<Playlist> playlists;
-    private List<Music> musics;
-    private List<Music> queue ;
-    private List<User> follower;
-    private List<User> following;
+    private List<Music> likedSongs;
+    private List<Music> queue;
+    private List<User> followers;
+    private List<User> followings;
     private List<Music> playedSongs; // اونایی که اینبار گوش داده
-    private List<Genre> likedGenres ;
+    private List<Genre> likedGenres;
 
     private Theme theme;
 
@@ -41,7 +43,70 @@ public class User {
     private LocalDateTime joinedDate ;
     private LocalTime totalListeningDuration ;
 
+
+    private final int MINIMUM_USERNAME_LENGTH = 4 ;
+    private final String DEFAULT_PASSWORD = "1234";
     //private File log ;
+
+
+    //Constructors
+    private User(){
+        firstname = "NO FIRST NAME FOUND!" ;
+        lastname = "NO LAST NAME FOUND!" ;
+        profilePictureURL = "NO PROFILE PICTURE FOUND!" ;
+
+        theme = Theme.LIGHT ;
+        joinedDate = LocalDateTime.now();
+        lastUsernameChangeTime = LocalDateTime.now();
+        totalListeningDuration = LocalTime.of(0,0,0);
+
+        playlists = new ArrayList<>();
+        likedSongs = new ArrayList<>();
+        followers = new ArrayList<>();
+        followings = new ArrayList<>();
+        likedGenres = new ArrayList<>();
+        playedSongs = new LinkedList<>();
+        queue = new LinkedList<>();
+        musics = new TreeSet<>();
+    }
+    public User(String username , String password , String email){
+        this();
+        if (!isUsernameValid(username)) {
+            throw new IllegalArgumentException("Invalid Username");
+        }
+        if (!isPasswordValid(password)) {
+            throw new IllegalArgumentException("Invalid Password");
+        }
+        if (!isEmailValid(email)) {
+            throw new IllegalArgumentException("Invalid Email");
+        }
+        //LOGGGGGG
+
+        this.username = username ;
+        this.password = password ;
+        this.email = email ;
+    }
+    protected User(String username , String password){
+        this();
+        if (!isUsernameValid(username)) {
+            throw new IllegalArgumentException("Invalid Username");
+        }
+        if (!isPasswordValid(password)) {
+            throw new IllegalArgumentException("Invalid Password");
+        }
+        this.username = username ;
+        this.password = password;
+        this.email = "NO EMAIL FOUND" ;
+    }
+    protected User(String username){
+        this();
+        if (!isUsernameValid(username)) {
+            throw new IllegalArgumentException("Invalid Username");
+        }
+        this.username = username ;
+        this.password = DEFAULT_PASSWORD;
+        this.email = "NO EMAIL FOUND" ;
+    }
 
 
 
@@ -60,14 +125,71 @@ public class User {
         return password.equals(correctPassword) ;
     }
 
-    boolean isPasswordValid(String password) {
+    private boolean isPasswordValid(String password) {
         String passwordPattern = "^(?=.*[a-zA-Z])(?=.*[0-9]).{8,}$"; //mersi az arian seydi
         Pattern pattern = Pattern.compile(passwordPattern);
         Matcher matcher = pattern.matcher(password);
+        return (matcher.find() && !password.contains(this.username));
+    }
+
+    private boolean isEmailValid(String email){
+        String emailPattern = "^(\\w*|\\d*|.*|_*|)@(\\w*|\\d*).(\\w{2,})$" ;
+        Pattern pattern = Pattern.compile(emailPattern) ;
+        Matcher matcher = pattern.matcher(email);
         return matcher.find();
     }
 
+    private boolean isUsernameValid(String username){
+        return (!username.startsWith(".") && username.length() >= MINIMUM_USERNAME_LENGTH);
+    }
 
+    public boolean follow(User user) {
+        if (user.isAccountPrivate()) return false;
+        else {
+            followings.add(user);
+            user.getFollowers().add(this);
+            return true;
+        }
+    }
+
+    public boolean unfollow(User user){
+        if(!this.getFollowings().contains(user)) return false;
+        else {
+            this.getFollowings().remove(user);
+            user.getFollowers().remove(this);
+            return true;
+        }
+    }
+
+    public boolean removeFollower(User user){
+        if(!this.getFollowers().contains(user)) return false;
+        else{
+            this.getFollowers().remove(user);
+            user.getFollowings().remove(user);
+            return true;
+        }
+    }
+
+    public void addToMusics(Music music){
+        musics.add(music);
+    }
+
+    public void likeSong(Music music){
+
+    }
+
+    //Equals and HashCode
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof User user)) return false;
+        return Objects.equals(username, user.username);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(username);
+    }
 
 
     //Default Getter And Setters :
@@ -175,5 +297,41 @@ public class User {
 
     public void setTotalListeningDuration(LocalTime totalListeningDuration) {
         this.totalListeningDuration = totalListeningDuration;
+    }
+
+    public boolean isAccountPrivate() {
+        return isAccountPrivate;
+    }
+
+    public void setAccountPrivate(boolean accountPrivate) {
+        isAccountPrivate = accountPrivate;
+    }
+
+    public List<Playlist> getPlaylists() {
+        return playlists;
+    }
+
+    public Set<Music> getMusics() {
+        return musics;
+    }
+
+    public List<Music> getQueue() {
+        return queue;
+    }
+
+    public List<User> getFollowers() {
+        return followers;
+    }
+
+    public List<User> getFollowings() {
+        return followings;
+    }
+
+    public List<Music> getPlayedSongs() {
+        return playedSongs;
+    }
+
+    public List<Genre> getLikedGenres() {
+        return likedGenres;
     }
 }
