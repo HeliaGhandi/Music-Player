@@ -31,7 +31,7 @@ public class Playlist {
 
     private static final String INVALID_NAME = "Invalid Name" ;
     private static final String INVALID_DURATION = "Invalid Duration" ;
-
+    private static final String INVALID_AUTHOR = "Invalid Author";
     //Constructors :
 
     private Playlist(){
@@ -53,6 +53,9 @@ public class Playlist {
 
         if(!isPlaylistNameValid(name)){
             throw new IllegalArgumentException(INVALID_NAME);
+        }
+        if(author == null){
+            throw new NullPointerException(INVALID_AUTHOR);
         }
 
         this.name = name;
@@ -98,7 +101,7 @@ public class Playlist {
     }
 
     public boolean addMusicToPlaylist(List<Music> musics){
-        if(musics.isEmpty()) return false;
+        if(musics == null || musics.isEmpty()) return false;
         else{
             musicList.addAll(musics);
             return true;
@@ -106,7 +109,7 @@ public class Playlist {
     }
 
     public boolean removeMusicFromPlaylist(Music music){
-        if(!musicList.contains(music) || music == null) return false;
+        if(music == null || !musicList.contains(music)) return false;
         else{
             musicList.remove(music);
             return true;
