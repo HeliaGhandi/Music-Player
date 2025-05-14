@@ -201,9 +201,22 @@ public class User {
         }
     }
 
-    /*public boolean createPlayList(){
-        // Playlist constructor needed
-    }*/
+    public boolean createPlayList(String name , Music... musics){
+        try{
+            Playlist playlist = new Playlist(name , this , musics) ;
+            playlists.add(playlist);
+            return true;
+        }catch (IllegalArgumentException iae){
+            return false ;
+        }
+    }
+    public boolean addPlaylist(Playlist playlist){
+        if(playlist == null || playlists.contains(playlist)) return false ;
+        else {
+            playlists.add(playlist);
+            return true;
+        }
+    }
     public boolean deletePlaylist(Playlist playlist){
         if(playlist == null || !playlists.contains(playlist)) return false ;
         else {
@@ -243,18 +256,30 @@ public class User {
             return false;
         } else {
             this.getLikedPlayLists().add(playlist);
+            playlist.setLikeCount(playlist.getLikeCount()+1);
+            return true;
+        }
+    }
+    public boolean likeMusic(Music music){
+        if(music == null) return false;
+        if(this.getLikedSongs().contains(music)){
+            this.getLikedSongs().remove(music);
+            return false;
+        } else {
+            this.getLikedSongs().add(music);
+            music.setLikedCount(music.getLikedCount()+1);
             return true;
         }
     }
 
-    public boolean likeGenres(List<Genre> genres){
+    public boolean likedGenres(List<Genre> genres){
         if(genres== null || genres.isEmpty()) return false ;
         else{
             likedGenres.addAll(genres) ;
             return true ;
         }
     }
-    public boolean likeGenres(Genre... genres){
+    public boolean likedGenres(Genre... genres){
         if(genres.length == 0 ) return false ;
         else{
             likedGenres.addAll(List.of(genres)) ;

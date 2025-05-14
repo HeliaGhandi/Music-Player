@@ -17,12 +17,14 @@ public class Music {
     private String QRCode ;
     private String lyrics ; //change to a file if possible later
 
+
     private boolean isPaused = true;
 
     private LocalTime duration ;
     private final LocalDateTime dateSongAddedToDataBase ; // va
 
     private int likedCount = 0 ;
+
 
     private List<Genre> genres ;
     private List<User> artists ;
@@ -201,4 +203,5 @@ public class Music {
     public List<User> getArtists() {
         return artists;
     }
+
 }
