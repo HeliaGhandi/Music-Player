@@ -1,4 +1,5 @@
-import java.time.LocalDate;
+package com.lattestudio.musicplayer.model;
+
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -62,10 +63,10 @@ public class Playlist {
         this.author = author;
         this.QRCode = "";//baada QRCode dade she
 
-        this.musicList = List.of(musics);
+        this.musicList = new ArrayList<>(List.of(musics));
     }
 
-    protected Playlist(String name , Music... musics){
+    public Playlist(String name , Music... musics){
         this();
 
         if(!isPlaylistNameValid(name)){
@@ -73,15 +74,15 @@ public class Playlist {
         }
 
         this.name = name;
-        this.musicList = List.of(musics);
+        this.musicList = new ArrayList<>(List.of(musics));
     }
 
 
 
     //Methods :
 
-    public boolean isPlaylistNameValid(String name){
-        return (!name.isEmpty()) ;
+    public boolean isPlaylistNameValid(String name){ //!name.trim().isEmpty() removes leading white space and then checks
+        return (!name.isEmpty() && !name.trim().isEmpty()) ;
     }
 
     public boolean appendFromPlaylist(Playlist playlist){
@@ -136,13 +137,14 @@ public class Playlist {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Playlist playlist)) return false;
-        return isPrivate == playlist.isPrivate && Objects.equals(name, playlist.name) && Objects.equals(author, playlist.author) && Objects.equals(totalDuration, playlist.totalDuration);
+        return Objects.equals(name, playlist.name) && Objects.equals(author, playlist.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, author, isPrivate, totalDuration);
+        return Objects.hash(name, author);
     }
+
 
     //Default Getter And Setters :
 

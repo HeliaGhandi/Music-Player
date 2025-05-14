@@ -1,6 +1,8 @@
+package com.lattestudio.musicplayer.model;
 /*
     saat 9 , 22 ordibehesht , miz tabar shorooe proje :)
  */
+
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
@@ -55,6 +57,7 @@ public class User {
 
 
     //Constructors :
+
     private User(){
         this.firstname = "FIRST NAME NOT SET YET";
         this.lastname = "LAST NAME NOT SET YET";
@@ -74,11 +77,20 @@ public class User {
         this.queue = new LinkedList<>();
         this.musics = new TreeSet<>();
     }
+
+    /**
+     *
+     * @param username (see isUsernameValid)
+     * @param password must be more than 8 chars - lowercase and uppercase chars and also letters (see isPasswordValid)
+     * @param email the domain must contain 2 or more letters (see isEmailValid)
+     */
     public User(String username , String password , String email){
         this();
         if (!isUsernameValid(username)) {
             throw new IllegalArgumentException(INVALID_USERNAME);
         }
+        this.username = username ;
+
         if (!isPasswordValid(password)) {
             throw new IllegalArgumentException(INVALID_PASSWORD);
         }
@@ -87,11 +99,11 @@ public class User {
         }
         //LOGGGGGG
 
-        this.username = username ;
+
         this.password = password ;
         this.email = email ;
     }
-    protected User(String username , String password){
+    public User(String username , String password){
         this();
         if (!isUsernameValid(username)) {
             throw new IllegalArgumentException(INVALID_USERNAME);
@@ -103,7 +115,7 @@ public class User {
         this.password = password;
         this.email = "NO EMAIL FOUND" ;
     }
-    protected User(String username){
+    public User(String username){
         this();
         if (!isUsernameValid(username)) {
             throw new IllegalArgumentException(INVALID_USERNAME);
@@ -138,14 +150,14 @@ public class User {
     }
 
     private boolean isEmailValid(String email){
-        String emailPattern = "^(\\w*|\\d*|.*|_*|)@(\\w*|\\d*).(\\w{2,})$" ;
+        String emailPattern = "^(\\w*|\\d*|.*|_*|)@(\\w*|\\d*).([a-zA-Z0-9.]{2,})$" ;
         Pattern pattern = Pattern.compile(emailPattern) ;
         Matcher matcher = pattern.matcher(email);
         return matcher.find();
     }
 
-    private boolean isUsernameValid(String username){
-        return (!username.startsWith(".") && username.length() >= MINIMUM_USERNAME_LENGTH);
+    private boolean isUsernameValid(String username){ //!name.trim().isEmpty() removes leading white space and then checks
+        return (!username.startsWith(".") && username.length() >= MINIMUM_USERNAME_LENGTH && !username.trim().isEmpty());
     }
 
     public boolean follow(User user) {
@@ -202,6 +214,7 @@ public class User {
     }
 
     public boolean createPlayList(String name , Music... musics){
+        if(name == null ||name.isEmpty()) return false ;
         try{
             Playlist playlist = new Playlist(name , this , musics) ;
             playlists.add(playlist);
@@ -226,7 +239,7 @@ public class User {
     }
 
     /*
-    public downloadMusic(Music music){
+    public downloadMusic(com.lattestudio.musicplayer.model.Music music){
     //TO-DO
     // hamchenin hamin baraye playlist
     }

@@ -1,14 +1,15 @@
-/**
- * @author Helia Ghandi
- * @author Iliya Esmaeili
- * @since 0.0.3
- */
+package com.lattestudio.musicplayer.model;
+
 // sarde ;) (daneshkade jeloye namaz khoone neeshastim:) )
 //hanooz sarde
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
-
+/**
+ * @author Helia Ghandi
+ * @author Iliya Esmaeili
+ * @since 0.0.3
+ */
 @SuppressWarnings("unused")
 public class Music {
     //Properties :
@@ -89,19 +90,34 @@ public class Music {
         this.name = name ;
         this.duration = LocalTime.ofSecondOfDay(((long)minutes * (long)HOUR_TO_MINUTES_COEFFICIENT)) ;
     }
-    protected Music(String name){
+    public Music(String name){
         this();
         if(!isMusicNameValid(name)){
             throw new IllegalArgumentException(INVALID_NAME) ;
         }
         this.duration = LocalTime.of(0,0,0);
     }
-
+    public Music(String name , User... artists){
+        this(name);
+        this.artists = new ArrayList<>(List.of(artists));
+    }
+    public Music(String name , int minutes , User... artists){
+        this(name , minutes);
+        this.artists = new ArrayList<>(List.of(artists));
+    }
+    public Music(String name , int hour , int minutes , int seconds , User... artists) {
+        this(name , hour , minutes , seconds);
+        this.artists = new ArrayList<>(List.of(artists));
+    }
+    public Music(String name , LocalTime duration , User... artists) {
+        this(name , duration);
+        this.artists = new ArrayList<>(List.of(artists));
+    }
 
     //Methods :
 
-    public boolean isMusicNameValid(String name){
-        return (!name.isEmpty()) ;
+    public boolean isMusicNameValid(String name){ //!name.trim().isEmpty() removes leading white space and then checks
+        return (!name.isEmpty() && !name.trim().isEmpty()) ;
     }
     public boolean play(){
         if(!isPaused) return false ;
@@ -118,7 +134,9 @@ public class Music {
             return true ;
         }
     }
-
+    public void addGenres(Genre... genres){
+        this.genres.addAll(List.of(genres));
+    }
 
     //Equals and HashCode :
 

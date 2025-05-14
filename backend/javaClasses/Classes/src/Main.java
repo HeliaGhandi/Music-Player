@@ -4,16 +4,9 @@ import java.util.Arrays;
 
 class Main{
     public static void main(String[] args) {
-        LocalTime time = LocalTime.ofSecondOfDay(120);
-        //LocalTime time2 = LocalTime.of(120);
 
-        System.out.println(time.getMinute());
-        System.out.println(time);
-        sum();
+        String yoohoo = "   yoohoo yoohoo";
+        System.out.println(yoohoo.trim());
 
     }
-    public static void sum(int... a){
-        System.out.println(Arrays.toString(a));
-    }
-
 }
