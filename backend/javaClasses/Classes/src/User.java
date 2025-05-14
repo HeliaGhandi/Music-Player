@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 /**
  * @author Helia Ghandi
  * @author Iliya Esmaeili
+ * @since 0.0.1
  */
 @SuppressWarnings("unused")
 public class User {
@@ -31,6 +32,7 @@ public class User {
     private Set<Music> musics;
     private List<Playlist> playlists;
     private List<Music> likedSongs;
+    private List<Playlist> likedPlayLists;
     private List<Music> queue;
     private List<User> followers;
     private List<User> followings;
@@ -62,6 +64,7 @@ public class User {
 
         playlists = new ArrayList<>();
         likedSongs = new ArrayList<>();
+        likedPlayLists = new ArrayList<>();
         followers = new ArrayList<>();
         followings = new ArrayList<>();
         likedGenres = new ArrayList<>();
@@ -174,9 +177,33 @@ public class User {
         musics.add(music);
     }
 
-    public void likeSong(Music music){
-
+    public void removeFromMusics(Music music){
+        musics.remove(music);
     }
+
+    public boolean likeSong(Music music){
+        if(this.getLikedSongs().contains(music)){
+            this.getLikedSongs().remove(music);
+            return false;
+        } else {
+            likedSongs.add(music);
+            return true;
+        }
+    }
+
+    /*public boolean createPlayList(){
+    }*/
+
+    public boolean likePlayList(Playlist playlist){
+        if(this.getLikedPlayLists().contains(playlist)){
+            this.getLikedPlayLists().remove(playlist);
+            return false;
+        } else {
+            this.getLikedPlayLists().add(playlist);
+            return true;
+        }
+    }
+
 
     //Equals and HashCode
 
@@ -333,5 +360,13 @@ public class User {
 
     public List<Genre> getLikedGenres() {
         return likedGenres;
+    }
+
+    public List<Music> getLikedSongs() {
+        return likedSongs;
+    }
+
+    public List<Playlist> getLikedPlayLists() {
+        return likedPlayLists;
     }
 }
