@@ -24,6 +24,14 @@ public class Music {
 
     private LocalTime duration ;
 
+    private int likedCount = 0 ;
+
+    private List<Genre> genreList ;
+    private List<User> Artists ;
+
+    private Map<User,String> comments ;
+
+
 
 
 
