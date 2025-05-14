@@ -40,7 +40,7 @@ public class User {
     private Theme theme;
 
     private LocalDateTime lastUsernameChangeTime ;
-    private LocalDateTime joinedDate ;
+    private final LocalDateTime joinedDate ;
     private LocalTime totalListeningDuration ;
 
 
@@ -370,9 +370,6 @@ public class User {
         return joinedDate;
     }
 
-    public void setJoinedDate(LocalDateTime joinedDate) {
-        this.joinedDate = joinedDate;
-    }
 
     public LocalTime getTotalListeningDuration() {
         return totalListeningDuration;
