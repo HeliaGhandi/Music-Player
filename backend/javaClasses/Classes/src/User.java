@@ -34,6 +34,7 @@ public class User {
     private List<User> followers;
     private List<User> followings;
     private List<Music> playedSongs; // اونایی که اینبار گوش داده
+    //TO-DO playedSongs
     private List<Genre> likedGenres;
 
     private Theme theme;
@@ -178,8 +179,12 @@ public class User {
         musics.add(music);
     }
 
-    public void removeFromMusics(Music music){
-        musics.remove(music);
+    public boolean removeFromMusics(Music music){
+        if(!musics.contains(music)) return false ;
+        else {
+            musics.remove(music);
+            return true ;
+        }
     }
 
     public boolean likeSong(Music music){
@@ -193,9 +198,41 @@ public class User {
     }
 
     /*public boolean createPlayList(){
+        // Playlist constructor needed
     }*/
+    public boolean deletePlaylist(Playlist playlist){
+        if(!playlists.contains(playlist)) return false ;
+        else {
+            playlists.add(playlist) ;
+            return true ;
+        }
+    }
 
-    public boolean likePlayList(Playlist playlist){
+    /*
+    public downloadMusic(Music music){
+    //TO-DO
+    // hamchenin hamin baraye playlist
+    }
+     */
+
+    public boolean comment(Music music , String message){
+        if(music == null || message.isEmpty()){
+            return false ;
+        }else {
+            Set<User> usersThatCommentedOnThisMusic = music.getComments().keySet();
+            List<String> comments ;
+            if(usersThatCommentedOnThisMusic.contains(this)){
+                comments = music.getComments().get(this);
+            }else{
+                comments = new ArrayList<>() ;
+            }
+            comments.add(message);
+            music.getComments().put(this , comments) ;
+            return true ;
+        }
+    } // ghavi
+
+    public boolean likePlaylist(Playlist playlist){
         if(this.getLikedPlayLists().contains(playlist)){
             this.getLikedPlayLists().remove(playlist);
             return false;
@@ -205,6 +242,24 @@ public class User {
         }
     }
 
+    public boolean likeGenres(List<Genre> genres){
+        if(genres.isEmpty()) return false ;
+        else{
+            likedGenres.addAll(genres) ;
+            return true ;
+        }
+    }
+    public boolean likeGenres(Genre... genres){
+        if(genres.length == 0 ) return false ;
+        else{
+            likedGenres.addAll(List.of(genres)) ;
+            return true ;
+        }
+    }
+
+    public void addToQueue(Music music){
+        queue.add(music) ;
+    }
 
     //Equals and HashCode :
 

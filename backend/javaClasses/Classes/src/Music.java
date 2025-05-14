@@ -29,7 +29,7 @@ public class Music {
     private List<Genre> genreList ;
     private List<User> Artists ;
 
-    private Map<User,String> comments ;
+    private Map<User,List<String>> comments ;
 
 
 
@@ -50,5 +50,9 @@ public class Music {
 
 
     //Default Getter And Setters :
+
+    public Map<User, List<String>> getComments() {
+        return comments;
+    }
 
 }
