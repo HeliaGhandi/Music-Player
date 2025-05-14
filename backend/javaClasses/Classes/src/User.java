@@ -1,14 +1,11 @@
 /*
     saat 9 , 22 ordibehesht , miz tabar shorooe proje :)
  */
-
-import java.sql.Time;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 /**
  * @author Helia Ghandi
  * @author Iliya Esmaeili
@@ -46,18 +43,22 @@ public class User {
     private LocalTime totalListeningDuration ;
 
 
-    private final int MINIMUM_USERNAME_LENGTH = 4 ;
-    private final String DEFAULT_PASSWORD = "1234";
+    private static final int MINIMUM_USERNAME_LENGTH = 4 ;
+    private static final  String DEFAULT_PASSWORD = "1234";
+    private static final String INVALID_USERNAME = "Invalid Username" ;
+    private static final String INVALID_PASSWORD = "Invalid Password" ;
+    private static final String INVALID_EMAIL = "Invalid Email" ;
+
+
     //private File log ;
 
 
     //Constructors :
     private User(){
-        firstname = "NO FIRST NAME FOUND!" ;
-        lastname = "NO LAST NAME FOUND!" ;
-        profilePictureURL = "NO PROFILE PICTURE FOUND!" ;
-
-        theme = Theme.LIGHT ;
+        firstname = "NO FIRST NAME FOUND!";
+        lastname = "NO LAST NAME FOUND!";
+        profilePictureURL = "NO PROFILE PICTURE FOUND!";
+        theme = Theme.LIGHT;
         joinedDate = LocalDateTime.now();
         lastUsernameChangeTime = LocalDateTime.now();
         totalListeningDuration = LocalTime.of(0,0,0);
@@ -75,13 +76,13 @@ public class User {
     public User(String username , String password , String email){
         this();
         if (!isUsernameValid(username)) {
-            throw new IllegalArgumentException("Invalid Username");
+            throw new IllegalArgumentException(INVALID_USERNAME);
         }
         if (!isPasswordValid(password)) {
-            throw new IllegalArgumentException("Invalid Password");
+            throw new IllegalArgumentException(INVALID_PASSWORD);
         }
         if (!isEmailValid(email)) {
-            throw new IllegalArgumentException("Invalid Email");
+            throw new IllegalArgumentException(INVALID_EMAIL);
         }
         //LOGGGGGG
 
@@ -92,10 +93,10 @@ public class User {
     protected User(String username , String password){
         this();
         if (!isUsernameValid(username)) {
-            throw new IllegalArgumentException("Invalid Username");
+            throw new IllegalArgumentException(INVALID_USERNAME);
         }
         if (!isPasswordValid(password)) {
-            throw new IllegalArgumentException("Invalid Password");
+            throw new IllegalArgumentException(INVALID_PASSWORD);
         }
         this.username = username ;
         this.password = password;
@@ -104,7 +105,7 @@ public class User {
     protected User(String username){
         this();
         if (!isUsernameValid(username)) {
-            throw new IllegalArgumentException("Invalid Username");
+            throw new IllegalArgumentException(INVALID_USERNAME);
         }
         this.username = username ;
         this.password = DEFAULT_PASSWORD;
