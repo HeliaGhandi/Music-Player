@@ -7,9 +7,13 @@ dar hal majara jooyi (iliya)
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.sql.SQLOutput;
+import java.util.List;
 
+
+import com.lattestudio.musicplayer.model.*;
 import com.lattestudio.musicplayer.util.Colors;
+
+import javax.swing.*;
 
 /**
  * @author Helia Ghandi
@@ -19,6 +23,7 @@ import com.lattestudio.musicplayer.util.Colors;
  */
 public class Server {
     private static final int PORT = 9090;
+
 
     private Socket socket;
 
