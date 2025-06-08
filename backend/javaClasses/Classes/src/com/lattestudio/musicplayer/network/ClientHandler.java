@@ -13,6 +13,7 @@ import com.lattestudio.musicplayer.model.User;
 import com.lattestudio.musicplayer.network.blueprints.LoginRequest;
 import com.lattestudio.musicplayer.network.blueprints.SignUpRequest;
 import com.lattestudio.musicplayer.util.Colors;
+import com.lattestudio.musicplayer.util.Message;
 
 /**
  * @author Helia Ghandi
@@ -43,7 +44,7 @@ public class ClientHandler implements Runnable {
              BufferedWriter output = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()))) {
             String jsonRequest ;
             while ((jsonRequest = input.readLine()) != null){
-            System.out.println(Colors.jsonReceived("JSON RECEIVED:" , jsonRequest));
+            Message.jsonReceived("JSON RECEIVED:" , jsonRequest);
 
             Request request = gson.fromJson(jsonRequest, Request.class);
             Response response = handleRequest(request);
@@ -78,7 +79,7 @@ public class ClientHandler implements Runnable {
                 try {
                     signUpRequest = (SignUpRequest)request;
 
-                    Path path = Paths.get("src/com.lattestudio.musicplayer/db/users.json");
+                    Path path = Paths.get("src/com/lattestudio/musicplayer/db/users.json");
                     OutputStream outputStream = Files.newOutputStream(path);
                      output = new ObjectOutputStream(outputStream);
 

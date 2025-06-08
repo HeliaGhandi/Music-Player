@@ -12,6 +12,7 @@ import java.util.List;
 
 import com.lattestudio.musicplayer.model.*;
 import com.lattestudio.musicplayer.util.Colors;
+import com.lattestudio.musicplayer.util.Message;
 
 import javax.swing.*;
 
@@ -30,19 +31,19 @@ public class Server {
 
     public void start (){
         try(ServerSocket serverSocket = new ServerSocket(PORT)){
-            System.out.println(Colors.cyanServerMessage("Music Server is running on port"));
+            Message.cyanServerMessage("Music Server is running on port");
 
             while (true){
                 socket = serverSocket.accept();
-                System.out.println(Colors.cyanServerMessage("New client connected: " + socket.getInetAddress()));
+                Message.cyanServerMessage("New client connected: " + socket.getInetAddress());
 
                 ClientHandler handler = new ClientHandler(socket);
                 Thread clientThread = new Thread(handler);
                 clientThread.start();
             }
         } catch (IOException e) {
-            System.out.println(Colors.redServerMessage("IO EXCEPTION ON CREATING SERVER SOCKET"));
-            System.out.println(Colors.redServerMessage("YOU ARE COOKED!"));//so as we:)
+            Message.redServerMessage("IO EXCEPTION ON CREATING SERVER SOCKET");
+            Message.redServerMessage("YOU ARE COOKED!");//so as we:)
             throw new RuntimeException(e);
         }
 

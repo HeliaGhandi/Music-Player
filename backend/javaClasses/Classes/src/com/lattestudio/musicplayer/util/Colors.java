@@ -85,17 +85,5 @@ public class Colors {
 
 
 
-    //METHODS :
-    public static String cyanServerMessage(String message){
-        return (Colors.CYAN_BOLD_BRIGHT+"[SERVER]: "+Colors.YELLOW_BRIGHT+message+Colors.RESET);
-    }
-    public static String redServerMessage(String message ){
-        return (Colors.RED_BOLD_BRIGHT+"[SERVER]: "+Colors.YELLOW_BRIGHT+message+Colors.RESET);
-    }
-
-    public static String jsonReceived(String message , String json){
-        return (Colors.CYAN_BOLD_BRIGHT+"[SERVER]: "+Colors.YELLOW_BRIGHT+message+Colors.RESET + "\n" + Colors.BLACK_BACKGROUND_BRIGHT+ json+Colors.RESET);
-    }
-
 
 }
