@@ -31,7 +31,7 @@ public class Server {
 
     public void start (){
         try(ServerSocket serverSocket = new ServerSocket(PORT)){
-            Message.cyanServerMessage("Music Server is running on port");
+            Message.cyanServerMessage("Music Server is running on port : " + PORT);
 
             while (true){
                 socket = serverSocket.accept();

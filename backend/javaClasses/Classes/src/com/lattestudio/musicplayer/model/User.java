@@ -3,6 +3,7 @@ package com.lattestudio.musicplayer.model;
     saat 9 , 22 ordibehesht , miz tabar shorooe proje :)
  */
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
@@ -14,7 +15,7 @@ import java.util.regex.Pattern;
  * @since 0.0.1
  */
 @SuppressWarnings("unused")
-public class User {
+public class User  implements Serializable {
     //Properties :
     private String username;
     private String firstname ;
@@ -54,6 +55,16 @@ public class User {
 
 
     //private File log ;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 
 
     //Constructors :
@@ -137,6 +148,9 @@ public class User {
 
 
     //Methods :
+
+
+
     public boolean changePassword(String password) {
         // baadan to code dart dorost she
         if(isPasswordValid(password)) {
@@ -191,7 +205,7 @@ public class User {
         if(user == null || !this.getFollowers().contains(user)) return false;
         else{
             this.getFollowers().remove(user);
-            user.getFollowings().remove(user);
+            user.getFollowings().remove(this);
             return true;
         }
     }
@@ -242,7 +256,7 @@ public class User {
     public boolean deletePlaylist(Playlist playlist){
         if(playlist == null || !playlists.contains(playlist)) return false ;
         else {
-            playlists.add(playlist) ;
+            playlists.remove(playlist) ;
             return true ;
         }
     }
@@ -322,12 +336,12 @@ public class User {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof User user)) return false;
-        return Objects.equals(username, user.username);
+        return Objects.equals(username, user.username) && Objects.equals(email, user.email) && Objects.equals(password, user.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(username);
+        return Objects.hash(username, email, password);
     }
 
 

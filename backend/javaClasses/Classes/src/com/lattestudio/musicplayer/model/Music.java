@@ -2,6 +2,7 @@ package com.lattestudio.musicplayer.model;
 
 // sarde ;) (daneshkade jeloye namaz khoone neeshastim:) )
 //hanooz sarde
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
@@ -11,7 +12,7 @@ import java.util.*;
  * @since 0.0.3
  */
 @SuppressWarnings("unused")
-public class Music {
+public class Music implements Serializable {
     //Properties :
     private String name ;
     private String icon ;

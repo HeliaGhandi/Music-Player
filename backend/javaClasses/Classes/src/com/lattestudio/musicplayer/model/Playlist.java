@@ -1,5 +1,6 @@
 package com.lattestudio.musicplayer.model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import java.util.Objects;
 
 
 @SuppressWarnings("unused")
-public class Playlist {
+public class Playlist implements Serializable {
     //Properties :
     private String name ;
     private String QRCode;

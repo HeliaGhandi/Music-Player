@@ -82,9 +82,10 @@ public class Message {
     public static void redServerMessage(String message ){
         startUp();
         String formattedString = coloredTime() +Colors.RED_BOLD_BRIGHT+"[SERVER]: "+Colors.YELLOW_BRIGHT+message+Colors.RESET+"\n"  ;
+        String formattedStringNoColor = dateFormat() + " " + timeFormat() +" - "+ "[SERVER]: "+ message +"\n" ;
         System.out.print(formattedString);
         try{
-            fileWriter.write(formattedString);
+            fileWriter.write(formattedStringNoColor);
         } catch (IOException e) {
             throw new RuntimeException("COULD NOT WRITE TO LOG FILE!");
         }
@@ -95,9 +96,10 @@ public class Message {
     public static void jsonReceived(String message , String json){
         startUp();
         String formattedString = coloredTime()+ Colors.CYAN_BOLD_BRIGHT+"[SERVER]: "+Colors.YELLOW_BRIGHT+message+Colors.RESET + "\n" + Colors.BLACK_BACKGROUND_BRIGHT+ json+Colors.RESET +"\n" ;
+        String formattedStringNoColor = dateFormat() + " " + timeFormat() +" - "+ "[SERVER]: "+ message +"\n" + json + "\n" ;
         System.out.print(formattedString);
         try{
-            fileWriter.write(formattedString);
+            fileWriter.write(formattedStringNoColor);
         } catch (IOException e) {
             throw new RuntimeException("COULD NOT WRITE TO LOG FILE!");
         }

@@ -5,15 +5,20 @@ import java.net.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 import com.lattestudio.musicplayer.db.DataBase;
 import com.lattestudio.musicplayer.model.User;
 import com.lattestudio.musicplayer.network.blueprints.LoginRequest;
 import com.lattestudio.musicplayer.network.blueprints.SignUpRequest;
-import com.lattestudio.musicplayer.util.Colors;
 import com.lattestudio.musicplayer.util.Message;
+import com.lattestudio.musicplayer.util.adapter.LocalDateTimeAdapter;
+import com.lattestudio.musicplayer.util.adapter.LocalTimeAdapter;
 
 /**
  * @author Helia Ghandi
@@ -23,11 +28,19 @@ import com.lattestudio.musicplayer.util.Message;
  */
 public class ClientHandler implements Runnable {
     private Socket socket;
-    private String request;
-    private final Gson gson = new Gson();
+    private String requestMessage;
+    private final Gson gson = new GsonBuilder()
+            .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
+            .registerTypeAdapter(LocalTime.class, new LocalTimeAdapter())
+            .setPrettyPrinting()
+            .create();
+
+
     private static final String LOGIN = "LOGIN" ;
     private static final String SIGN_UP = "SIGN_UP" ;
     private static final String FORGOT_PASSWORD = "FORGOT_PASSWORD" ;
+    private static final String TEST_COMMAND = "TEST_COMMAND" ;
+    String jsonRequest ;
 
     public ClientHandler(Socket socket) {
         this.socket = socket;
@@ -35,14 +48,14 @@ public class ClientHandler implements Runnable {
 
     public ClientHandler(Socket socket, String request) {
         this.socket = socket;
-        this.request = request;
+        this.requestMessage = request;
     }
 
     @Override
     public void run() {
         try (BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
              BufferedWriter output = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()))) {
-            String jsonRequest ;
+
             while ((jsonRequest = input.readLine()) != null){
             Message.jsonReceived("JSON RECEIVED:" , jsonRequest);
 
@@ -59,53 +72,79 @@ public class ClientHandler implements Runnable {
         }
     }
 
-    private Response handleRequest(Request request) {
+    private Response handleRequest(Request request) throws IOException {
         String command =  request.getCommand();
         switch (command){
             case LOGIN :{
                 LoginRequest loginRequest ;
                 try {
-                    loginRequest = (LoginRequest)request;
+                    loginRequest = gson.fromJson(jsonRequest , LoginRequest.class);
                 }catch (Exception e){
                     throw new IllegalArgumentException("Bad argument for login");
                 }
                 if(loginRequest.isLoginCreditEmail()){
+                    if(DataBase.getEmails().contains(loginRequest.getLoginCredit())){
 
+                    }else {
+                        return new Response(false , "email not found"); // :(
+                    }
+                }else {
+                    if(DataBase.getUsernames().contains(loginRequest.getLoginCredit())){
+
+                    }else {
+                        return new Response(false , "username not found"); // :(
+                    }
                 }
-            } break;
+
+            }
             case SIGN_UP:{
                 SignUpRequest signUpRequest ;
-                ObjectOutputStream output ;
                 try {
-                    signUpRequest = (SignUpRequest)request;
-
-                    Path path = Paths.get("src/com/lattestudio/musicplayer/db/users.json");
-                    OutputStream outputStream = Files.newOutputStream(path);
-                     output = new ObjectOutputStream(outputStream);
-
-                }catch (Exception e){
+                    signUpRequest = gson.fromJson(jsonRequest , SignUpRequest.class);
+                }catch (IllegalArgumentException iae){
                     throw new IllegalArgumentException("Bad argument for sign up");
                 }
-                User user = new User(signUpRequest.getUsername() , signUpRequest.getPassword() , signUpRequest.getEmail());
+
+                Path path = Paths.get("src/com/lattestudio/musicplayer/db/users.json");
+                RandomAccessFile output = new RandomAccessFile(path.toFile() , "rw");
+
+                if (DataBase.getUsernames().contains(signUpRequest.getUsername())) return new Response(false , "username already exists.");
+                User user = new User(signUpRequest.getUsername() , signUpRequest.getPassword() , signUpRequest.getEmail()); //handles illegal argument excepton itslef ;)))
+                user.setFirstname(signUpRequest.getFirstname());
+                user.setLastname(signUpRequest.getLastname());
                 try {
-                    output.writeObject(new Gson().toJson(user));
+                    String userJson = gson.toJson(user);
+                    if(output.length() == 0){
+                        output.writeBytes("[\n");
+                        output.writeBytes(userJson);
+                        output.writeBytes("\n]");
+                    }else {
+                        output.seek(output.length() - 1);
+                        output.writeBytes(",\n");
+                        output.writeBytes(userJson);
+                        output.writeBytes("\n]");
+                    }
                     DataBase.getUsers().add(user);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-
-                new Response(true);
-            } break ;
+                output.close();
+               return new Response(true);
+            }
             case FORGOT_PASSWORD:{
-
-            }break ;
+                return new Response(true);
+            }
+            case TEST_COMMAND:{
+                Message.cyanServerMessage("TEST COMMAND RECEIVED SUCCESSFULLY");
+                return new Response(true, "yoohoo") ;
+            }
             default : {
-                throw new JsonSyntaxException("WRONG JSON SYNTAX");
-
+                //throw new JsonSyntaxException("WRONG JSON SYNTAX");
+                return new Response(false , "WRONG JSON SYNTAX");
             }
 
         }
-        return new Response(false , "WRONG JSON SYNTAX");
+
     }
 
     public Socket getSocket() {
@@ -117,10 +156,10 @@ public class ClientHandler implements Runnable {
     }
 
     public String getRequest() {
-        return request;
+        return requestMessage;
     }
 
     public void setRequest(String request) {
-        this.request = request;
+        this.requestMessage = request;
     }
 }
