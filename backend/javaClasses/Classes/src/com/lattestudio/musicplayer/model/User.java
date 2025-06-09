@@ -28,6 +28,7 @@ public class User  implements Serializable {
     private boolean canShareSongWithUser = true;
     private boolean is2faVerified = false;
     private boolean isAccountPrivate = false;
+    private boolean rememberMe = false ;
 
     private Set<Music> musics;
     private List<Playlist> playlists;
@@ -46,6 +47,8 @@ public class User  implements Serializable {
     private final LocalDateTime joinedDate ;
     private LocalTime totalListeningDuration ;
 
+
+    private int numberOfFailLoginAttempts  ;
 
     private static final int MINIMUM_USERNAME_LENGTH = 4 ;
     private static final  String DEFAULT_PASSWORD = "1234";
@@ -77,6 +80,7 @@ public class User  implements Serializable {
         this.joinedDate = LocalDateTime.now();
         this.lastUsernameChangeTime = LocalDateTime.now();
         this.totalListeningDuration = LocalTime.of(0,0,0);
+        this.numberOfFailLoginAttempts = 0 ;
 
         this.playlists = new ArrayList<>();
         this.likedSongs = new ArrayList<>();
@@ -330,6 +334,9 @@ public class User  implements Serializable {
             return true;
         }
     }
+    public void failedLoginAttempt(){
+        numberOfFailLoginAttempts++;
+    }
 
     //Equals and HashCode :
 
@@ -347,6 +354,22 @@ public class User  implements Serializable {
 
     //Default Getter And Setters :
 
+
+    public boolean isRememberMe() {
+        return rememberMe;
+    }
+
+    public void setRememberMe(boolean rememberMe) {
+        this.rememberMe = rememberMe;
+    }
+
+    public int getNumberOfFailLoginAttempts() {
+        return numberOfFailLoginAttempts;
+    }
+
+    public void setNumberOfFailLoginAttempts(int numberOfFailLoginAttempts) {
+        this.numberOfFailLoginAttempts = numberOfFailLoginAttempts;
+    }
 
     public String getUsername() {
         return username;
@@ -492,4 +515,5 @@ public class User  implements Serializable {
     public List<Playlist> getLikedPlayLists() {
         return likedPlayLists;
     }
+
 }

@@ -64,6 +64,7 @@ public class ClientHandler implements Runnable {
             String jsonResponse = gson.toJson(response);
 
             output.write(jsonResponse);
+            Message.jsonSent("JSON SENT : " , jsonResponse);
             output.newLine(); //GPT
             output.flush();
         }
@@ -73,7 +74,7 @@ public class ClientHandler implements Runnable {
     }
 
     private Response handleRequest(Request request) throws IOException {
-        String command =  request.getCommand();
+        String command =  request.getCommand().toUpperCase();
         switch (command){
             case LOGIN :{
                 LoginRequest loginRequest ;
@@ -82,21 +83,65 @@ public class ClientHandler implements Runnable {
                 }catch (Exception e){
                     throw new IllegalArgumentException("Bad argument for login");
                 }
-                if(loginRequest.isLoginCreditEmail()){
-                    if(DataBase.getEmails().contains(loginRequest.getLoginCredit())){
+                if(loginRequest.isLoginCreditEmail()){ //LOGIN WITH EMAIL
+                    int indexOfUser = DataBase.getEmails().indexOf(loginRequest.getLoginCredit());
 
+                    if(indexOfUser != -1){
+                        User user = DataBase.getUsers().get(indexOfUser) ;
+                        if (user.getPassword().equals(loginRequest.getPassword())){
+                            user.setNumberOfFailLoginAttempts(0);
+                            if(user.isIs2faVerified()){
+                                return new Response(true,"Login successfully with Email (2FA)");
+                            }else {
+                                if(loginRequest.isRememberMe()){
+                                    user.setRememberMe(true);
+                                    return new Response(true,"Login successfully with Email(Remember)");
+                                }else {
+                                    return new Response(true,"Login successfully with Email");
+                                }
+                            }
+                        }else {
+                            user.failedLoginAttempt();
+                            if(user.getNumberOfFailLoginAttempts() >= 3){
+                                return new Response(false , "Wrong password and total attempts more than 3");
+                            }else {
+                                return new Response(false , "Wrong password");
+                            }
+                        }
                     }else {
                         return new Response(false , "email not found"); // :(
                     }
-                }else {
-                    if(DataBase.getUsernames().contains(loginRequest.getLoginCredit())){
+                }else { //LOGIN WITH USERNAME
+                    int indexOfUser = DataBase.getUsernames().indexOf(loginRequest.getLoginCredit());
+                    if(indexOfUser != -1){
+                        User user = DataBase.getUsers().get(indexOfUser) ;
+                        if (user.getPassword().equals(loginRequest.getPassword())){
+                            user.setNumberOfFailLoginAttempts(0);
+                            if(user.isIs2faVerified()){
+                                return new Response(true,"Login successfully with Username (2FA)");
+                            }else {
+                                if(loginRequest.isRememberMe()){
+                                    user.setRememberMe(true);
+                                    return new Response(true,"Login successfully with Username(Remember)");
+                                }else {
+                                    return new Response(true,"Login successfully with Username");
+                                }
+                            }
+                        }else {
+                            user.failedLoginAttempt();
+                            if(user.getNumberOfFailLoginAttempts() >= 3){
+                                return new Response(false , "Wrong password and total attempts more than 3");
+                            }else {
+                                return new Response(false , "Wrong password");
+                            }
 
+                        }
                     }else {
                         return new Response(false , "username not found"); // :(
                     }
                 }
 
-            }
+            }// =D
             case SIGN_UP:{
                 SignUpRequest signUpRequest ;
                 try {
@@ -109,6 +154,7 @@ public class ClientHandler implements Runnable {
                 RandomAccessFile output = new RandomAccessFile(path.toFile() , "rw");
 
                 if (DataBase.getUsernames().contains(signUpRequest.getUsername())) return new Response(false , "username already exists.");
+                if (DataBase.getEmails().contains(signUpRequest.getEmail())) return new Response(false , "email already exists.");
                 User user = new User(signUpRequest.getUsername() , signUpRequest.getPassword() , signUpRequest.getEmail()); //handles illegal argument excepton itslef ;)))
                 user.setFirstname(signUpRequest.getFirstname());
                 user.setLastname(signUpRequest.getLastname());

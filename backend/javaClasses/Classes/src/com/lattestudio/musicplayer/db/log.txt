@@ -1,0 +1,352 @@
+2025-Jun-09 09:53:12 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 09:53:33 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 09:53:33 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"helia","lastname":"ghandi","username":"helia","password":"HELIAHELIA1385","email":"i.esmaeili@sbu.ac.ir"}
+2025-Jun-09 09:55:05 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 09:55:08 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 09:55:08 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"helia","lastname":"ghandi","username":"helia","password":"HELIAHELIA1385","email":"i.esmaeili@sbu.ac.ir"}
+2025-Jun-09 09:55:17 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 09:55:17 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"helia","lastname":"ghandi","username":"helia","password":"HELIAHELIA1385","email":"i.esmaeili@sbu.ac.ir"}
+2025-Jun-09 09:55:21 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 09:55:22 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 09:55:22 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"helia","lastname":"ghandi","username":"helia","password":"HELIAHELIA1385","email":"i.esmaeili@sbu.ac.ir"}
+2025-Jun-09 09:57:22 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 09:57:24 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 09:57:24 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"helia","lastname":"ghandi","username":"helia","password":"HELIAHELIA1385","email":"i.esmaeili@sbu.ac.ir"}
+2025-Jun-09 10:03:12 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:03:15 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:03:15 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"helia","lastname":"ghandi","username":"helia","password":"HELIAHELIA1385","email":"i.esmaeili@sbu.ac.ir"}
+2025-Jun-09 10:03:30 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:03:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:03:54 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"helia","lastname":"ghandi","username":"helia","password":"HELIAHELIA1385","email":"i.esmaeili@sbu.ac.ir"}
+2025-Jun-09 10:04:14 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:04:14 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"helia","lastname":"ghandi","username":"helia","password":"HELIAHELIA1385","email":"i.esmaeili@sbu.ac.ir"}
+2025-Jun-09 10:04:23 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:04:23 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"admin","lastname":"admin","username":"admin","password":"a1d2m3i4n5","email":"admin@admin.com"}
+2025-Jun-09 10:04:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:04:54 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"admin","lastname":"admin","username":"iliya","password":"a1d2m3i4n5","email":"admin@admin.com"}
+2025-Jun-09 10:07:43 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:07:51 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:07:51 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"admin","lastname":"admin","username":"iliya","password":"a1d2m3i4n5","email":"admin@admin.com"}
+2025-Jun-09 10:08:09 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:08:09 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"admin","lastname":"admin","username":"admin","password":"a1d2m3i4n5","email":"admin@admin.com"}
+2025-Jun-09 10:11:49 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:11:49 - [SERVER]: USERNAMES RESTORED : [ "admin, helia]
+2025-Jun-09 10:11:49 - [SERVER]: EMAILS RESTORED :[: "admin@admin.com, "i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:11:49 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:16:05 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:16:05 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:16:05 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:16:05 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:16:15 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:16:15 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"admin","lastname":"admin","username":"admin","password":"a1d2m3i4n5","email":"admin@admin.com"}
+2025-Jun-09 10:16:28 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:16:28 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"admin","lastname":"admin","username":"admin","password":"a1d2m3i4n5","email":"admin@admin.com"}
+2025-Jun-09 10:16:31 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:16:31 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"admin","lastname":"admin","username":"admin","password":"a1d2m3i4n5","email":"admin@admin.com"}
+2025-Jun-09 10:16:31 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:16:31 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"admin","lastname":"admin","username":"admin","password":"a1d2m3i4n5","email":"admin@admin.com"}
+2025-Jun-09 10:16:32 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:16:32 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"admin","lastname":"admin","username":"admin","password":"a1d2m3i4n5","email":"admin@admin.com"}
+2025-Jun-09 10:16:35 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:16:35 - [SERVER]: JSON RECEIVED:
+{"command":"SIGN_UP","firstname":"admin","lastname":"admin","username":"hhh","password":"a1d2m3i4n5","email":"admin@admin.com"}
+2025-Jun-09 10:31:24 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:31:24 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:31:24 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:31:24 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:33:52 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:33:52 - [SERVER]: JSON RECEIVED:
+{"command":"Login","loginCredit":"Iliya","password":"HELIAHELIA1385"}
+2025-Jun-09 10:34:30 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:34:30 - [SERVER]: JSON RECEIVED:
+{"command":"LOGIN","loginCredit":"Iliya","password":"HELIAHELIA1385"}
+2025-Jun-09 10:35:04 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:35:04 - [SERVER]: JSON RECEIVED:
+{"command":"LOGIN","loginCredit":"heli@siidjfh.com","password":"HELIAHELIA1385"}
+2025-Jun-09 10:35:18 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:35:18 - [SERVER]: JSON RECEIVED:
+{"command":"LOGIN","loginCredit":"helia","password":"HELIAHELIA1385"}
+2025-Jun-09 10:35:42 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:35:42 - [SERVER]: JSON RECEIVED:
+{"command":"LOGIN","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:36:31 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:36:31 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:36:31 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:36:31 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:36:34 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:36:34 - [SERVER]: JSON RECEIVED:
+{"command":"LOGIN","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:36:47 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:36:47 - [SERVER]: JSON RECEIVED:
+{"command":"LOGIN","loginCredit":"helia","password":"HELIAHELIA1385"}
+2025-Jun-09 10:37:36 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:37:36 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:37:36 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:37:36 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:37:43 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:37:43 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"helia","password":"HELIAHELIA1385"}
+2025-Jun-09 10:37:52 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:37:52 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"helia","password":"HELIAHELI2A1385"}
+2025-Jun-09 10:39:35 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:39:35 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:39:35 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:39:35 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:39:38 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:39:38 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"helia","password":"HELIAHELI2A1385"}
+2025-Jun-09 10:47:45 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:47:45 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:47:45 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:47:45 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:47:47 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:47:47 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"helia","password":"HELIAHELI2A1385"}
+2025-Jun-09 10:47:48 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:47:48 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"helia","password":"HELIAHELI2A1385"}
+2025-Jun-09 10:47:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:47:49 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"helia","password":"HELIAHELI2A1385"}
+2025-Jun-09 10:48:10 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:48:10 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELI2A1385"}
+2025-Jun-09 10:48:22 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:48:22 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:48:27 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:48:27 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHEL12IA1385"}
+2025-Jun-09 10:48:28 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:48:28 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHEL12IA1385"}
+2025-Jun-09 10:48:29 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:48:29 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHEL12IA1385"}
+2025-Jun-09 10:50:37 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:50:37 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:50:37 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:50:37 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:50:42 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:50:43 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:51:03 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:51:03 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:51:03 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:51:03 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:51:05 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:51:05 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:54:04 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:54:04 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:54:04 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:54:04 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:54:08 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:54:08 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:54:08 - [SERVER]: JSON SENT
+{
+  "success": true,
+  "message": "Login successfully with Username (2FA)"
+}
+2025-Jun-09 10:54:24 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:54:24 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:54:24 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:54:24 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:54:24 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:54:24 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:54:24 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username (2FA)"
+}
+2025-Jun-09 10:55:00 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:55:00 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:55:00 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:55:00 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:55:02 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:55:02 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:55:02 - [SERVER]: JSON SENT : 
+JSON SAVE TO LOG
+2025-Jun-09 10:55:17 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:55:17 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:55:17 - [SERVER]: JSON SENT : 
+JSON SAVE TO LOG
+2025-Jun-09 10:55:23 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:55:23 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:55:23 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:55:23 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:55:25 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:55:25 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:55:25 - [SERVER]: JSON SENT : 
+JSON SAVED TO LOG
+2025-Jun-09 10:55:55 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:55:55 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:55:55 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:55:55 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:55:55 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:55:55 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:55:55 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username (2FA)"
+}
+2025-Jun-09 10:56:49 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:56:49 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:56:49 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:56:49 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:56:51 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:56:51 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:56:51 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username (2FA)"
+}
+2025-Jun-09 10:57:45 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:57:45 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:57:45 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:57:45 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:57:46 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:57:46 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:57:46 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username (2FA)"
+}
+2025-Jun-09 10:57:56 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:57:56 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:57:56 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:57:56 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:57:57 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:57:57 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:57:57 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username (2FA)"
+}
+2025-Jun-09 10:58:08 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 10:58:08 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 10:58:08 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 10:58:08 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 10:58:09 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:58:09 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:58:09 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username (2FA)"
+}
+2025-Jun-09 10:58:10 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 10:58:10 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 10:58:10 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username (2FA)"
+}
+2025-Jun-09 11:00:35 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 11:00:35 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 11:00:35 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 11:00:35 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 11:00:37 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 11:00:37 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 11:00:37 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username (2FA)"
+}
+2025-Jun-09 11:00:58 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 11:00:58 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 11:00:58 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 11:00:58 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 11:00:59 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 11:00:59 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 11:00:59 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username (2FA)"
+}
+2025-Jun-09 11:01:06 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 11:01:06 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 11:01:06 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username (2FA)"
+}
+2025-Jun-09 11:01:16 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 11:01:16 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 11:01:16 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username (2FA)"
+}
+2025-Jun-09 11:01:16 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 11:01:16 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 11:01:16 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username (2FA)"
+}
+2025-Jun-09 11:09:24 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 11:09:24 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 11:09:24 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 11:09:24 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 11:09:27 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 11:09:27 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385"}
+2025-Jun-09 11:09:27 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Email (2FA)"
+}
+2025-Jun-09 11:09:46 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 11:09:46 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385","rememberMe":"true"}
+2025-Jun-09 11:09:46 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Email (2FA)"
+}
+2025-Jun-09 11:10:06 - [SERVER]: USERS RESTORED : [User{username='admin', firstname='admin', lastname='admin', email='admin@admin.com'}, User{username='helia', firstname='helia', lastname='ghandi', email='i.esmaeili@sbu.ac.ir'}]
+2025-Jun-09 11:10:06 - [SERVER]: USERNAMES RESTORED : [admin, helia]
+2025-Jun-09 11:10:06 - [SERVER]: EMAILS RESTORED :[admin@admin.com, i.esmaeili@sbu.ac.ir]
+2025-Jun-09 11:10:06 - [SERVER]: Music Server is running on port : 9090
+2025-Jun-09 11:10:07 - [SERVER]: New client connected: /127.0.0.1
+2025-Jun-09 11:10:07 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"i.esmaeili@sbu.ac.ir","password":"HELIAHELIA1385","rememberMe":"true"}
+2025-Jun-09 11:10:07 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Email(Remember)"
+}

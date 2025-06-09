@@ -22,6 +22,11 @@ public class LoginRequest extends Request {
     public boolean isRememberMe() {
         return rememberMe;
     }
+
+    public void setRememberMe(boolean rememberMe) {
+        this.rememberMe = rememberMe;
+    }
+
     public boolean isLoginCreditEmail(){
         String emailPattern = "^(\\w*|\\d*|.*|_*|)@(\\w*|\\d*).([a-zA-Z0-9.]{2,})$" ;
         Pattern pattern = Pattern.compile(emailPattern);

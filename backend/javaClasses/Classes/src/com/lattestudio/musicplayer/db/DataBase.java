@@ -32,59 +32,70 @@ public class DataBase {
     private static List<String> emails = new LinkedList<>();
 
     public static List<User> getUsers() {
-        return users;
+        return DataBase.users;
     }
 
-    public static List<String> getUsernames() {
-        Path path = Paths.get("src/com/lattestudio/musicplayer/db/users.json");
-        RandomAccessFile output = null;
-        try {
-            output = new RandomAccessFile(path.toFile() , "rw");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        String line;
-        while (true){
-            try {
-                if ((line = output.readLine()) == null) break;
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            if(line.contains("username")){
-                usernames.add(line.substring(15,line.length()-2)); //15 for json fommating to easily access the user name :)
-            }
-        }
-        try {
-            output.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+//    public static List<String> getUsernames() {
+//        Path path = Paths.get("src/com/lattestudio/musicplayer/db/users.json");
+//        RandomAccessFile output = null;
+//        try {
+//            output = new RandomAccessFile(path.toFile() , "rw");
+//        } catch (FileNotFoundException e) {
+//            throw new RuntimeException(e);
+//        }
+//        String line;
+//        while (true){
+//            try {
+//                if ((line = output.readLine()) == null) break;
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//            if(line.contains("username")){
+//                usernames.add(line.substring(15,line.length()-2)); //15 for json fommating to easily access the user name :)
+//            }
+//        }
+//        try {
+//            output.close();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//        return usernames;
+//    }
+//    public static List<String> getEmails() { //sath payin tar az estefadeh az user ha ama sari tar ;)
+//        Path path = Paths.get("src/com/lattestudio/musicplayer/db/users.json");
+//        RandomAccessFile output = null;
+//        try {
+//            output = new RandomAccessFile(path.toFile() , "rw");
+//        } catch (FileNotFoundException e) {
+//            throw new RuntimeException(e);
+//        }
+//        String line;
+//        while (true){
+//            try {
+//                if ((line = output.readLine()) == null) break;
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//            if(line.contains("email")){
+//                emails.add(line.substring(11,line.length()-2)); //15 for json fommating to easily access the user name :)
+//            }
+//        }
+//        try {
+//            output.close();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//        return emails;
+//    }
+    public static List<String> getUsernames(){
+        for(User user : users){
+            usernames.add(user.getUsername());
         }
         return usernames;
     }
-
-    public static List<String> getEmails() { //sath payin tar az estefadeh az user ha ama sari tar ;)
-        Path path = Paths.get("src/com/lattestudio/musicplayer/db/users.json");
-        RandomAccessFile output = null;
-        try {
-            output = new RandomAccessFile(path.toFile() , "rw");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        String line;
-        while (true){
-            try {
-                if ((line = output.readLine()) == null) break;
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            if(line.contains("email")){
-                emails.add(line.substring(11,line.length()-2)); //15 for json fommating to easily access the user name :)
-            }
-        }
-        try {
-            output.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+    public static List<String> getEmails(){
+        for(User user : users){
+            emails.add(user.getEmail());
         }
         return emails;
     }

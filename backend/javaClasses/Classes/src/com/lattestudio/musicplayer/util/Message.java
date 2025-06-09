@@ -105,6 +105,19 @@ public class Message {
         }
         shutDown();
     }
+    public static void jsonSent(String message , String json){
+        startUp();
+        String formattedString = coloredTime()+ Colors.CYAN_BOLD_BRIGHT+"[SERVER]: "+Colors.YELLOW_BRIGHT + message + Colors.RESET + "\n" + Colors.BLACK_BACKGROUND_BRIGHT+ json+Colors.RESET   ;
+        String formattedStringNoColor = dateFormat() + " " + timeFormat() +" - "+ "[SERVER]: "+ message +"\n" + json + "\n" ;
+        System.out.print(formattedString);
+        System.out.println(Colors.BLACK_BACKGROUND_BRIGHT + "\n" + Colors.RESET);
+        try{
+            fileWriter.write(formattedStringNoColor);
+        } catch (IOException e) {
+            throw new RuntimeException("COULD NOT WRITE TO LOG FILE!");
+        }
+        shutDown();
+    }
     public static void readAllLogs() throws IOException {
         startUp();
         System.out.print(Colors.BLACK_BACKGROUND_BRIGHT);

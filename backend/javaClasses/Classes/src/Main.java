@@ -14,7 +14,10 @@ import java.util.Arrays;
 
 class Main{
     public static void main(String[] args) throws Exception {
-        System.out.println(DataBase.loadUsers());
+        Message.cyanServerMessage("USERS RESTORED : " + DataBase.loadUsers());
+        Message.cyanServerMessage("USERNAMES RESTORED : "+ DataBase.getUsernames());
+        Message.cyanServerMessage("EMAILS RESTORED :" + DataBase.getEmails());
+
         Server server = new Server();
         server.start();
 
