@@ -10,9 +10,16 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /**
+ * <p>
+ *     The User Class That Stores a user and its data
+ *     it throws Exceptions for bad username/email etc itself ;)
+ * </p>
  * @author Helia Ghandi
  * @author Iliya Esmaeili
- * @since 0.0.1
+ * @since v0.0.1
+ * @see Playlist
+ * @see Music
+ * @see com.lattestudio.musicplayer.Tests.UserTest
  */
 @SuppressWarnings("unused")
 public class User  implements Serializable {

@@ -1,5 +1,10 @@
+/*
+TO-DO-LIST :
+    1.private constructor + javadoc + comment
+ */
+
+//kolah refactoring gozashtim - yekshanbe fizik darim - hichi balad nistim ;) 22 khordad 2024
 package com.lattestudio.musicplayer.util;
-import com.lattestudio.musicplayer.util.Colors;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,19 +16,42 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 /**
+ * <p>
+ *     a util class that does multiple things :
+ * </p>
+ * <p>
+ *     1.sending Colored outputs with help of Color class
+ * </p>
+ * <p>
+ *     2.sending the uncolored version to the log file
+ * </p>
  * @author Helia Ghandi
  * @author Iliya Esmaeili
  * @see Colors
- * @since 0.0.18
+ * @since v0.0.18
  */
 
-//helia latte noosh jonet :)
+//helia latte noosh joonet :)
 
 public class Message {
+    //Properties :
     private static Path log = Paths.get("src/com/lattestudio/musicplayer/db/log.txt");
     private static FileWriter fileWriter;
     private static RandomAccessFile fileReader;
 
+    //Constructors :
+
+
+    //Methods :
+
+    /**
+     * <p>
+     *     uses a {@code StringBuilder} to create a format for time (using {@code LocalTime} for time)
+     * </p>
+     * @return a formatted string for time : {@code "hh:mm:ss"} (for example  01:01:01)
+     * @see StringBuilder
+     * @see LocalTime
+     */
     public static String timeFormat(){
         LocalTime localTime = LocalTime.now();
         StringBuilder hour = new StringBuilder(String.valueOf(localTime.getHour()));
@@ -38,15 +66,30 @@ public class Message {
         return (hour.toString() + ":" + minute.toString()+":"+second.toString());
     }
 
+    /**
+     * @return a colored string using {@code Colors} class
+     * @see Colors
+     */
     public static String coloredTime(){
         return(Colors.PURPLE + timeFormat() + " - "+Colors.RESET);
     }
 
+    /**
+     * <p>uses {@code LocalDateTime} format method to produce formatted string for date</p>
+     * @return a string of format : {@code "yyyy-MMM-dd"} (for example 2024-Nov-12)
+     * @see LocalDateTime
+     */
     public static String dateFormat(){
         LocalDateTime localDateTime = LocalDateTime.now();
         return localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MMM-dd"));
     }
 
+    /**
+     * <p>
+     *     opens writers and readers for {@code Messages} class
+     * </p>
+     * @see Message
+     */
     public static void startUp(){
         try {
             fileWriter = new FileWriter(log.toFile() , true);
@@ -55,6 +98,13 @@ public class Message {
             throw new RuntimeException("COULD NOT ACCESS LOG FILE");
         }
     }
+
+    /**
+     * <p>
+     *     closes writers and readers for {@code Messages}  class
+     * </p>
+     * @see Message
+     */
     public static void shutDown(){
         try {
             fileWriter.close();
@@ -64,6 +114,22 @@ public class Message {
         }
     }
 
+    /**
+     * <p>
+     *     a String with format and color :
+     * </p>
+     * <p>
+     *     {@code [SERVER]: {message}} for the console
+     * </p>
+     * <p>
+     *     a String with format and no color :
+     * </p>
+     * <p>
+     *     {@code "yyyy-MMM-dd hh:mm:ss - [SERVER]: {message}} for the log file
+     * </p>
+     * @param message the message from the server to be shown in console and written to log file
+     * @see Colors
+     */
     public static void cyanServerMessage(String message){
         startUp();
         String formattedString = coloredTime() + Colors.CYAN_BOLD_BRIGHT+"[SERVER]: "+Colors.YELLOW_BRIGHT+message+Colors.RESET +"\n" ;
@@ -78,7 +144,22 @@ public class Message {
         shutDown();
     }
 
-
+    /**
+     * <p>
+     *     a String with format and color :
+     * </p>
+     * <p>
+     *     {@code [SERVER]: {message}} for the console
+     * </p>
+     * <p>
+     *     a String with format and no color :
+     * </p>
+     * <p>
+     *     {@code "yyyy-MMM-dd hh:mm:ss - [SERVER]: {message}} for the log file
+     * </p>
+     * @param message the message from the server to be shown in console and written to log file
+     * @see Colors
+     */
     public static void redServerMessage(String message ){
         startUp();
         String formattedString = coloredTime() +Colors.RED_BOLD_BRIGHT+"[SERVER]: "+Colors.YELLOW_BRIGHT+message+Colors.RESET+"\n"  ;
@@ -92,7 +173,14 @@ public class Message {
         shutDown();
     }
 
-
+    /**
+     * <p>
+     *     a String with format and color for console and String with format and no color for log file
+     * </p>
+     * @param message the message from the server to be shown in console and written to log file
+     * @param json the JSON String from the front app to the server
+     * @see Colors
+     */
     public static void jsonReceived(String message , String json){
         startUp();
         String formattedString = coloredTime()+ Colors.CYAN_BOLD_BRIGHT+"[SERVER]: "+Colors.YELLOW_BRIGHT+message+Colors.RESET + "\n" + Colors.BLACK_BACKGROUND_BRIGHT+ json+Colors.RESET +"\n" ;
@@ -105,6 +193,14 @@ public class Message {
         }
         shutDown();
     }
+    /**
+     * <p>
+     *     a String with format and color for console and String with format and no color for log file
+     * </p>
+     * @param message the message from the server to be shown in console and written to log file
+     * @param json the JSON String from the server to the front app
+     * @see Colors
+     */
     public static void jsonSent(String message , String json){
         startUp();
         String formattedString = coloredTime()+ Colors.CYAN_BOLD_BRIGHT+"[SERVER]: "+Colors.YELLOW_BRIGHT + message + Colors.RESET + "\n" + Colors.BLACK_BACKGROUND_BRIGHT+ json+Colors.RESET   ;
@@ -118,6 +214,12 @@ public class Message {
         }
         shutDown();
     }
+
+    /**
+     * reads all logs that are saved to the log file
+     * @throws IOException
+     * @see Colors
+     */
     public static void readAllLogs() throws IOException {
         startUp();
         System.out.print(Colors.BLACK_BACKGROUND_BRIGHT);

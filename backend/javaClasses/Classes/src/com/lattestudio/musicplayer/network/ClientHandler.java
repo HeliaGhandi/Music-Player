@@ -1,17 +1,23 @@
+/*
+TO-DO-LIST :
+    1.property haye moratab tar
+    2.exception haye dorost -> javadoc esh ham dorost she
+    3.handle kheili toolanie
+    4.bastan hame recourse ha
+    5.baraye dashtan throw ha va hamchenin response ha ya pak kardan yekish
+    6.unused suppress she
+ */
+
 package com.lattestudio.musicplayer.network;
 
-import java.io.*;
-import java.net.*;
-import java.nio.file.Files;
+import java.io.*; //bad
+import java.net.*; //bad
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonSyntaxException;
 import com.lattestudio.musicplayer.db.DataBase;
 import com.lattestudio.musicplayer.model.User;
 import com.lattestudio.musicplayer.network.blueprints.LoginRequest;
@@ -21,26 +27,37 @@ import com.lattestudio.musicplayer.util.adapter.LocalDateTimeAdapter;
 import com.lattestudio.musicplayer.util.adapter.LocalTimeAdapter;
 
 /**
+ * <p>
+ *     Handles jsons with switch-case and creates response for the Server class to send it to front end(flutter music player)
+ * </p>
  * @author Helia Ghandi
- * @author ILiya Esmaeili
+ * @author Iliya Esmaeili
  * @see com.lattestudio.musicplayer.network.Server
- * @since 0.0.16
+ * @see Response
+ * @see Request
+ * @see LoginRequest
+ * @see SignUpRequest
+ * @since v0.0.16
  */
 public class ClientHandler implements Runnable {
+    //Properties :
     private Socket socket;
     private String requestMessage;
+    String jsonRequest ;
     private final Gson gson = new GsonBuilder()
             .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
             .registerTypeAdapter(LocalTime.class, new LocalTimeAdapter())
             .setPrettyPrinting()
-            .create();
+            .create();//GPT
 
 
     private static final String LOGIN = "LOGIN" ;
     private static final String SIGN_UP = "SIGN_UP" ;
     private static final String FORGOT_PASSWORD = "FORGOT_PASSWORD" ;
     private static final String TEST_COMMAND = "TEST_COMMAND" ;
-    String jsonRequest ;
+
+
+    //Constructors :
 
     public ClientHandler(Socket socket) {
         this.socket = socket;
@@ -50,7 +67,18 @@ public class ClientHandler implements Runnable {
         this.socket = socket;
         this.requestMessage = request;
     }
+    //Methods :
 
+    /**
+     * <p>
+     *     receives a json -> creates a request object from json -> passes the request object to handler method -> stores the response that handler created in a response object -> creates a json from response -> sends out the response
+     * </p>
+     * <p>
+     *     also logs the important data with Message util class
+     * </p>
+     * @author Helia Ghandi
+     * @author Iliya Esmaeili
+     */
     @Override
     public void run() {
         try (BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -73,6 +101,17 @@ public class ClientHandler implements Runnable {
         }
     }
 
+    /**
+     *
+     * @param request gets a request that was created from the json sent by frontend(flutter)
+     * @return returns a response based on the request - whether it was successful or not - also provides a message if needed 0_0
+     * @throws IOException
+     * @author Helia Ghandi
+     * @author Iliya Esmaeili
+     * @see Response
+     * @see Request
+     * @see ClientHandler
+     */
     private Response handleRequest(Request request) throws IOException {
         String command =  request.getCommand().toUpperCase();
         switch (command){
@@ -193,6 +232,7 @@ public class ClientHandler implements Runnable {
 
     }
 
+    //Default Getter And Setters :
     public Socket getSocket() {
         return socket;
     }

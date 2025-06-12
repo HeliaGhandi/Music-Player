@@ -7,9 +7,13 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
 /**
+ * <p>
+ *     Class for storing each music and its data
+ * </p>
  * @author Helia Ghandi
  * @author Iliya Esmaeili
- * @since 0.0.3
+ * @since v0.0.3
+ * @see Playlist
  */
 @SuppressWarnings("unused")
 public class Music implements Serializable {

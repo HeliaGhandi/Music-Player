@@ -8,13 +8,16 @@ import java.util.List;
 import java.util.Objects;
 
 /**
+ * <p>
+ *     Class for each playlist;)
+ * </p>
  * @author Helia Ghandi
  * @author Iliya Esmaeili
- * //since vaghti ke man theme download kardam va baroonam miad :)  24 ordibehesht (tavalod arian)
- * //since zadan be sabk helia ;)
+ * @since vaghti ke man theme download kardam va baroonam miad :)  24 ordibehesht (tavalod arian) //since zadan be sabk helia ;)
  * @see Music
+ * @since v0.0.1
  */
-
+//since zadan be sabk helia ;)
 
 @SuppressWarnings("unused")
 public class Playlist implements Serializable {

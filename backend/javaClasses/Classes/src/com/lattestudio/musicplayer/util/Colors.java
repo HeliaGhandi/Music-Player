@@ -1,13 +1,23 @@
+/*
+TO-DO-LIST :
+    1.private default constructor + javadoc + comment
+ */
 package com.lattestudio.musicplayer.util;
 
 /**
+ * <p>
+ *     util class
+ *     for having a more userfriendly and more beautiful command line :))
+ * </p>
  * @author GPT
- * @since 0.0.16
+ * @since v0.0.16
+ * @see Message
  */
 /*
     khoshgel she ;)
  */
 public class Colors {
+    //Properties :
     // Reset
     public static final String RESET = "\033[0m";  // Text Reset
 
@@ -82,8 +92,7 @@ public class Colors {
     public static final String CYAN_BACKGROUND_BRIGHT = "\033[0;106m";  // CYAN
     public static final String WHITE_BACKGROUND_BRIGHT = "\033[0;107m";   // WHITE
 
-
-
+    //Constructors :
 
 
 }

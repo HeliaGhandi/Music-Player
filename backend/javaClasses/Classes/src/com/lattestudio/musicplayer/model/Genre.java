@@ -3,9 +3,14 @@ package com.lattestudio.musicplayer.model;
 import java.io.Serializable;
 
 /**
+ * <p>
+ *     Different Genres Availble for each music
+ * </p>
  * @author Helia Ghandi
  * @author Iliya Esmaeili
- * @since 0.0.1
+ * @since v0.0.1
+ * @see Music
+ * @see Playlist
  */
 @SuppressWarnings("unused")
 public enum Genre implements Serializable {
