@@ -49,4 +49,32 @@
   "joinedDate": "2025-06-09T10:03:15.991895",
   "totalListeningDuration": "00:00:00"
 }
+,
+{
+  "username": "fwfwfd",
+  "firstname": "gijgoijo",
+  "lastname": "fwsfw",
+  "email": "gggwge@gmail.com",
+  "password": "bhrh@142",
+  "profilePictureURL": "PROFILE PICTURE NOT SET YET",
+  "isVerified": false,
+  "canShareSongWithUser": true,
+  "is2faVerified": false,
+  "isAccountPrivate": false,
+  "rememberMe": false,
+  "musics": [],
+  "playlists": [],
+  "likedSongs": [],
+  "likedPlayLists": [],
+  "queue": [],
+  "followers": [],
+  "followings": [],
+  "playedSongs": [],
+  "likedGenres": [],
+  "theme": "LIGHT",
+  "lastUsernameChangeTime": "2025-07-20T20:54:01.302018",
+  "joinedDate": "2025-07-20T20:54:01.302005",
+  "totalListeningDuration": "00:00:00",
+  "numberOfFailLoginAttempts": 0
+}
 ]
