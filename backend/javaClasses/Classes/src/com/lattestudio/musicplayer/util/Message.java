@@ -6,6 +6,9 @@ TO-DO-LIST :
 //kolah refactoring gozashtim - yekshanbe fizik darim - hichi balad nistim ;) 22 khordad 2024
 package com.lattestudio.musicplayer.util;
 
+import com.lattestudio.musicplayer.db.DataBase;
+import com.lattestudio.musicplayer.model.User;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -14,6 +17,7 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 /**
  * <p>
@@ -234,5 +238,19 @@ public class Message {
         System.out.println(Colors.RESET);
         shutDown();
 }
+    public static void restoreUsers() throws IOException {
+        Message.cyanServerMessage("USERS RESTORED : ");
+        System.out.println(Colors.BLACK_BACKGROUND_BRIGHT);
+
+        for(User user : DataBase.loadUsers()){
+            System.out.format("""
+                     Name : %s %s
+                     Email:%s
+                    """ , user.getFirstname() , user.getLastname() , user.getEmail());
+            System.out.println();
+        }
+        System.out.println(Colors.RESET);
+
+    }
 
 }

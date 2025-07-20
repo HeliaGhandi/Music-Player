@@ -1,8 +1,3 @@
-/*
-TO-DO-LIST :
-    1.getter names refactor
- */
-
 package com.lattestudio.musicplayer.network;
 /**
  * <p>

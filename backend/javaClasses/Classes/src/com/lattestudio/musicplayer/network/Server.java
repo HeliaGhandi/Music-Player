@@ -1,10 +1,6 @@
 /*
 TO-DO-LIST :
-    1.constructor
-    2.start()
     3.better exception handling and messages and try-catch -> more specific;)
-    4.commenting why we need an always true and disabling the rule
-    5.suppressing unused
  */
 
 package com.lattestudio.musicplayer.network;
@@ -42,13 +38,19 @@ import com.lattestudio.musicplayer.util.Message;
  */
 public class Server {
     //Properties :
-    private final int PORT = 9090;
+    private  int PORT = 9090;
 
     private Socket socket;
 
     //Constructors :
-    // ye constructor khali
-    // ye constructor ke PORT set kone
+
+    public Server() {
+    }
+
+    public Server(int PORT) {
+        this.PORT = PORT;
+    }
+
 
 
     //Methods :
@@ -74,7 +76,7 @@ public class Server {
                 ClientHandler handler = new ClientHandler(socket);
                 Thread clientThread = new Thread(handler);
                 clientThread.start();
-            }
+            }//bayad hamishe montazer bashe :)
 
         } catch (IOException e) {
             Message.redServerMessage("IO EXCEPTION ON CREATING SERVER SOCKET");

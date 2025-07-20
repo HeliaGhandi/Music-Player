@@ -1,17 +1,14 @@
 /*
 TO-DO-LIST :
-    1.property haye moratab tar
     2.exception haye dorost -> javadoc esh ham dorost she
-    3.handle kheili toolanie
-    4.bastan hame recourse ha
     5.baraye dashtan throw ha va hamchenin response ha ya pak kardan yekish
-    6.unused suppress she
  */
 
 package com.lattestudio.musicplayer.network;
 
-import java.io.*; //bad
-import java.net.*; //bad
+
+import java.io.*;
+import java.net.Socket;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
@@ -39,11 +36,13 @@ import com.lattestudio.musicplayer.util.adapter.LocalTimeAdapter;
  * @see SignUpRequest
  * @since v0.0.16
  */
+
 public class ClientHandler implements Runnable {
+
     //Properties :
     private Socket socket;
     private String requestMessage;
-    String jsonRequest ;
+    private String jsonRequest ;
     private final Gson gson = new GsonBuilder()
             .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
             .registerTypeAdapter(LocalTime.class, new LocalTimeAdapter())
@@ -54,7 +53,6 @@ public class ClientHandler implements Runnable {
     private static final String LOGIN = "LOGIN" ;
     private static final String SIGN_UP = "SIGN_UP" ;
     private static final String FORGOT_PASSWORD = "FORGOT_PASSWORD" ;
-    private static final String TEST_COMMAND = "TEST_COMMAND" ;
 
 
     //Constructors :
@@ -77,7 +75,7 @@ public class ClientHandler implements Runnable {
      *     also logs the important data with Message util class
      * </p>
      * @author Helia Ghandi
-     * @author Iliya Esmaeili
+     * @author Iliya Esmaeili   
      */
     @Override
     public void run() {
@@ -97,7 +95,7 @@ public class ClientHandler implements Runnable {
             output.flush();
         }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Socket throws IO Exception");
         }
     }
 
@@ -116,120 +114,131 @@ public class ClientHandler implements Runnable {
         String command =  request.getCommand().toUpperCase();
         switch (command){
             case LOGIN :{
-                LoginRequest loginRequest ;
-                try {
-                    loginRequest = gson.fromJson(jsonRequest , LoginRequest.class);
-                }catch (Exception e){
-                    throw new IllegalArgumentException("Bad argument for login");
-                }
-                if(loginRequest.isLoginCreditEmail()){ //LOGIN WITH EMAIL
-                    int indexOfUser = DataBase.getEmails().indexOf(loginRequest.getLoginCredit());
-
-                    if(indexOfUser != -1){
-                        User user = DataBase.getUsers().get(indexOfUser) ;
-                        if (user.getPassword().equals(loginRequest.getPassword())){
-                            user.setNumberOfFailLoginAttempts(0);
-                            if(user.isIs2faVerified()){
-                                return new Response(true,"Login successfully with Email (2FA)");
-                            }else {
-                                if(loginRequest.isRememberMe()){
-                                    user.setRememberMe(true);
-                                    return new Response(true,"Login successfully with Email(Remember)");
-                                }else {
-                                    return new Response(true,"Login successfully with Email");
-                                }
-                            }
-                        }else {
-                            user.failedLoginAttempt();
-                            if(user.getNumberOfFailLoginAttempts() >= 3){
-                                return new Response(false , "Wrong password and total attempts more than 3");
-                            }else {
-                                return new Response(false , "Wrong password");
-                            }
-                        }
-                    }else {
-                        return new Response(false , "email not found"); // :(
-                    }
-                }else { //LOGIN WITH USERNAME
-                    int indexOfUser = DataBase.getUsernames().indexOf(loginRequest.getLoginCredit());
-                    if(indexOfUser != -1){
-                        User user = DataBase.getUsers().get(indexOfUser) ;
-                        if (user.getPassword().equals(loginRequest.getPassword())){
-                            user.setNumberOfFailLoginAttempts(0);
-                            if(user.isIs2faVerified()){
-                                return new Response(true,"Login successfully with Username (2FA)");
-                            }else {
-                                if(loginRequest.isRememberMe()){
-                                    user.setRememberMe(true);
-                                    return new Response(true,"Login successfully with Username(Remember)");
-                                }else {
-                                    return new Response(true,"Login successfully with Username");
-                                }
-                            }
-                        }else {
-                            user.failedLoginAttempt();
-                            if(user.getNumberOfFailLoginAttempts() >= 3){
-                                return new Response(false , "Wrong password and total attempts more than 3");
-                            }else {
-                                return new Response(false , "Wrong password");
-                            }
-
-                        }
-                    }else {
-                        return new Response(false , "username not found"); // :(
-                    }
-                }
+                return loginHandler();
 
             }// =D
             case SIGN_UP:{
-                SignUpRequest signUpRequest ;
-                try {
-                    signUpRequest = gson.fromJson(jsonRequest , SignUpRequest.class);
-                }catch (IllegalArgumentException iae){
-                    throw new IllegalArgumentException("Bad argument for sign up");
-                }
-
-                Path path = Paths.get("src/com/lattestudio/musicplayer/db/users.json");
-                RandomAccessFile output = new RandomAccessFile(path.toFile() , "rw");
-
-                if (DataBase.getUsernames().contains(signUpRequest.getUsername())) return new Response(false , "username already exists.");
-                if (DataBase.getEmails().contains(signUpRequest.getEmail())) return new Response(false , "email already exists.");
-                User user = new User(signUpRequest.getUsername() , signUpRequest.getPassword() , signUpRequest.getEmail()); //handles illegal argument excepton itslef ;)))
-                user.setFirstname(signUpRequest.getFirstname());
-                user.setLastname(signUpRequest.getLastname());
-                try {
-                    String userJson = gson.toJson(user);
-                    if(output.length() == 0){
-                        output.writeBytes("[\n");
-                        output.writeBytes(userJson);
-                        output.writeBytes("\n]");
-                    }else {
-                        output.seek(output.length() - 1);
-                        output.writeBytes(",\n");
-                        output.writeBytes(userJson);
-                        output.writeBytes("\n]");
-                    }
-                    DataBase.getUsers().add(user);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                output.close();
-               return new Response(true);
+                return signupHandler();
             }
             case FORGOT_PASSWORD:{
-                return new Response(true);
-            }
-            case TEST_COMMAND:{
-                Message.cyanServerMessage("TEST COMMAND RECEIVED SUCCESSFULLY");
-                return new Response(true, "yoohoo") ;
+                return alzheimerHandler();
             }
             default : {
-                //throw new JsonSyntaxException("WRONG JSON SYNTAX");
                 return new Response(false , "WRONG JSON SYNTAX");
             }
 
         }
 
+    }
+
+    private static Response alzheimerHandler() {
+        return new Response(true);
+    }
+
+    private Response signupHandler() throws IOException {
+        SignUpRequest signUpRequest ;
+        try {
+            signUpRequest = gson.fromJson(jsonRequest , SignUpRequest.class);
+        }catch (IllegalArgumentException iae){
+            throw new IllegalArgumentException("Bad argument for sign up");
+        }
+
+        Path path = Paths.get("src/com/lattestudio/musicplayer/db/users.json");
+        RandomAccessFile output = new RandomAccessFile(path.toFile() , "rw");
+
+        if (DataBase.getUsernames().contains(signUpRequest.getUsername()))
+            return new Response(false, "username already exists.");
+        if (DataBase.getEmails().contains(signUpRequest.getEmail()))
+            return new Response(false, "email already exists.");
+        User user = new User(signUpRequest.getUsername() , signUpRequest.getPassword() , signUpRequest.getEmail()); //handles illegal argument excepton itslef ;)))
+        user.setFirstname(signUpRequest.getFirstname());
+        user.setLastname(signUpRequest.getLastname());
+        try {
+            String userJson = gson.toJson(user);
+            if(output.length() == 0){
+                output.writeBytes("[\n");
+                output.writeBytes(userJson);
+                output.writeBytes("\n]");
+            }else {
+                output.seek(output.length() - 1);
+                output.writeBytes(",\n");
+                output.writeBytes(userJson);
+                output.writeBytes("\n]");
+            }
+            DataBase.getUsers().add(user);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }finally {
+            output.close();
+        }
+
+        return alzheimerHandler();
+    }
+
+    private Response loginHandler() {
+        LoginRequest loginRequest ;
+        try {
+            loginRequest = gson.fromJson(jsonRequest , LoginRequest.class);
+        }catch (Exception e){
+            throw new IllegalArgumentException("Bad argument for login");
+        }
+        if(loginRequest.isLoginCreditEmail()){ //LOGIN WITH EMAIL
+            int indexOfUser = DataBase.getEmails().indexOf(loginRequest.getLoginCredit());
+
+            if(indexOfUser != -1){
+                User user = DataBase.getUsers().get(indexOfUser) ;
+                if (user.getPassword().equals(loginRequest.getPassword())){
+                    user.setNumberOfFailLoginAttempts(0);
+                    if(user.isIs2faVerified()){
+                        return new Response(true, "Login successfully with Email (2FA)");
+                    }else {
+                        if(loginRequest.isRememberMe()){
+                            user.setRememberMe(true);
+                            return new Response(true, "Login successfully with Email(Remember)");
+                        }else {
+                            return new Response(true, "Login successfully with Email");
+                        }
+                    }
+                }else {
+                    user.failedLoginAttempt();
+                    if(user.getNumberOfFailLoginAttempts() >= 3){
+                        return new Response(false, "Wrong password and total attempts more than 3");
+                    }else {
+                        return new Response(false, "Wrong password");
+                    }
+                }
+            }else {
+                return new Response(false, "email not found");
+            }
+        }else { //LOGIN WITH USERNAME
+            int indexOfUser = DataBase.getUsernames().indexOf(loginRequest.getLoginCredit());
+            if(indexOfUser != -1){
+                User user = DataBase.getUsers().get(indexOfUser) ;
+                if (user.getPassword().equals(loginRequest.getPassword())){
+                    user.setNumberOfFailLoginAttempts(0);
+                    if(user.isIs2faVerified()){
+                        return new Response(true, "Login successfully with Username (2FA)");
+                    }else {
+                        if(loginRequest.isRememberMe()){
+                            user.setRememberMe(true);
+                            return new Response(true, "Login successfully with Username(Remember)");
+                        }else {
+                            return new Response(true, "Login successfully with Username");
+                        }
+                    }
+                }else {
+                    user.failedLoginAttempt();
+                    if(user.getNumberOfFailLoginAttempts() >= 3){
+                        return new Response(false, "Wrong password and total attempts more than 3");
+                    }else {
+                        return new Response(false, "Wrong password");
+                    }
+
+                }
+            }else {
+                return new Response(false, "username not found");
+            }
+        }
     }
 
     //Default Getter And Setters :

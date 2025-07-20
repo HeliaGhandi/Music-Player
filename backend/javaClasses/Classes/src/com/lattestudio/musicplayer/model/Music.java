@@ -1,7 +1,7 @@
 package com.lattestudio.musicplayer.model;
-
 // sarde ;) (daneshkade jeloye namaz khoone neeshastim:) )
 //hanooz sarde
+// kash hanoozam sard bood ):
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.LocalTime;

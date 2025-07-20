@@ -1,7 +1,3 @@
-/*
-TO-DO-LIST :
-    1.comment for why constructor is empty
- */
 package com.lattestudio.musicplayer.network;
 
 /**
@@ -35,7 +31,7 @@ public class Request {
      * @see ClientHandler
      * @see Server
      */
-    public Request() {}
+    public Request() {} //for gson
 
 
     //Default Getter And Setters :

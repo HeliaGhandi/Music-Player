@@ -1,7 +1,5 @@
 /*
 TO-DO-LIST :
-    1.USERS RESTORED - USERNAMES RESTORED - EMAILS RESTORED -> move to the message class (ghashang taresh konim masalan har user dar yek khat va ye background mesl json ee ha)
-    2.imports replace * -> khas tar
     3.comment haye faz 1 ghabel piade sazi hastand
     4.bad as hame comment haye man sonar qube ha tamoom shan ;)
     5.joda kardan property o folan dar hame class ha
@@ -16,10 +14,9 @@ import com.lattestudio.musicplayer.util.Message;
 
 class Main{
     public static void main(String[] args) throws Exception {
-        Message.cyanServerMessage("USERS RESTORED : " + DataBase.loadUsers());
+        Message.restoreUsers();
         Message.cyanServerMessage("USERNAMES RESTORED : "+ DataBase.getUsernames());
         Message.cyanServerMessage("EMAILS RESTORED :" + DataBase.getEmails());
-
         Server server = new Server();
         server.start();
 
