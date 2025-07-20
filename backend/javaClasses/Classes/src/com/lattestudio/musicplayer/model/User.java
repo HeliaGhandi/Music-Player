@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 /**
  * <p>
  *     The User Class That Stores a user and its data
- *     it throws Exceptions for bad username/email etc itself ;)
+ *     it throws Exceptions for bad username/email etc. itself ;)
  * </p>
  * @author Helia Ghandi
  * @author Iliya Esmaeili
