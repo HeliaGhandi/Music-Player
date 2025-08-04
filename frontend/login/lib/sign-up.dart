@@ -5,7 +5,12 @@ import 'package:login/json-handler.dart';
 
 class SignUpPage extends StatefulWidget {
   void Function() changeToLogin;
-  SignUpPage({required this.changeToLogin, super.key});
+  void Function() changeToHomePage;
+  SignUpPage({
+    required this.changeToHomePage,
+    required this.changeToLogin,
+    super.key,
+  });
 
   @override
   State<SignUpPage> createState() {
@@ -31,6 +36,9 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
+    double? deviceWidth = MediaQuery.of(context).size.width;
+    double? deviceHeight = MediaQuery.of(context).size.height;
+
     return Container(
       child: Stack(
         children: [
@@ -132,6 +140,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           // مثلاً:
                           // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) => HomeScreen()));
                           print('Login Successful!');
+                          widget.changeToHomePage();
                         } else {
                           print('Login Failed: ${response['message']}');
                           // می‌توانید یک پیام خطا به کاربر نمایش دهید
@@ -192,6 +201,43 @@ class _SignUpPageState extends State<SignUpPage> {
                 ],
               ),
             ),
+          ),
+          Column(
+            children: [
+              SizedBox(height: deviceHeight - 65),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      splashFactory: NoSplash.splashFactory, // gham :(
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      "privacy policy",
+                      style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontSize: 13,
+                      ),
+                    ),
+                  ),
+                  Text("|", style: GoogleFonts.poppins(color: Colors.white)),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      splashFactory: NoSplash.splashFactory,
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      "terms of serive",
+                      style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontSize: 13,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ],
       ),

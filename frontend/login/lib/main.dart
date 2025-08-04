@@ -1,10 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:login/authentication-screens-handler.dart';
+import 'package:login/home-screen.dart';
 import 'package:login/screen.dart';
+import 'package:login/browse-screen.dart';
+import 'package:login/setting.dart';
+import 'package:login/music-screen.dart';
 
 void main() {
-  runApp(MaterialApp(home: (Screen())));
+  runApp(MaterialApp(home: (AuthenticationScreenHandler())));
 }
-
+// void main() {
+//   runApp(
+//     MaterialApp(
+//       home: (MusicScreen(
+//         singer: "Arctic Monkeys",
+//         name: "505",
+//         cover: "assets/covers/am.jpg",
+//       )),
+//     ),
+//   );
+// }
 // import 'package:flutter/material.dart';
 // import 'network_utils.dart'; // import فایل NetworkUtils
 

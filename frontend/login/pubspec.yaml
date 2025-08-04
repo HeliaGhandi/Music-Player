@@ -65,8 +65,17 @@ flutter:
     - assets/images/login-background.png
     - assets/images/blured-login-background.png
     - assets/images/google-logo.png
-    
-
+    - assets/covers/am.jpg
+    - assets/covers/billie.jpg
+    - assets/covers/ebi.jpg
+    - assets/covers/googoosh.jpg
+    - assets/covers/heliyom.jpg
+    - assets/covers/shayea.jpeg
+    - assets/covers/night.png
+    - assets/icons/go.png
+    - assets/icons/gosetting.png
+    - assets/icons/icon.png
+    - assets/icons/search.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 

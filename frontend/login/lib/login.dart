@@ -6,7 +6,12 @@ import 'package:login/notif.dart';
 
 class LoginPage extends StatefulWidget {
   void Function() changeToSignUp;
-  LoginPage({required this.changeToSignUp, super.key});
+  void Function() changeToHomePage;
+  LoginPage({
+    required this.changeToHomePage,
+    required this.changeToSignUp,
+    super.key,
+  });
 
   @override
   State<LoginPage> createState() {
@@ -27,6 +32,9 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    double? deviceWidth = MediaQuery.of(context).size.width;
+    double? deviceHeight = MediaQuery.of(context).size.height;
+
     return Container(
       child: Stack(
         children: [
@@ -151,6 +159,7 @@ class _LoginPageState extends State<LoginPage> {
                           // مثلاً:
                           // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) => HomeScreen()));
                           print('Login Successful!');
+                          widget.changeToHomePage();
                         } else {
                           Notif(
                             text: 'Login Failed: ${response['message']} ',
@@ -218,6 +227,43 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           //Notif(text: "test", color: Color(0xFFD2C3D8),),
+          Column(
+            children: [
+              SizedBox(height: deviceHeight - 65),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      splashFactory: NoSplash.splashFactory, // gham :(
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      "privacy policy",
+                      style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontSize: 13,
+                      ),
+                    ),
+                  ),
+                  Text("|", style: GoogleFonts.poppins(color: Colors.white)),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      splashFactory: NoSplash.splashFactory,
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      "terms of serive",
+                      style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontSize: 13,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ],
       ),
     );

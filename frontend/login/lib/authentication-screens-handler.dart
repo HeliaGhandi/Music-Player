@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:login/authentication-screen.dart';
 import 'package:login/background-login.dart';
+import 'package:login/browse-screen.dart';
+import 'package:login/home-screen.dart';
 import 'package:login/sign-up.dart';
+import 'package:login/music-screen.dart';
 // Assuming you save the above code in animated_background_widget.dart
 import 'package:login/login.dart';
 
@@ -34,15 +37,51 @@ class _AuthenticationScreenHandlerState
 
   void changeScreenToSignUp() {
     setState(() {
-      widget.activeScreen = SignUpPage(changeToLogin: changeScreenToLogin);
+      widget.activeScreen = SignUpPage(
+        changeToLogin: changeScreenToLogin,
+        changeToHomePage: changeScreenToHome,
+      );
       activeBackground = bluredLoginBackground;
     });
   }
 
   void changeScreenToLogin() {
     setState(() {
-      widget.activeScreen = LoginPage(changeToSignUp: changeScreenToSignUp);
+      widget.activeScreen = LoginPage(
+        changeToSignUp: changeScreenToSignUp,
+        changeToHomePage: changeScreenToHome,
+      );
       activeBackground = bluredLoginBackground;
+    });
+  }
+
+  void changeScreenToHome() {
+    setState(() {
+      widget.activeScreen = HomeScreen(
+        changeToBrowse: changeScreenToBrowse,
+        changeToHome: changeScreenToHome,
+        changeToMusicScreen: changeScreenToMusicScreen,
+      );
+    });
+  }
+
+  void changeScreenToBrowse() {
+    setState(() {
+      widget.activeScreen = BrowseScreen(
+        changeToHome: changeScreenToHome,
+        changeToBrowse: changeScreenToBrowse,
+        changeToMusic: changeScreenToMusicScreen,
+      );
+    });
+  }
+
+  void changeScreenToMusicScreen() {
+    setState(() {
+      widget.activeScreen = MusicScreen(
+        singer: "Arctic Monkeys",
+        name: "505",
+        cover: "assets/covers/am.jpg",
+      );
     });
   }
 
@@ -73,43 +112,7 @@ class _AuthenticationScreenHandlerState
                 child: widget.activeScreen!,
               ),
             ),
-          Column(
-            children: [
-              SizedBox(height: deviceHeight - 60),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextButton(
-                    style: TextButton.styleFrom(
-                      splashFactory: NoSplash.splashFactory, // gham :(
-                    ),
-                    onPressed: () {},
-                    child: Text(
-                      "privacy policy",
-                      style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 13,
-                      ),
-                    ),
-                  ),
-                  Text("|", style: GoogleFonts.poppins(color: Colors.white)),
-                  TextButton(
-                    style: TextButton.styleFrom(
-                      splashFactory: NoSplash.splashFactory,
-                    ),
-                    onPressed: () {},
-                    child: Text(
-                      "terms of serive",
-                      style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 13,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+          Column(children: [SizedBox(height: deviceHeight - 60)]),
         ],
       ),
     );
