@@ -3,11 +3,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:login/authenticaion-text-field-format.dart';
 import 'package:login/json-handler.dart';
 import 'package:login/notif.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:login/ios-keyboard.dart';
 
 class LoginPage extends StatefulWidget {
   void Function() changeToSignUp;
   void Function() changeToHomePage;
+  void Function() changeToAlzheimer;
   LoginPage({
+    required this.changeToAlzheimer,
     required this.changeToHomePage,
     required this.changeToSignUp,
     super.key,
@@ -20,6 +24,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool _showCustomKeyboard = false;
+  bool _isPasswordField = false;
   @override
   void initState() {
     super.initState();
@@ -29,6 +35,27 @@ class _LoginPageState extends State<LoginPage> {
 
   TextEditingController? authController;
   TextEditingController? passwordController;
+
+  void _onKeyTap(String value) {
+    final controller = _isPasswordField ? passwordController : authController;
+    controller!.text += value;
+  }
+
+  void _onBackspace() {
+    final controller = _isPasswordField ? passwordController : authController;
+    if (controller!.text.isNotEmpty) {
+      controller.text = controller.text.substring(
+        0,
+        controller.text.length - 1,
+      );
+    }
+  }
+
+  void _onReturn() {
+    setState(() {
+      _showCustomKeyboard = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +93,12 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(height: 10),
 
                   AuthenticationTextField(
+                    onTap: () {
+                      setState(() {
+                        _showCustomKeyboard = true;
+                        _isPasswordField = false;
+                      });
+                    },
                     controller: authController,
                     hint: "username / email",
                     color: Color.fromARGB(247, 35, 36, 46),
@@ -74,6 +107,12 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   SizedBox(height: 10),
                   AuthenticationTextField(
+                    onTap: () {
+                      setState(() {
+                        _showCustomKeyboard = true;
+                        _isPasswordField = true; // Corrected this line
+                      });
+                    },
                     controller: passwordController,
                     hint: "password",
                     color: Color.fromARGB(247, 35, 36, 46),
@@ -118,12 +157,14 @@ class _LoginPageState extends State<LoginPage> {
                           style: TextButton.styleFrom(
                             splashFactory: NoSplash.splashFactory,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            widget.changeToAlzheimer();
+                          },
                           child: Text(
                             "alzheimer?",
                             style: GoogleFonts.poppins(
                               color: Colors.white,
-                              fontSize: 11,
+                              fontSize: 9.4,
                             ),
                           ),
                         ),
@@ -160,6 +201,15 @@ class _LoginPageState extends State<LoginPage> {
                           // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) => HomeScreen()));
                           print('Login Successful!');
                           widget.changeToHomePage();
+                          if (response['success'] == true) {
+                            // Save the login state
+                            SharedPreferences prefs =
+                                await SharedPreferences.getInstance();
+                            await prefs.setBool('isLoggedIn', true);
+
+                            print('Login Successful!');
+                            widget.changeToHomePage();
+                          }
                         } else {
                           Notif(
                             text: 'Login Failed: ${response['message']} ',
@@ -264,6 +314,16 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ],
           ),
+          if (_showCustomKeyboard)
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: IOSKeyboard(
+                onKeyTap: _onKeyTap,
+                onBackspace: _onBackspace,
+                onClose: () => setState(() => _showCustomKeyboard = false),
+                onReturn: _onReturn,
+              ),
+            ),
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:login/ios-keyboard.dart';
 
 class AuthenticationTextField extends StatefulWidget {
   final controller;
@@ -7,12 +8,14 @@ class AuthenticationTextField extends StatefulWidget {
   Color color;
   double horizontalPadding = 0;
   bool isPassword;
+  void Function() onTap;
   AuthenticationTextField({
     required this.hint,
     required this.color,
     required this.horizontalPadding,
     required this.isPassword,
     required this.controller,
+    required this.onTap,
     super.key,
   });
   @override
@@ -36,6 +39,12 @@ class _AuthenticationTextFieldState extends State<AuthenticationTextField> {
       child: SizedBox(
         height: 55,
         child: TextFormField(
+          showCursor: true,
+          readOnly: true,
+          onTap: () {
+            // This now calls the onTap callback from the parent widget
+            widget.onTap();
+          },
           controller: widget.controller,
           obscureText: isPassword ? !_isPasswordVisible : false,
 

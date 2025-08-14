@@ -30,7 +30,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  google_fonts: ^6.2.1 # or the latest version
+  google_fonts: ^6.2.1
+  just_audio: ^0.9.42
+  audio_session: ^0.1.16
+  just_audio_background: ^0.0.1-beta.10
+  path_provider: ^2.1.2
+  crypto: ^3.0.3
+   # or the latest version
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -40,6 +46,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  shared_preferences: ^2.2.3 # Use the latest version
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -76,6 +83,7 @@ flutter:
     - assets/icons/gosetting.png
     - assets/icons/icon.png
     - assets/icons/search.png
+    - assets/icons/repeat.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 

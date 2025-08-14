@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:math';
+import 'package:login/main.dart';
 
 class Setting extends StatelessWidget {
+  void Function() changeToHome;
+  void Function() changeToAuth;
+  Setting({required this.changeToHome, required this.changeToAuth});
   @override
   Widget build(BuildContext context) {
     double? deviceWidth = MediaQuery.of(context).size.width;
@@ -32,7 +36,9 @@ class Setting extends StatelessWidget {
                       splashFactory: InkRipple.splashFactory,
                       foregroundColor: Colors.white,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      changeToHome();
+                    },
                     child: Transform.rotate(
                       angle: pi,
                       child: Image.asset(
@@ -84,7 +90,7 @@ class Setting extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              "Helia",
+                              UserInfo.firstname,
                               style: GoogleFonts.lato(
                                 fontSize: 22,
                                 color: Colors.white,
@@ -106,9 +112,11 @@ class Setting extends StatelessWidget {
                   ],
                 ),
               ),
-              Button(text: "Account"),
-              Button(text: "Content & display"),
-              Button(text: "Privacy & social"),
+              Button(text: "Account", ontap: () {}),
+              Button(text: "Content & display", ontap: () {}),
+              Button(text: "Privacy & social", ontap: () {}),
+              SizedBox(height: deviceHeight - 450),
+              Button(text: "LOG OUT", ontap: changeToAuth, color: Colors.red),
             ],
           ),
         ],
@@ -119,7 +127,9 @@ class Setting extends StatelessWidget {
 
 class Button extends StatelessWidget {
   String text;
-  Button({required this.text});
+  void Function() ontap;
+  Color? color;
+  Button({required this.text, required this.ontap, this.color});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -130,11 +140,17 @@ class Button extends StatelessWidget {
           splashFactory: InkRipple.splashFactory,
           foregroundColor: Colors.white,
         ),
-        onPressed: () {},
+        onPressed: ontap,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(text, style: GoogleFonts.lato(fontSize: 18)),
+            Text(
+              text,
+              style: GoogleFonts.lato(
+                fontSize: 18,
+                color: this.color ?? Colors.white,
+              ),
+            ),
             Image.asset("assets/icons/gosetting.png", width: 20),
           ],
         ),

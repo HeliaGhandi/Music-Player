@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- Localhost + emulator host -->
+        <domain includeSubdomains="true">127.0.0.1</domain>
+        <domain includeSubdomains="true">10.0.2.2</domain>
+        <!-- If your server uses a custom host -->
+        <!-- <domain includeSubdomains="true">my-local-server</domain> -->
+    </domain-config>
+</network-security-config>

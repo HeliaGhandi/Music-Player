@@ -10,12 +10,15 @@ class HomeScreen extends StatefulWidget {
   void Function() changeToBrowse;
   void Function() changeToHome;
   void Function() changeToMusicScreen;
+  void Function() changeToSettingScreen;
   HomeScreen({
     required this.changeToBrowse,
     required this.changeToHome,
     required this.changeToMusicScreen,
+    required this.changeToSettingScreen,
     super.key,
   });
+
   State<HomeScreen> createState() {
     return _HomeScreenWidget();
   }
@@ -51,7 +54,9 @@ class _HomeScreenWidget extends State<HomeScreen> {
                         color: Colors.grey,
                       ),
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      widget.changeToSettingScreen();
+                    },
                   ),
                   SizedBox(width: deviceWidth - 120),
 
@@ -151,7 +156,10 @@ class _HomeScreenWidget extends State<HomeScreen> {
             children: [
               SizedBox(height: 14.5),
               SizedBox(height: deviceHeight - 180),
-              MusicBar(changeToFullScreen: widget.changeToMusicScreen),
+              // Use CachedMusicBar for enhanced music playback with caching
+              CachedMusicBar(changeToFullScreen: widget.changeToMusicScreen),
+              // Or use the original MusicBar for JSON-based streaming:
+              // MusicBar(changeToFullScreen: widget.changeToMusicScreen),
               SizedBox(height: 5),
               NavigationBari(
                 select: 1,

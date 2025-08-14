@@ -4,7 +4,12 @@ class TextInput extends StatelessWidget {
   String text;
   double border;
   Color color;
-  TextInput({super.key, required this.text, required this.border, required this.color});
+  TextInput({
+    super.key,
+    required this.text,
+    required this.border,
+    required this.color,
+  });
   @override
   Widget build(BuildContext context) {
     TextEditingController controller = TextEditingController(text: text);
@@ -13,7 +18,6 @@ class TextInput extends StatelessWidget {
     controller.selection = TextSelection.fromPosition(TextPosition(offset: 2));
     return TextField(
       controller: controller,
-
       decoration: InputDecoration(
         hintText: text,
         hintStyle: TextStyle(color: Colors.white),

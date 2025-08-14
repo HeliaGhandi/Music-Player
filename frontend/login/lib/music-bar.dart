@@ -1,27 +1,119 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:login/cached_music_player.dart';
+import 'dart:async'; // Added for StreamSubscription
+import 'package:just_audio/just_audio.dart'; // Added for PlayerState
 
-class MusicBar extends StatefulWidget {
+/// Enhanced music bar with caching support
+class CachedMusicBar extends StatefulWidget {
   void Function() changeToFullScreen;
-  MusicBar({super.key, required this.changeToFullScreen});
+  CachedMusicBar({super.key, required this.changeToFullScreen});
+
   @override
-  State<MusicBar> createState() {
-    return _MusicBarState();
+  State<CachedMusicBar> createState() {
+    return _CachedMusicBarState();
   }
 }
 
-class _MusicBarState extends State<MusicBar> {
-  final musicState = MusicState();
+class _CachedMusicBarState extends State<CachedMusicBar> {
+  final CachedMusicPlayer _musicPlayer = CachedMusicPlayer();
+
+  // Stream subscription for player state updates
+  StreamSubscription<PlayerState>? _playerStateSubscription;
+  Timer? _progressTimer;
+
+  @override
+  void initState() {
+    super.initState();
+    // Listen to player state changes
+    _playerStateSubscription = _musicPlayer.playerStateStream.listen((state) {
+      if (mounted) {
+        setState(() {
+          // State is managed by the music player now
+        });
+      }
+    });
+
+    // Listen to position updates
+    _progressTimer = Timer.periodic(Duration(milliseconds: 100), (timer) {
+      if (mounted && CachedMusicPlayer.isPlaying.value) {
+        setState(() {
+          // Progress is calculated in the build method now
+        });
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _playerStateSubscription?.cancel();
+    _progressTimer?.cancel();
+    _musicPlayer.stop();
+    super.dispose();
+  }
+
+  Future<void> _togglePlayPause() async {
+    try {
+      print("=== STARTING MUSIC REQUEST ===");
+      print(
+        "Current music state - isPlaying: ${CachedMusicPlayer.isPlaying.value}",
+      );
+
+      const musicName = "to_kharab_kardi_golzar.mp3";
+      print("About to call _musicPlayer.togglePlayPause for: $musicName");
+
+      await _musicPlayer.togglePlayPause(
+        musicName: musicName,
+        onDone: () {
+          print("=== SONG FINISHED ===");
+          if (mounted) {
+            setState(() {
+              // State is managed by the music player now
+            });
+          }
+          print("Song finished");
+        },
+        onError: (err) {
+          print("=== STREAMING ERROR ===");
+          print("Error details: $err");
+          if (mounted) {
+            setState(() {
+              // State is managed by the music player now
+            });
+          }
+          print("Streaming error: $err");
+        },
+      );
+
+      print("=== MUSIC REQUEST COMPLETED ===");
+    } catch (e) {
+      print("=== ERROR IN _togglePlayPause ===");
+      print("Exception: $e");
+      print("Stack trace: ${StackTrace.current}");
+      setState(() {
+        // State is managed by the music player now
+      });
+    }
+  }
+
+  double _getProgress() {
+    final position = _musicPlayer.position;
+    final duration = _musicPlayer.duration;
+    if (position != null && duration != null && duration.inMilliseconds > 0) {
+      return position.inMilliseconds / duration.inMilliseconds;
+    }
+    return 0.0;
+  }
+
   @override
   Widget build(BuildContext context) {
-    double progress = 0.9;
     double? deviceWidth = MediaQuery.of(context).size.width;
     double? deviceHeight = MediaQuery.of(context).size.height;
+
     return GestureDetector(
       onTap: widget.changeToFullScreen,
       child: Container(
         alignment: Alignment.center,
-
         child: Stack(
           alignment: Alignment.center,
           children: [
@@ -49,10 +141,8 @@ class _MusicBarState extends State<MusicBar> {
                         ),
                       ),
                     ),
-
                     SizedBox(width: 12),
                     Column(
-                      //mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -70,26 +160,34 @@ class _MusicBarState extends State<MusicBar> {
                             fontSize: 12,
                           ),
                         ),
+                        SizedBox(height: 4),
                       ],
                     ),
                     SizedBox(width: deviceWidth - 200),
-                    (musicState.isPlaying == true)
-                        ? GestureDetector(
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // Cache status indicator
+                        const SizedBox(width: 8),
+                        // Play/Pause button
+                        GestureDetector(
                           onTap: () {
-                            setState(() {
-                              musicState.isPlaying = false;
-                            });
+                            _togglePlayPause();
+                            CachedMusicPlayer.togglePlayingState();
                           },
-                          child: Icon(Icons.pause_circle, size: 40),
-                        )
-                        : GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              musicState.isPlaying = true;
-                            });
-                          },
-                          child: Icon(Icons.play_circle, size: 40),
+                          child: ValueListenableBuilder(
+                            valueListenable: CachedMusicPlayer.isPlaying,
+                            builder: (cntx, val, _) {
+                              return Icon(
+                                val ? Icons.pause_circle : Icons.play_circle,
+                                size: 40,
+                                color: Colors.white,
+                              );
+                            },
+                          ),
                         ),
+                      ],
+                    ),
                   ],
                 ),
               ],
@@ -99,7 +197,11 @@ class _MusicBarState extends State<MusicBar> {
                 SizedBox(height: deviceHeight - 850),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 14),
-                  child: LinearProgressIndicator(value: progress),
+                  child: LinearProgressIndicator(
+                    value: _getProgress(),
+                    backgroundColor: Colors.white24,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
@@ -107,16 +209,5 @@ class _MusicBarState extends State<MusicBar> {
         ),
       ),
     );
-  }
-}
-
-class MusicState {
-  static final MusicState _instance = MusicState._internal();
-  bool isPlaying = false; // default
-
-  MusicState._internal();
-
-  factory MusicState() {
-    return _instance;
   }
 }

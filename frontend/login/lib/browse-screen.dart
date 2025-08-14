@@ -7,7 +7,11 @@ class BrowseScreen extends StatefulWidget {
   void Function() changeToHome;
   void Function() changeToBrowse;
   void Function() changeToMusic;
-  BrowseScreen({required this.changeToHome, required this.changeToBrowse , required this.changeToMusic});
+  BrowseScreen({
+    required this.changeToHome,
+    required this.changeToBrowse,
+    required this.changeToMusic,
+  });
   double space = 25;
   State<BrowseScreen> createState() {
     return _BrowseScreenWidget();
@@ -224,7 +228,10 @@ class _BrowseScreenWidget extends State<BrowseScreen> {
               children: [
                 SizedBox(height: 14.5),
                 SizedBox(height: deviceHeight - 180),
-                MusicBar(changeToFullScreen: widget.changeToMusic,),
+                // Use CachedMusicBar for enhanced music playback with caching
+                CachedMusicBar(changeToFullScreen: widget.changeToMusic),
+                // Or use the original MusicBar for JSON-based streaming:
+                // MusicBar(changeToFullScreen: widget.changeToMusic,),
                 SizedBox(height: 5),
                 NavigationBari(
                   select: 2,

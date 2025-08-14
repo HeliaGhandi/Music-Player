@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:login/2auth-for-reset-pass.dart';
+import 'package:login/alzheimer.dart';
 import 'package:login/authentication-screen.dart';
 import 'package:login/background-login.dart';
 import 'package:login/browse-screen.dart';
 import 'package:login/home-screen.dart';
+import 'package:login/reset-password.dart';
+import 'package:login/setting.dart';
 import 'package:login/sign-up.dart';
 import 'package:login/music-screen.dart';
+import 'package:login/2auth.dart';
 // Assuming you save the above code in animated_background_widget.dart
 import 'package:login/login.dart';
 
@@ -35,11 +40,39 @@ class _AuthenticationScreenHandlerState
     super.initState();
   }
 
+  void changeScreenToAuth() {
+    setState(() {
+      widget.activeScreen = AuthenticationScreen(
+        changeToSignUp: changeScreenToSignUp,
+        changeToLogin: changeScreenToLogin,
+      );
+    });
+  }
+
   void changeScreenToSignUp() {
     setState(() {
       widget.activeScreen = SignUpPage(
+        changeToTwoStepAuth: changeScreenToAuthenticationTwoStep,
         changeToLogin: changeScreenToLogin,
         changeToHomePage: changeScreenToHome,
+      );
+      activeBackground = bluredLoginBackground;
+    });
+  }
+
+  void changeScreenToAuthenticationTwoStep() {
+    setState(() {
+      widget.activeScreen = TwoAuthentication(
+        changeToHomePage: changeScreenToHome,
+      );
+      activeBackground = bluredLoginBackground;
+    });
+  }
+
+  void changeScreenToAuthenticationTwoStepForResetPassword() {
+    setState(() {
+      widget.activeScreen = TwoAuthenticationForResetPassword(
+        changeToPassChange: changeScreenToResetPassword,
       );
       activeBackground = bluredLoginBackground;
     });
@@ -48,6 +81,7 @@ class _AuthenticationScreenHandlerState
   void changeScreenToLogin() {
     setState(() {
       widget.activeScreen = LoginPage(
+        changeToAlzheimer: changeScreenToAlzheimer,
         changeToSignUp: changeScreenToSignUp,
         changeToHomePage: changeScreenToHome,
       );
@@ -58,6 +92,7 @@ class _AuthenticationScreenHandlerState
   void changeScreenToHome() {
     setState(() {
       widget.activeScreen = HomeScreen(
+        changeToSettingScreen: changeScreenToSetting,
         changeToBrowse: changeScreenToBrowse,
         changeToHome: changeScreenToHome,
         changeToMusicScreen: changeScreenToMusicScreen,
@@ -78,11 +113,38 @@ class _AuthenticationScreenHandlerState
   void changeScreenToMusicScreen() {
     setState(() {
       widget.activeScreen = MusicScreen(
+        changeToHomeScreen: changeScreenToHome,
         singer: "Arctic Monkeys",
         name: "505",
         cover: "assets/covers/am.jpg",
       );
     });
+  }
+
+  void changeScreenToSetting() {
+    setState(() {
+      widget.activeScreen = Setting(
+        changeToHome: changeScreenToHome,
+        changeToAuth: changeScreenToLogin,
+      );
+    });
+  }
+
+  void changeScreenToAlzheimer() {
+    setState(() {
+      widget.activeScreen = Alzheimer(
+        changeToTwoAuthForResetPass:
+            changeScreenToAuthenticationTwoStepForResetPassword,
+      );
+    });
+    activeBackground = bluredLoginBackground;
+  }
+
+  void changeScreenToResetPassword() {
+    setState(() {
+      widget.activeScreen = ResetPassword(changeToHomePage: changeScreenToHome);
+    });
+    activeBackground = bluredLoginBackground;
   }
 
   void changeScreenToPrivacyPolicy() {}

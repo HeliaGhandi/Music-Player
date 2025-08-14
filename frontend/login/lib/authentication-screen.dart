@@ -4,7 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 class AuthenticationScreen extends StatelessWidget {
   void Function() changeToSignUp;
   void Function() changeToLogin;
-  AuthenticationScreen({super.key, 
+  AuthenticationScreen({
+    super.key,
     required this.changeToSignUp,
     required this.changeToLogin,
   });
@@ -83,7 +84,7 @@ class AuthenticationScreen extends StatelessWidget {
                   SizedBox(width: 6),
                   Text(
                     "CONTINUE WITH GOOGLE",
-                    style: GoogleFonts.poppins(fontSize: 15),
+                    style: GoogleFonts.poppins(fontSize: 12),
                   ),
                 ],
               ),
