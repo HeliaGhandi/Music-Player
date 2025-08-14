@@ -18,15 +18,33 @@ import com.lattestudio.musicplayer.network.Request;
  */
 public class ForgotPasswordRequest extends Request {
     //Properties :
-    private String loginCredit;
+    private String email;
+    private String newPassword;
+    private String reEnteredNewPassword;
 
 
     //Default Getter And Setters :
-    public String getLoginCredit() {
-        return loginCredit;
+    public String getEmail() {
+        return email;
     }
 
-    public void setLoginCredit(String loginCredit) {
-        this.loginCredit = loginCredit;
+    public void setEmail(String loginCredit) {
+        this.email = loginCredit;
+    }
+
+    public String getNewPassword() {
+        return newPassword;
+    }
+
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
+    }
+
+    public String getReEnteredNewPassword() {
+        return reEnteredNewPassword;
+    }
+
+    public void setReEnteredNewPassword(String reEnteredNewPassword) {
+        this.reEnteredNewPassword = reEnteredNewPassword;
     }
 }

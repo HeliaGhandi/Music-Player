@@ -211,11 +211,14 @@ public class Message {
         String formattedStringNoColor = dateFormat() + " " + timeFormat() +" - "+ "[SERVER]: "+ message +"\n" + json + "\n" ;
         System.out.print(formattedString);
         System.out.println(Colors.BLACK_BACKGROUND_BRIGHT + "\n" + Colors.RESET);
-        try{
-            fileWriter.write(formattedStringNoColor);
-        } catch (IOException e) {
-            throw new RuntimeException("COULD NOT WRITE TO LOG FILE!");
+        if(!message.contains("CHUNK")){
+            try{
+                fileWriter.write(formattedStringNoColor);
+            } catch (IOException e) {
+                throw new RuntimeException("COULD NOT WRITE TO LOG FILE!");
+            }
         }
+
         shutDown();
     }
 

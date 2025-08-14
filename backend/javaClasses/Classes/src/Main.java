@@ -12,13 +12,20 @@ import com.lattestudio.musicplayer.db.DataBase;
 import com.lattestudio.musicplayer.network.Server;
 import com.lattestudio.musicplayer.util.Message;
 
+
+
 class Main{
     public static void main(String[] args) throws Exception {
         Message.restoreUsers();
         Message.cyanServerMessage("USERNAMES RESTORED : "+ DataBase.getUsernames());
         Message.cyanServerMessage("EMAILS RESTORED :" + DataBase.getEmails());
+        Message.cyanServerMessage("SONG NAMES RESTORED : " + DataBase.loadSongsNames());
         Server server = new Server();
         server.start();
+
+
+
+
 
     }
 }

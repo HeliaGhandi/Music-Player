@@ -10,8 +10,10 @@ dar hal majara jooyi (iliya)
  */
 
 import java.io.IOException;
+import java.net.Inet4Address;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.Objects;
 import com.lattestudio.musicplayer.util.Message;
 
@@ -38,16 +40,16 @@ import com.lattestudio.musicplayer.util.Message;
  */
 public class Server {
     //Properties :
-    private  int PORT = 9090;
-
+    private int PORT = 9090;
+    private final String IP = Inet4Address.getLocalHost().getHostAddress();
     private Socket socket;
 
     //Constructors :
 
-    public Server() {
+    public Server() throws UnknownHostException {
     }
 
-    public Server(int PORT) {
+    public Server(int PORT) throws UnknownHostException {
         this.PORT = PORT;
     }
 
@@ -67,11 +69,13 @@ public class Server {
      */
     public void start (){
         try(ServerSocket serverSocket = new ServerSocket(PORT)){
-
-            Message.cyanServerMessage("Music Server is running on port : " + PORT);
+            serverSocket.setSoTimeout(0);// 0 = infinite wait for connections
+            Message.cyanServerMessage("Music Server is running on :" + IP +":" +PORT);
 
             while (true){
                 socket = serverSocket.accept();
+                socket.setSoTimeout(0);// Keep connection alive forever unless manually closed
+                socket.setKeepAlive(true);
                 Message.cyanServerMessage("New client connected: " + socket.getInetAddress());
                 ClientHandler handler = new ClientHandler(socket);
                 Thread clientThread = new Thread(handler);
@@ -110,4 +114,7 @@ public class Server {
         return socket;
     }
 
+    public String getIP() {
+        return IP;
+    }
 }

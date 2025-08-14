@@ -176,7 +176,7 @@ public class User  implements Serializable {
         return password.equals(correctPassword) ;
     }
 
-    private boolean isPasswordValid(String password) {
+    public boolean isPasswordValid(String password) {
         String passwordPattern = "^(?=.*[a-zA-Z])(?=.*[0-9]).{8,}$"; //mersi az arian seydi
         Pattern pattern = Pattern.compile(passwordPattern);
         Matcher matcher = pattern.matcher(password);
