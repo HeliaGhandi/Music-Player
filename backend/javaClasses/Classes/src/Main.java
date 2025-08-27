@@ -9,7 +9,9 @@ TO-DO-LIST :
  */
 
 import com.lattestudio.musicplayer.db.DataBase;
+import com.lattestudio.musicplayer.fx.RunFx;
 import com.lattestudio.musicplayer.network.Server;
+import com.lattestudio.musicplayer.util.Colors;
 import com.lattestudio.musicplayer.util.Message;
 
 
@@ -20,12 +22,27 @@ class Main{
         Message.cyanServerMessage("USERNAMES RESTORED : "+ DataBase.getUsernames());
         Message.cyanServerMessage("EMAILS RESTORED :" + DataBase.getEmails());
         Message.cyanServerMessage("SONG NAMES RESTORED : " + DataBase.loadSongsNames());
-        Server server = new Server();
-        server.start();
+        Message.cyanAdminMessageToAdminPanel("SONGS : " + DataBase.getMusics());
+        Thread serverRunner = new Thread(new ServerRunner());
+        serverRunner.setName("SERVER");
+        serverRunner.setPriority(Thread.MAX_PRIORITY);
+        serverRunner.start();
+        Thread.sleep(50);
+        Message.cyanAdminMessageToAdminPanel("ADMINISTRATOR PANEL IS STARTING:...");
+        System.out.println(Colors.BLUE_BACKGROUND_BRIGHT);
+        RunFx.main(args);
+        System.out.println(Colors.RESET);
+    }
+}
 
-
-
-
-
+class ServerRunner implements Runnable {
+    @Override
+    public void run() {
+        try {
+            Server server = new Server();
+            server.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -22,7 +22,8 @@ public class Music implements Serializable {
     private String icon ;
     private String QRCode ;
     private String lyrics ; //change to a file if possible later
-
+    private String url ;
+    private String artist ;
 
     private boolean isPaused = true;
 
@@ -61,6 +62,14 @@ public class Music implements Serializable {
         this.comments = new HashMap<>();
 
         this.dateSongAddedToDataBase = LocalDateTime.now();
+    }
+    public Music(String name , String url){
+        this();
+        if(!isMusicNameValid(name)){
+            throw new IllegalArgumentException(INVALID_NAME) ;
+        }
+        this.name = name ;
+        this.url = url ;
     }
     public Music(String name , LocalTime duration){
         this() ;
@@ -127,6 +136,16 @@ public class Music implements Serializable {
 
     //Methods :
 
+
+    @Override
+    public String toString() {
+        return "Music{" +
+                "name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                ", artist='" + artist + '\'' +
+                '}';
+    }
+
     public boolean isMusicNameValid(String name){ //!name.trim().isEmpty() removes leading white space and then checks
         return (!name.isEmpty() && !name.trim().isEmpty()) ;
     }
@@ -151,17 +170,17 @@ public class Music implements Serializable {
 
     //Equals and HashCode :
 
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Music music)) return false;
-        return likedCount == music.likedCount && Objects.equals(name, music.name) && Objects.equals(duration, music.duration) && Objects.equals(genres, music.genres) && Objects.equals(artists, music.artists);
+        return Objects.equals(url, music.url);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, duration, likedCount, genres, artists);
+        return Objects.hashCode(url);
     }
-
 
     //Default Getter And Setters :
 
@@ -233,4 +252,19 @@ public class Music implements Serializable {
         return artists;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
 }

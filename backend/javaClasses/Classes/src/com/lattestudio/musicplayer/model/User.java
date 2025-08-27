@@ -40,6 +40,7 @@ public class User  implements Serializable {
     private Set<Music> musics;
     private List<Playlist> playlists;
     private List<Music> likedSongs;
+    //private List<Music> sharedWithSongs;
     private List<Playlist> likedPlayLists;
     private List<Music> queue;
     private List<User> followers;
@@ -95,6 +96,7 @@ public class User  implements Serializable {
         this.followers = new ArrayList<>();
         this.followings = new ArrayList<>();
         this.likedGenres = new ArrayList<>();
+        //this.sharedWithSongs = new ArrayList<>();
         this.playedSongs = new LinkedList<>();
         this.queue = new LinkedList<>();
         this.musics = new TreeSet<>();
@@ -132,13 +134,13 @@ public class User  implements Serializable {
      */
     public User(String username , String password){
         this();
+        this.username = username ;
         if (!isUsernameValid(username)) {
             throw new IllegalArgumentException(INVALID_USERNAME);
         }
         if (!isPasswordValid(password)) {
             throw new IllegalArgumentException(INVALID_PASSWORD);
         }
-        this.username = username ;
         this.password = password;
         this.email = "NO EMAIL FOUND" ;
     }
@@ -308,9 +310,9 @@ public class User  implements Serializable {
         }
     }
     public boolean likeMusic(Music music){
-        if(music == null) return false;
         if(this.getLikedSongs().contains(music)){
             this.getLikedSongs().remove(music);
+            music.setLikedCount(music.getLikedCount()-1);
             return false;
         } else {
             this.getLikedSongs().add(music);
@@ -523,4 +525,11 @@ public class User  implements Serializable {
         return likedPlayLists;
     }
 
+//    public List<Music> getSharedWithSongs() {
+//        return sharedWithSongs;
+//    }
+//
+//    public void setSharedWithSongs(List<Music> sharedWithSongs) {
+//        this.sharedWithSongs = sharedWithSongs;
+//    }
 }

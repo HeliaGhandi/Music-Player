@@ -12,21 +12,27 @@ import java.net.Socket;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.security.spec.ECField;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Arrays;
 import java.util.Base64;
+import java.util.LinkedList;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonSyntaxException;
 import com.lattestudio.musicplayer.db.DataBase;
+import com.lattestudio.musicplayer.model.Music;
 import com.lattestudio.musicplayer.model.User;
 import com.lattestudio.musicplayer.network.blueprints.*;
 import com.lattestudio.musicplayer.util.Mail;
 import com.lattestudio.musicplayer.util.Message;
 import com.lattestudio.musicplayer.util.adapter.LocalDateTimeAdapter;
 import com.lattestudio.musicplayer.util.adapter.LocalTimeAdapter;
-import jdk.jfr.DataAmount;
+import com.sun.javafx.geom.AreaOp;
+
+import javax.xml.crypto.Data;
 
 /**
  * <p>
@@ -63,6 +69,15 @@ public class ClientHandler implements Runnable {
     private static final String TWO_AUTHENTICATION = "TWO_AUTHENTICATION";
     private static final String TWO_AUTHENTICATION_RECOVERY = "TWO_AUTHENTICATION_RECOVERY";
     private static final String ALZHEIMER = "ALZHEIMER";
+    private static final String COMPLETE_INFO = "COMPLETE_INFO";
+    private static final String DELETE_ACCOUNT = "DELETE_ACCOUNT";
+    private static final String USER_LIST = "USER_LIST";
+    private static final String GET_ALL_MUSICS = "GET_ALL_MUSICS";
+    private static final String LIKE_MUSIC = "LIKE_MUSIC";
+    private static final String GET_LIKED_MUSICS = "GET_LIKED_MUSICS";
+    private static final String SHARE_MUSIC = "SHARE_MUSIC";
+    private static final String GET_QUEUE = "GET_QUEUE" ;
+    private static final String PRIVATE_ACCOUNT = "PRIVATE_ACCOUNT" ;
 
 
     //Constructors :
@@ -243,6 +258,33 @@ public class ClientHandler implements Runnable {
             case ALZHEIMER :{
                 return alzheimerHandler();
             }
+            case COMPLETE_INFO:{
+                return completeInfoHandler();
+            }
+            case DELETE_ACCOUNT: {
+                return deleteAccount();
+            }
+            case USER_LIST: {
+                return userListHandler();
+            }
+            case GET_ALL_MUSICS: {
+                return musicListSendHandler();
+            }
+            case LIKE_MUSIC:{
+                return likeMusicHandler();
+            }
+            case GET_LIKED_MUSICS:{
+                return likeListSendHandler();
+            }
+            case SHARE_MUSIC:{
+                return shareMusicHandler();
+            }
+            case GET_QUEUE:{
+                return queueListSendHandler();
+            }
+            case PRIVATE_ACCOUNT:{
+                return privacyAccountHandler();
+            }
             default: {
                 return new Response(false, "WRONG JSON SYNTAX");
             }
@@ -251,10 +293,215 @@ public class ClientHandler implements Runnable {
 
     }
 
+    private Response privacyAccountHandler(){
+        PrivacyChangeRequest privacyChangeRequest;
+        try {
+            privacyChangeRequest = gson.fromJson(jsonRequest, PrivacyChangeRequest.class);
+        } catch (IllegalArgumentException iae) {
+            return new Response(false , "Bad argument for PRIVACY REQUEST");
+        }
+        int indexOfUser = DataBase.getUsernames().indexOf(privacyChangeRequest.getUsername());
+        if(indexOfUser == -1){
+            return new Response(false);
+        }
+        User user = DataBase.getUsers().get(indexOfUser);
+        user.setAccountPrivate(privacyChangeRequest.isPrivate());
+        return new Response(true , "USER:" + user.getUsername() + "Successfully changed their privacy status to " + privacyChangeRequest.isPrivate());
+
+    }
+
+    private Response queueListSendHandler(){
+        GetQueueListRequest getQueueListRequest;
+        try {
+            getQueueListRequest = gson.fromJson(jsonRequest, GetQueueListRequest.class);
+        } catch (IllegalArgumentException iae) {
+            return new Response(false , "Bad argument for GET QUEUE LIST REQUEST");
+        }
+        int indexOfUser = DataBase.getUsernames().indexOf(getQueueListRequest.getUsername());
+        if(indexOfUser == -1){
+            return new Response(false);
+        }
+        User user = DataBase.getUsers().get(indexOfUser);
+        List<String> sharedMusicURLS = new LinkedList<>();
+        for(Music music : user.getQueue()){
+            sharedMusicURLS.add(music.getUrl());
+        }
+        return new Response(true , sharedMusicURLS.toString());
+    }
+
+    private Response shareMusicHandler(){
+        ShareSongRequest shareSongRequest;
+        try {
+            shareSongRequest = gson.fromJson(jsonRequest , ShareSongRequest.class);
+        } catch (IllegalArgumentException iae) {
+            return new Response(false , "Bad argument for SHARE SONG REQUEST");
+        }
+        int indexOfFromUser = DataBase.getUsernames().indexOf(shareSongRequest.getFromUsername());
+        User fromUser = DataBase.getUsers().get(indexOfFromUser);
+        int indexOfToUser = DataBase.getUsernames().indexOf(shareSongRequest.getToUsername());
+        User toUser = DataBase.getUsers().get(indexOfToUser);
+        int index = DataBase.getMusics().indexOf(new Music("temp" ,  shareSongRequest.getMusicURL()));//create a temp music to use indexOf
+        Music music = DataBase.getMusics().get(index);
+        //fromUser.follow(toUser);
+        toUser.getQueue().add(music);
+        DataBase.clearUsersJson();
+        try{
+            for(int i = 0 ; i < DataBase.getUsers().size() ; i++){
+                try{
+                    DataBase.writeToUsersJson(DataBase.getUsers().get(i) , gson , false);
+                }catch (Exception e){
+                    throw new RuntimeException(e.getMessage());
+                }
+            }
+
+//            for(int i = 0 ; i < DataBase.getMusics().size() ; i++){
+//                try{
+//                    DataBase.writeToMusicsJson(DataBase.getMusics().get(i) , gson , false);
+//                }catch (Exception e){
+//                    throw new RuntimeException(e.getMessage());
+//                }
+//
+//            }
+
+        }catch (Exception e){
+            return new Response(false);
+        }
+        return new Response(true);
 
 
+    }
+    private Response likeMusicHandler(){
+        LikeSongRequest likeSongRequest;
+        try {
+            likeSongRequest = gson.fromJson(jsonRequest , LikeSongRequest.class);
+        } catch (IllegalArgumentException iae) {
+            return new Response(false , "Bad argument for LIKE SONG REQUEST");
+        }
+        String URL = likeSongRequest.getMusicUrl();
+        int index = DataBase.getMusics().indexOf(new Music("temp" ,  URL));//create a temp music to use indexOf
+        Music music = DataBase.getMusics().get(index);
+        int indexOfUser = DataBase.getUsernames().indexOf(likeSongRequest.getUsername());
+        User user = DataBase.getUsers().get(indexOfUser);
+        boolean success = user.likeMusic(music);
+        int newCount = DataBase.computeLikeCountFor(music);
+        music.setLikedCount(Math.max(0, newCount)); // guard against negatives
+        //DataBase.clearMusicsJson();
+        DataBase.clearUsersJson();
+        try{
+            for(int i = 0 ; i < DataBase.getUsers().size() ; i++){
+                try{
+                    DataBase.writeToUsersJson(DataBase.getUsers().get(i) , gson , false);
+                }catch (Exception e){
+                    throw new RuntimeException(e.getMessage());
+                }
+            }
+
+//            for(int i = 0 ; i < DataBase.getMusics().size() ; i++){
+//                try{
+//                    DataBase.writeToMusicsJson(DataBase.getMusics().get(i) , gson , false);
+//                }catch (Exception e){
+//                    throw new RuntimeException(e.getMessage());
+//                }
+//
+//            }
+
+        }catch (Exception e){
+            return new Response(false);
+        }
+        return new Response(success , "new like count : " + music.getLikedCount());
+    }
+
+    private Response likeListSendHandler(){
+        GetLikeListRequest getlikeListRequest;
+        try {
+            getlikeListRequest = gson.fromJson(jsonRequest, GetLikeListRequest.class);
+        } catch (IllegalArgumentException iae) {
+            return new Response(false , "Bad argument for GET LIKE LIST REQUEST");
+        }
+        int indexOfUser = DataBase.getUsernames().indexOf(getlikeListRequest.getUsername());
+        if(indexOfUser == -1){
+            return new Response(false);
+        }
+        User user = DataBase.getUsers().get(indexOfUser);
+        List<String> likedMusicURLS = new LinkedList<>();
+        for(Music music : user.getLikedSongs()){
+            likedMusicURLS.add(music.getUrl());
+        }
+        return new Response(true , likedMusicURLS.toString());
+    }
+
+    private Response musicListSendHandler(){
+        GetMusicListRequest getMusicListRequest;
+        try {
+            getMusicListRequest = gson.fromJson(jsonRequest, GetMusicListRequest.class);
+        } catch (IllegalArgumentException iae) {
+            return new Response(false , "Bad argument for GET MUSIC LIST REQUEST");
+        }
+        try {
+            return new Response(true , DataBase.loadSongsNames().toString());
+        }catch (IOException ioe){
+            return new Response(false);
+        }
+    }
+
+    private Response userListHandler(){
+        List<User> usersToSend;
+        List<String> usernamesToSend ;
+        UserListSearchRequest userListSearchRequest;
+        try {
+            userListSearchRequest = gson.fromJson(jsonRequest, UserListSearchRequest.class);
+        } catch (IllegalArgumentException iae) {
+            return new Response(false , "Bad argument for USER LIST");
+        }
+        if(userListSearchRequest.getFilter().equals("")){
+            return new Response(true , DataBase.getUsernames().toString());
+            //UserListSearchRequest.publicUsers.toString()
+        }else {
+            usersToSend = UserListSearchRequest.searchUsers(userListSearchRequest.getFilter());
+            System.out.println(usersToSend.toString());
+            if (usersToSend.size() == 0) return new Response(false, "User not found");
+            else return new Response(true, usersToSend.toString());
+        }
+    }
 
 
+    private Response deleteAccount(){
+        DeleteAccountRequest deleteAccountRequest;
+        try {
+            deleteAccountRequest = gson.fromJson(jsonRequest, DeleteAccountRequest.class);
+        } catch (IllegalArgumentException iae) {
+            return new Response(false , "Bad argument for Delete Account");
+        }
+        if (!DataBase.getUsernames().contains(deleteAccountRequest.getUsername()))
+            return new Response(false, "username doesn`t exist.");
+        int index = DataBase.getUsernames().indexOf(deleteAccountRequest.getUsername());
+        DataBase.removeUserFromServer(DataBase.getUsers().get(index));
+        return new Response(true);
+    }
+private Response completeInfoHandler() {
+    CompleteInfoRequest completeInfoRequest;
+    try {
+        completeInfoRequest = gson.fromJson(jsonRequest, CompleteInfoRequest.class);
+    } catch (IllegalArgumentException iae) {
+        return new Response(false, "Bad argument for completeInfo");
+    }
+    if (completeInfoRequest.isLoginCreditEmail()) {
+        int index = DataBase.getEmails().indexOf(completeInfoRequest.getAuth());
+        if (index != -1) {
+            User user = DataBase.getUsers().get(index);
+            return new CompleteInfoResponse(true, user.getEmail(), user.getUsername(), user.getLastname(), user.getFirstname());
+        }else return new Response(false , "User not found!");
+
+    }
+    else {
+        int index = DataBase.getUsernames().indexOf(completeInfoRequest.getAuth());
+        if (index != -1) {
+            User user = DataBase.getUsers().get(index);
+            return new CompleteInfoResponse(true, user.getEmail(), user.getUsername(), user.getLastname(), user.getFirstname());
+        }
+        else return new Response(false , "User not found!");
+    }
+}
 
     private Response alzheimerHandler(){
         AlzheimerRequest alzheimerRequest;

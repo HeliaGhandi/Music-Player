@@ -16,7 +16,9 @@ import java.util.Properties;
  * @since v0.1.8
  */
 public class Mail {
-
+    private Mail(){
+        throw new UnsupportedOperationException("Utility class");
+    }
     // Sends a styled verification email with background images and logo
     /**
      * Sends a verification email to the specified recipient email address.

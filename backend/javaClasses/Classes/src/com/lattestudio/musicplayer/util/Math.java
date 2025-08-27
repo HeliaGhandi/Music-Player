@@ -11,7 +11,9 @@ import java.util.Random;
  * @since v0.1.8
  */
 public class Math {
-    private Math(){} //util class :)
+    private Math(){
+        throw new UnsupportedOperationException("Utility class");
+    } //util class :)
 
 
     // Generates a random 4-digit code

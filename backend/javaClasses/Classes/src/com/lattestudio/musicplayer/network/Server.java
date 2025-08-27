@@ -14,6 +14,7 @@ import java.net.Inet4Address;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.time.LocalTime;
 import java.util.Objects;
 import com.lattestudio.musicplayer.util.Message;
 
@@ -43,6 +44,10 @@ public class Server {
     private int PORT = 9090;
     private final String IP = Inet4Address.getLocalHost().getHostAddress();
     private Socket socket;
+    public static int USED_PORT  ;
+    public static String USED_IP ;
+    public static int numberOfConnectedUsers ;
+    public static LocalTime serverRunningStartTime ;
 
     //Constructors :
 
@@ -71,12 +76,16 @@ public class Server {
         try(ServerSocket serverSocket = new ServerSocket(PORT)){
             serverSocket.setSoTimeout(0);// 0 = infinite wait for connections
             Message.cyanServerMessage("Music Server is running on :" + IP +":" +PORT);
+            serverRunningStartTime = LocalTime.now();
+            USED_IP = IP;
+            USED_PORT = PORT;
 
             while (true){
                 socket = serverSocket.accept();
                 socket.setSoTimeout(0);// Keep connection alive forever unless manually closed
                 socket.setKeepAlive(true);
                 Message.cyanServerMessage("New client connected: " + socket.getInetAddress());
+                numberOfConnectedUsers++ ;
                 ClientHandler handler = new ClientHandler(socket);
                 Thread clientThread = new Thread(handler);
                 clientThread.start();

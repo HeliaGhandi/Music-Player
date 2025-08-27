@@ -93,6 +93,8 @@ public class Colors {
     public static final String WHITE_BACKGROUND_BRIGHT = "\033[0;107m";   // WHITE
 
     //Constructors :
-
+    private Colors(){
+        throw new UnsupportedOperationException("Utility class");
+    }
 
 }

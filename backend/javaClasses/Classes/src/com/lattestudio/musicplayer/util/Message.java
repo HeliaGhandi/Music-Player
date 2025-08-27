@@ -40,11 +40,20 @@ import java.util.List;
 public class Message {
     //Properties :
     private static Path log = Paths.get("src/com/lattestudio/musicplayer/db/log.txt");
+    private static Path adminLog = Paths.get("src/com/lattestudio/musicplayer/db/adminLog.txt");
     private static FileWriter fileWriter;
     private static RandomAccessFile fileReader;
+    private static FileWriter adminFileWriter;
+    private static RandomAccessFile adminFileReader;
 
     //Constructors :
 
+    /**
+     * Private constructor (UTIL CLASS)
+     */
+    private Message() {
+        throw new UnsupportedOperationException("Utility class");
+    }
 
     //Methods :
 
@@ -105,6 +114,21 @@ public class Message {
 
     /**
      * <p>
+     *     opens admin writers and admin readers for {@code Messages} class (specific for admin)
+     * </p>
+     * @see Message
+     */
+    public static void adminLogStartUp(){
+        try {
+            adminFileWriter = new FileWriter(adminLog.toFile() , true);
+            adminFileReader = new RandomAccessFile(adminLog.toFile() , "r");
+        } catch (IOException e) {
+            throw new RuntimeException("COULD NOT ACCESS LOG FILE");
+        }
+    }
+
+    /**
+     * <p>
      *     closes writers and readers for {@code Messages}  class
      * </p>
      * @see Message
@@ -113,6 +137,21 @@ public class Message {
         try {
             fileWriter.close();
             fileReader.close();
+        } catch (IOException e) {
+            throw new RuntimeException("LOG FILE ISNT CLOSING \nDO STH:)");
+        }
+    }
+
+    /**
+     * <p>
+     *     closes admin writers and admin readers for {@code Messages}  class
+     * </p>
+     * @see Message
+     */
+    public static void adminLogShutDown(){
+        try {
+            adminFileWriter.close();
+            adminFileReader.close();
         } catch (IOException e) {
             throw new RuntimeException("LOG FILE ISNT CLOSING \nDO STH:)");
         }
@@ -147,6 +186,77 @@ public class Message {
         }
         shutDown();
     }
+
+
+
+
+    /**
+     * <p>
+     *     a String with format and color :
+     * </p>
+     * <p>
+     *     {@code [ADMIN]: {message}} for the admin console
+     * </p>
+     * <p>
+     *     a String with format and no color :
+     * </p>
+     * <p>
+     *     {@code "yyyy-MMM-dd hh:mm:ss - [ADMIN]: {message}} for the log file
+     * </p>
+     * @param message the message from the ADMIN action to be shown in admin console and written to admin log file
+     * @see Colors
+     */
+    public static void cyanAdminMessageToAdminPanel(String message){
+        adminLogStartUp();
+        String formattedString = coloredTime() + Colors.GREEN_BOLD_BRIGHT+"[ADMIN ACTION]: "+Colors.BLUE_BOLD_BRIGHT+message+Colors.RESET +"\n" ;
+        String formattedStringNoColor = dateFormat() + " " + timeFormat() +" - "+ "[ADMIN ACTION]: "+ message +"\n" ;
+
+        System.out.print(formattedString);
+        try{
+            adminFileWriter.write(formattedStringNoColor);
+        } catch (IOException e) {
+            throw new RuntimeException("COULD NOT WRITE TO LOG FILE! : " + e.getLocalizedMessage());
+        }
+        adminLogShutDown();
+    }
+
+
+
+
+    /**
+     * <p>
+     *     a String with format and color :
+     * </p>
+     * <p>
+     *     {@code [ADMIN]: {message}} for the admin console
+     * </p>
+     * <p>
+     *     a String with format and no color :
+     * </p>
+     * <p>
+     *     {@code "yyyy-MMM-dd hh:mm:ss - [ADMIN]: {message}} for the log file
+     * </p>
+     * @param message the message from the ADMIN action to be shown in admin console and written to admin log file
+     * @see Colors
+     */
+    public static void redAdminMessageToAdminPanel(String message){
+        adminLogStartUp();
+        String formattedString = coloredTime() + Colors.RED_BOLD_BRIGHT+"[ADMIN ACTION]: "+Colors.BLUE_BOLD_BRIGHT+message+Colors.RESET +"\n" ;
+        String formattedStringNoColor = dateFormat() + " " + timeFormat() +" - "+ "[ADMIN ACTION]: "+ message +"\n" ;
+
+        System.out.print(formattedString);
+        try{
+            adminFileWriter.write(formattedStringNoColor);
+        } catch (IOException e) {
+            throw new RuntimeException("COULD NOT WRITE TO LOG FILE!");
+        }
+        adminLogShutDown();
+    }
+
+
+
+
+
 
     /**
      * <p>
@@ -215,7 +325,7 @@ public class Message {
             try{
                 fileWriter.write(formattedStringNoColor);
             } catch (IOException e) {
-                throw new RuntimeException("COULD NOT WRITE TO LOG FILE!");
+                throw new RuntimeException("COULD NOT WRITE TO LOG FILE!" + e.getLocalizedMessage() );
             }
         }
 
