@@ -1,4 +1,4 @@
-<p align="center"><img src="finalprap/musicplayer/fx/assets/musics.png" width="150"></p>
+<p align="center"><img src="photos/logo.jpeg" width="150"></p>
 <h1 align="center"><b>Flutter Music Player</b></h1>
 <h4 align="center">A cross-platform music player with a robust Java backend.</h4>
 <p align="center">
@@ -94,6 +94,7 @@ Install dependencies and run the app:
 flutter pub get
 flutter run
 ```
+!note : you need a physical android device or an android emulator for android run and a physical iphone or an ios emulator for ios run(you need apple developer account and phone number 2fa approved).
 
 Backend (Java)
 
@@ -101,8 +102,27 @@ Open the finalprap/musicplayer folder in your preferred Java IDE (e.g., IntelliJ
 
 Run the Server.java file to start the backend server.
 
--> ADMIN PANEL WILL START AUTOMATICLY.
+new musics added to data base with regex (musicname)!(artistname).mp3 are automatically added to data base and sent to front end.
 
+user has a cache of musics to play locally for a few times.
+
+no add-one is used for logging.
+
+using gson to send json to front end.
+
+-> ADMIN PANEL WILL START AUTOMATICLY.
+<p align="center">
+    <img src="photos/fx-screen-shots/home.png" width=350>
+  <img src="photos/fx-screen-shots/all-users.png" width=350>
+</p>
+<p align="center">
+    
+    <img src="photos/fx-screen-shots/all-musics.png" width=350>
+  <img src="photos/fx-screen-shots/new-user.png" width=350>
+  <img src="photos/fx-screen-shots/server.png" width=350>
+  
+    
+</p>
 
 🧪 Tests
 Unit tests for the backend are located in the musicplayer/Tests/ directory. You can run them using JUnit in your IDE.
