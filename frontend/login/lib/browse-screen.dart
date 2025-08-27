@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:login/main.dart';
 import 'package:login/navigation-bar.dart';
 import 'package:login/music-bar.dart';
+import 'package:login/content-display.dart';
+import 'package:login/ios-keyboard.dart';
 
 class BrowseScreen extends StatefulWidget {
   void Function() changeToHome;
   void Function() changeToBrowse;
   void Function() changeToMusic;
+  void Function() changeToLibrary;
+  bool? isDark;
   BrowseScreen({
+    this.isDark,
+    required this.changeToLibrary,
     required this.changeToHome,
     required this.changeToBrowse,
     required this.changeToMusic,
@@ -25,14 +32,31 @@ class _BrowseScreenWidget extends State<BrowseScreen> {
   void initState() {
     super.initState();
 
-    _searchController = TextEditingController(
-      text: "What do you want to listen to?",
-    );
+    _searchController = TextEditingController();
+  }
 
-    // Set cursor position at index 2
-    _searchController.selection = TextSelection.fromPosition(
-      TextPosition(offset: 2),
-    );
+  bool _showCustomKeyboard = false;
+
+  TextEditingController? _activeController;
+
+  void _onKeyTap(String value) {
+    _searchController.text += value;
+  }
+
+  void _onBackspace() {
+    if (_activeController != null && _activeController!.text.isNotEmpty) {
+      _activeController!.text = _activeController!.text.substring(
+        0,
+        _activeController!.text.length - 1,
+      );
+    }
+  }
+
+  void _onReturn() {
+    setState(() {
+      _showCustomKeyboard = false;
+      _activeController = null;
+    });
   }
 
   @override
@@ -48,7 +72,12 @@ class _BrowseScreenWidget extends State<BrowseScreen> {
               width: deviceWidth,
               height: deviceHeight,
               alignment: Alignment.center,
-              decoration: BoxDecoration(color: Colors.black),
+              decoration: BoxDecoration(
+                color:
+                    (UserInfo.isDark ?? true
+                        ? darkTheme.scaffoldBackgroundColor
+                        : lightTheme.scaffoldBackgroundColor),
+              ),
             ),
 
             Column(
@@ -61,7 +90,10 @@ class _BrowseScreenWidget extends State<BrowseScreen> {
                       "Search",
                       style: GoogleFonts.lato(
                         fontSize: 35,
-                        color: Colors.white,
+                        color:
+                            (UserInfo.isDark ?? true
+                                ? darkTheme.primaryColor
+                                : lightTheme.primaryColor),
                       ),
                     ),
                   ],
@@ -70,6 +102,14 @@ class _BrowseScreenWidget extends State<BrowseScreen> {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   child: TextField(
+                    controller: _searchController,
+                    onTap: () {
+                      setState(() {
+                        _showCustomKeyboard = true;
+                        _activeController = _searchController;
+                      });
+                    },
+                    readOnly: true,
                     decoration: InputDecoration(
                       prefixIcon: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -81,6 +121,7 @@ class _BrowseScreenWidget extends State<BrowseScreen> {
                       ),
                       //ofset ba sized box easy !
                       hintText: "What do you want to listen to?",
+
                       hintStyle: TextStyle(color: Colors.black),
                       filled: true,
                       fillColor: Colors.white,
@@ -100,7 +141,10 @@ class _BrowseScreenWidget extends State<BrowseScreen> {
                     Text(
                       "Browse all",
                       style: GoogleFonts.poppins(
-                        color: Colors.white,
+                        color:
+                            (UserInfo.isDark ?? true
+                                ? darkTheme.primaryColor
+                                : lightTheme.primaryColor),
                         fontSize: 20,
                       ),
                     ),
@@ -111,7 +155,7 @@ class _BrowseScreenWidget extends State<BrowseScreen> {
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: SizedBox(
-                      // height: deviceHeight - 100,
+                      height: deviceHeight + 190,
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -235,11 +279,22 @@ class _BrowseScreenWidget extends State<BrowseScreen> {
                 SizedBox(height: 5),
                 NavigationBari(
                   select: 2,
+                  changeToLibrary: widget.changeToLibrary,
                   changeToBrowse: widget.changeToBrowse,
                   changeToHome: widget.changeToHome,
                 ),
               ],
             ),
+            if (_showCustomKeyboard)
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: IOSKeyboard(
+                  onKeyTap: _onKeyTap,
+                  onBackspace: _onBackspace,
+                  onClose: () => setState(() => _showCustomKeyboard = false),
+                  onReturn: _onReturn,
+                ),
+              ),
           ],
         ),
       ),

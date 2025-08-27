@@ -2,21 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:math';
 import 'package:login/music-bar.dart';
-import 'package:login/music-player.dart';
+import 'package:login/cached_music_player.dart';
+import 'package:login/share.dart';
+import 'package:login/main.dart';
 import 'package:login/json-handler.dart';
-import 'dart:convert';
+import 'package:login/musics.dart';
+import 'package:login/music.dart';
 
 class MusicScreen extends StatefulWidget {
   String name;
   String? cover;
   String singer;
   void Function() changeToHomeScreen;
+  Share? share;
   //time ;
 
   MusicScreen({
     required this.changeToHomeScreen,
     required this.name,
     required this.singer,
+
     this.cover,
     super.key,
   });
@@ -28,7 +33,7 @@ class MusicScreen extends StatefulWidget {
 }
 
 class _MusicScreenState extends State<MusicScreen> {
-  final RawChunkMusicPlayer _musicPlayer = RawChunkMusicPlayer();
+  final CachedMusicPlayer _musicPlayer = CachedMusicPlayer();
 
   double _getProgress() {
     final position = _musicPlayer.position;
@@ -43,23 +48,16 @@ class _MusicScreenState extends State<MusicScreen> {
     try {
       print("=== STARTING MUSIC REQUEST ===");
       print(
-        "Current music state - isPlaying: ${RawChunkMusicPlayer.isPlaying.value}",
+        "Current music state - isPlaying: ${CachedMusicPlayer.isPlaying.value}",
       );
 
-      final jsonRequest = {
-        "command": "MUSIC_REQUEST",
-        "musicName": "to_kharab_kardi_golzar.mp3",
-      };
-      print("JSON Request to send: ${jsonEncode(jsonRequest)}");
-      print("About to call _musicPlayer.togglePlayPause...");
-
+      String musicName = UserInfo.currentMusicUrl;
       await _musicPlayer.togglePlayPause(
+        musicName: musicName,
         onDone: () {
           print("=== SONG FINISHED ===");
           if (mounted) {
-            setState(() {
-              // State is managed by the music player now
-            });
+            setState(() {});
           }
           print("Song finished");
         },
@@ -67,13 +65,10 @@ class _MusicScreenState extends State<MusicScreen> {
           print("=== STREAMING ERROR ===");
           print("Error details: $err");
           if (mounted) {
-            setState(() {
-              // State is managed by the music player now
-            });
+            setState(() {});
           }
           print("Streaming error: $err");
         },
-        jsonRequest: jsonRequest,
       );
 
       print("=== MUSIC REQUEST COMPLETED ===");
@@ -89,6 +84,19 @@ class _MusicScreenState extends State<MusicScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Keep title/artist in sync with the bar by parsing UserInfo.currentMusicUrl
+    String raw = UserInfo.currentMusicUrl;
+    String displayName = widget.name;
+    String displayArtist = widget.singer;
+    try {
+      final parts = raw.split('!');
+      if (parts.length >= 2) {
+        displayName = parts[0].replaceAll('-', ' ').trim();
+        displayArtist =
+            parts[1].replaceAll('.mp3', '').replaceAll('-', ' ').trim();
+      }
+    } catch (_) {}
+
     return GestureDetector(
       onVerticalDragUpdate: (details) {
         if (details.delta.dy > 0) {
@@ -106,7 +114,9 @@ class _MusicScreenState extends State<MusicScreen> {
                   angle: 3 * pi / 2,
                   child: GestureDetector(
                     child: Icon(Icons.arrow_back_ios_new, size: 40),
-                    onTap: () {
+                    onTap: () async {
+                      await Musics.loadMusicsFromServer();
+                      Musics.extractInfoFromJson();
                       widget.changeToHomeScreen();
                     },
                   ),
@@ -136,18 +146,56 @@ class _MusicScreenState extends State<MusicScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text(
-                          widget.name,
-                          style: GoogleFonts.lato(fontSize: 35),
+                        SizedBox(
+                          width: 200,
+                          height: 40,
+                          child: Text(
+                            displayName,
+                            style: GoogleFonts.lato(fontSize: 35),
+                          ),
                         ), //color: Colors(0xFF555555),),),
                         Text(
-                          widget.singer,
+                          displayArtist,
                           style: GoogleFonts.lato(fontSize: 25),
                         ),
                       ],
                     ),
                     SizedBox(width: 110),
-                    Icon(Icons.favorite_outline_outlined, size: 30),
+                    GestureDetector(
+                      onTap: () async {
+                        // Backend toggles like/dislike internally; always send LIKE_MUSIC
+                        final Map<String, String> request = {
+                          "command": "like_music",
+                          "username": UserInfo.username,
+                          "musicUrl": UserInfo.currentMusicUrl,
+                        };
+
+                        final Map<String, dynamic> response =
+                            await JsonHandler(json: request).sendTestRequest();
+                        print('Server Response: $response');
+
+                        if (response['success'] == true) {
+                          await Musics.loadLikedMusicsFromServer();
+                          Musics.extractInfoFromLikedJson();
+                          setState(() {});
+                        } else {
+                          await Musics.loadLikedMusicsFromServer();
+                          Musics.extractInfoFromLikedJson();
+                          setState(() {});
+                        }
+                      },
+                      child:
+                          (Musics.likedMusicNames.contains(widget.name)
+                              ? Icon(
+                                Icons.favorite_outline_outlined,
+                                size: 30,
+                                color: Colors.red,
+                              )
+                              : Icon(
+                                Icons.favorite_outline_outlined,
+                                size: 30,
+                              )),
+                    ),
                     SizedBox(width: 5),
                     Icon(Icons.add_circle_outline_sharp, size: 30),
                   ],
@@ -162,14 +210,28 @@ class _MusicScreenState extends State<MusicScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 35),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
+
                     children: [
-                      Icon(Icons.ios_share_outlined, size: 30),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            widget.share = Share(
+                              finalize: () {
+                                setState(() {
+                                  widget.share = null;
+                                });
+                              },
+                            );
+                          });
+                        },
+                        child: Icon(Icons.ios_share_outlined, size: 30),
+                      ),
                       SizedBox(width: 35),
                       Icon(Icons.skip_previous_outlined, size: 45),
                       SizedBox(width: 20),
                       GestureDetector(
                         child: ValueListenableBuilder(
-                          valueListenable: RawChunkMusicPlayer.isPlaying,
+                          valueListenable: CachedMusicPlayer.isPlaying,
                           builder: (cntx, val, _) {
                             return Icon(
                               val ? Icons.pause_circle : Icons.play_circle,
@@ -182,7 +244,7 @@ class _MusicScreenState extends State<MusicScreen> {
                         onTap: () {
                           _togglePlayPause();
                           setState(() {
-                            RawChunkMusicPlayer.togglePlayingState();
+                            CachedMusicPlayer.togglePlayingState();
                           });
                         },
                       ),
@@ -201,6 +263,7 @@ class _MusicScreenState extends State<MusicScreen> {
                 ),
               ],
             ),
+            if (widget.share != null) widget.share!,
           ],
         ),
       ),

@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:login/authenticaion-text-field-format.dart';
 import 'package:login/json-handler.dart';
+import 'package:login/main.dart';
 import 'package:login/notif.dart';
+import 'package:login/share.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:login/ios-keyboard.dart';
+import 'package:login/musics.dart';
 
 class LoginPage extends StatefulWidget {
   void Function() changeToSignUp;
@@ -26,6 +29,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   bool _showCustomKeyboard = false;
   bool _isPasswordField = false;
+  Notif? _currentNotif;
   @override
   void initState() {
     super.initState();
@@ -197,9 +201,46 @@ class _LoginPageState extends State<LoginPage> {
                         // اینجا می‌توانید بر اساس پاسخ سرور (response) عمل کنید،
                         // مثلاً اگر لاگین موفق بود، کاربر را به صفحه اصلی هدایت کنید.
                         if (response['success'] == true) {
+                          Map<String, String> request = {
+                            "command": "COMPLETE_INFO",
+                            "auth": authController!.text,
+                          };
+                          // یک نمونه از JsonHandler ایجاد کرده و متد sendTestRequest را فراخوانی می‌کنیم
+                          // و منتظر پاسخ آن می‌مانیم.
+                          Map<String, dynamic> response =
+                              await JsonHandler(
+                                json: request,
+                              ).sendTestRequest(); // <--- تغییر اصلی
+                          UserInfo.firstname = response['firstname'];
+                          UserInfo.lastname = response['lastname'];
+                          UserInfo.email = response['email'];
+                          UserInfo.username = response['username'];
+                          print(
+                            "User successful login :\nUsername : " +
+                                UserInfo.username +
+                                "\nFirstname : " +
+                                UserInfo.firstname +
+                                "\nLastname : " +
+                                UserInfo.lastname +
+                                "\nemail : " +
+                                UserInfo.email,
+                          );
                           // مثلاً:
                           // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) => HomeScreen()));
                           print('Login Successful!');
+                          await Musics.loadLikedMusicsFromServer();
+
+                          Musics.extractInfoFromLikedJson();
+                          await Musics.loadSharedMusicsFromServer();
+                          Musics.extractInfoFromSharedJson();
+                          Notif(
+                            text: "login succesful!",
+                            finalize: () {
+                              setState(() {
+                                _currentNotif = null;
+                              });
+                            },
+                          );
                           widget.changeToHomePage();
                           if (response['success'] == true) {
                             // Save the login state
@@ -211,9 +252,24 @@ class _LoginPageState extends State<LoginPage> {
                             widget.changeToHomePage();
                           }
                         } else {
+                          setState(() {
+                            _currentNotif = Notif(
+                              text: 'Login Failed: ${response['message']} ',
+                              finalize: () {
+                                setState(() {
+                                  _currentNotif = null;
+                                });
+                              },
+                            );
+                          });
                           Notif(
                             text: 'Login Failed: ${response['message']} ',
                             color: Color(0xFFD2C3D8),
+                            finalize: () {
+                              setState(() {
+                                _currentNotif = null;
+                              });
+                            },
                           );
                           // می‌توانید یک پیام خطا به کاربر نمایش دهید
                         }
@@ -276,7 +332,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
-          //Notif(text: "test", color: Color(0xFFD2C3D8),),
+
           Column(
             children: [
               SizedBox(height: deviceHeight - 65),
@@ -324,6 +380,7 @@ class _LoginPageState extends State<LoginPage> {
                 onReturn: _onReturn,
               ),
             ),
+          if (_currentNotif != null) _currentNotif!,
         ],
       ),
     );

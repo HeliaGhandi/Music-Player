@@ -4,11 +4,13 @@ import 'package:login/authenticaion-text-field-format.dart';
 import 'package:login/json-handler.dart';
 import 'package:login/main.dart';
 import 'package:login/ios-keyboard.dart';
+import 'package:login/notif.dart';
 
 class SignUpPage extends StatefulWidget {
   void Function() changeToLogin;
   void Function() changeToHomePage;
   void Function() changeToTwoStepAuth;
+
   SignUpPage({
     required this.changeToTwoStepAuth,
     required this.changeToHomePage,
@@ -23,6 +25,7 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  Notif? _currentNorif;
   bool _showCustomKeyboard = false;
   TextEditingController? _activeController;
 
@@ -192,10 +195,20 @@ class _SignUpPageState extends State<SignUpPage> {
                       print('Server Response: $response');
 
                       if (response['success'] == true) {
-                        print('Login Successful!');
+                        print('Sign up Successful!');
                         widget.changeToTwoStepAuth(); //,,,,,
                       } else {
-                        print('Login Failed: ${response['message']}');
+                        setState(() {
+                          _currentNorif = Notif(
+                            text: 'Sign up Failed: ${response['message']}',
+                            finalize: () {
+                              setState(() {
+                                _currentNorif = null;
+                              });
+                            },
+                          );
+                        });
+                        print('Sign up Failed: ${response['message']}');
                       }
                     },
                     style: OutlinedButton.styleFrom(
@@ -300,6 +313,7 @@ class _SignUpPageState extends State<SignUpPage> {
               onReturn: _onReturn,
             ),
           ),
+        if (_currentNorif != null) _currentNorif!,
       ],
     );
   }

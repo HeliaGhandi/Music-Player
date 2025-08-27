@@ -5,6 +5,8 @@ import 'package:just_audio/just_audio.dart';
 import 'package:login/json-handler.dart';
 import 'package:login/music_cache_manager.dart';
 import 'package:flutter/material.dart';
+import 'dart:io';
+import 'package:login/main.dart';
 
 /// Enhanced music player with automatic caching support
 class CachedMusicPlayer {
@@ -307,6 +309,22 @@ class CachedMusicPlayer {
   /// Remove specific music from cache
   Future<bool> removeFromCache(String musicName) async {
     return await _cacheManager.removeFromCache(musicName);
+  }
+
+  /// Play a local file
+  Future<void> playLocalFile(String filePath) async {
+    try {
+      await _audioPlayer.setAudioSource(AudioSource.uri(Uri.file(filePath)));
+      await _audioPlayer.play();
+      isPlaying.value = true;
+      _isInitialized = true;
+
+      // Set the current music URL to the file path so the music bar can display it
+      UserInfo.currentMusicUrl = filePath;
+      currentMusicName.value = filePath;
+    } catch (e) {
+      rethrow;
+    }
   }
 
   // Getters

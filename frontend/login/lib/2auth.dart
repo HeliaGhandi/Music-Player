@@ -10,7 +10,7 @@ import 'package:login/main.dart';
 
 class TwoAuthentication extends StatefulWidget {
   void Function() changeToHomePage;
-
+  Notif? _currentNotif;
   TwoAuthentication({required this.changeToHomePage, super.key});
   @override
   State<TwoAuthentication> createState() {
@@ -128,7 +128,15 @@ class _TwoAuthenticationState extends State<TwoAuthentication> {
             widget.changeToHomePage();
           }
         } else {
-          Notif(text: 'Login Failed', color: Color(0xFFD2C3D8));
+          Notif(
+            finalize: () {
+              setState(() {
+                widget._currentNotif = null;
+              });
+            },
+            text: 'Login Failed',
+            color: Color(0xFFD2C3D8),
+          );
           // می‌توانید یک پیام خطا به کاربر نمایش دهید
         }
       };
@@ -306,6 +314,11 @@ class _TwoAuthenticationState extends State<TwoAuthentication> {
                             Notif(
                               text: 'Login Failed',
                               color: Color(0xFFD2C3D8),
+                              finalize: () {
+                                setState(() {
+                                  widget._currentNotif = null;
+                                });
+                              },
                             );
                             // می‌توانید یک پیام خطا به کاربر نمایش دهید
                           }
@@ -378,6 +391,7 @@ class _TwoAuthenticationState extends State<TwoAuthentication> {
                   onReturn: _onReturn,
                 ),
               ),
+            if (widget._currentNotif != null) widget._currentNotif!,
           ],
         ),
       ),

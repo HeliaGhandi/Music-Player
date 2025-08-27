@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:login/content-display.dart';
+import 'package:login/main.dart';
 import 'package:login/recents-musics-button.dart';
 import 'package:login/made-for-you-musics-button.dart';
+import 'package:login/musics.dart';
 
 class ScrollableSection extends StatelessWidget {
   String topic;
   double size;
   double space;
+  bool? isDark;
+  List<Widget> content = [];
   ScrollableSection({
     required this.topic,
     required this.space,
     required this.size,
+    required this.content,
   });
   @override
   Widget build(BuildContext context) {
@@ -26,15 +32,28 @@ class ScrollableSection extends StatelessWidget {
             children: [
               Text(
                 topic,
+                textAlign: TextAlign.center,
+
                 style: GoogleFonts.lato(
-                  color: Colors.white,
+                  color:
+                      UserInfo.isDark
+                          ? darkTheme.focusColor
+                          : lightTheme.focusColor,
                   decoration: TextDecoration.none,
                   fontSize: 30,
                 ),
               ),
+
               Padding(
                 padding: const EdgeInsets.only(right: 5),
-                child: Image.asset("assets/icons/go.png", width: 20),
+                child: Image.asset(
+                  "assets/icons/go.png",
+                  color:
+                      (UserInfo.isDark
+                          ? darkTheme.focusColor
+                          : lightTheme.focusColor),
+                  width: 20,
+                ),
               ),
             ],
           ),
@@ -46,23 +65,7 @@ class ScrollableSection extends StatelessWidget {
           child: SingleChildScrollView(
             padding: EdgeInsets.symmetric(horizontal: 30),
             scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                MadeForYouMusicsButton(size: size, name: "name"),
-                SizedBox(width: space),
-                MadeForYouMusicsButton(size: size, name: "name"),
-                SizedBox(width: space),
-                MadeForYouMusicsButton(size: size, name: "name"),
-                SizedBox(width: space),
-                MadeForYouMusicsButton(size: size, name: "name"),
-                SizedBox(width: space),
-                MadeForYouMusicsButton(size: size, name: "name"),
-                SizedBox(width: space),
-                MadeForYouMusicsButton(size: size, name: "name"),
-                SizedBox(width: space),
-                MadeForYouMusicsButton(size: size, name: "name"),
-              ],
-            ),
+            child: Row(children: content),
           ),
         ),
       ],

@@ -4,7 +4,9 @@ class NavigationBari extends StatefulWidget {
   int select;
   void Function() changeToBrowse;
   void Function() changeToHome;
+  void Function() changeToLibrary;
   NavigationBari({
+    required this.changeToLibrary,
     required this.select,
     required this.changeToHome,
     super.key,
@@ -59,7 +61,9 @@ class _NavigationBariState extends State<NavigationBari> {
               ),
               SizedBox(width: 100),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  widget.changeToLibrary();
+                },
                 icon: Icon(
                   Icons.library_music_outlined,
                   color:

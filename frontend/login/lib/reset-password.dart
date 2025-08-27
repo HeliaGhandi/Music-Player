@@ -10,7 +10,7 @@ import 'package:login/main.dart';
 class ResetPassword extends StatefulWidget {
   void Function() changeToHomePage;
   ResetPassword({required this.changeToHomePage, super.key});
-
+  Notif? _currentNotif;
   @override
   State<ResetPassword> createState() {
     return _ResetPasswordState();
@@ -174,6 +174,11 @@ class _ResetPasswordState extends State<ResetPassword> {
                             }
                           } else {
                             Notif(
+                              finalize: () {
+                                setState(() {
+                                  widget._currentNotif = null;
+                                });
+                              },
                               text: 'Login Failed: ${response['message']} ',
                               color: Color(0xFFD2C3D8),
                             );
@@ -250,6 +255,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   onReturn: _onReturn,
                 ),
               ),
+            if (widget._currentNotif != null) widget._currentNotif!,
           ],
         ),
       ),

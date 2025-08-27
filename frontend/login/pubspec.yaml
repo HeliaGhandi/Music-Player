@@ -42,6 +42,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  file_picker: ^8.0.3
 
 dev_dependencies:
   flutter_test:
@@ -72,7 +73,10 @@ flutter:
     - assets/images/login-background.png
     - assets/images/blured-login-background.png
     - assets/images/google-logo.png
+    - assets/images/dark.jpg
+    - assets/images/light.jpg
     - assets/covers/am.jpg
+    - assets/covers/questions-mark.png
     - assets/covers/billie.jpg
     - assets/covers/ebi.jpg
     - assets/covers/googoosh.jpg
@@ -82,6 +86,10 @@ flutter:
     - assets/icons/go.png
     - assets/icons/gosetting.png
     - assets/icons/icon.png
+    - assets/icons/lock.png
+    - assets/user/profile.png
+    - assets/user/light-background.jpg
+    - assets/user/dark-background.jpg
     - assets/icons/search.png
     - assets/icons/repeat.png
   # An image asset can refer to one or more resolution-specific "variants", see

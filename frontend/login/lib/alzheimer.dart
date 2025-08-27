@@ -9,6 +9,7 @@ import 'package:login/ios-keyboard.dart';
 
 class Alzheimer extends StatefulWidget {
   void Function() changeToTwoAuthForResetPass;
+  Notif? _currentNotif;
   Alzheimer({super.key, required this.changeToTwoAuthForResetPass});
 
   @override
@@ -158,6 +159,11 @@ class _AlzheimerState extends State<Alzheimer> {
                             Notif(
                               text: 'Login Failed: ${response['message']} ',
                               color: Color(0xFFD2C3D8),
+                              finalize: () {
+                                setState(() {
+                                  widget._currentNotif = null;
+                                });
+                              },
                             );
                             // می‌توانید یک پیام خطا به کاربر نمایش دهید
                           }
@@ -232,6 +238,7 @@ class _AlzheimerState extends State<Alzheimer> {
                   onReturn: _onReturn,
                 ),
               ),
+              if(widget._currentNotif != null) widget._currentNotif!
           ],
         ),
       ),

@@ -10,7 +10,7 @@ import 'package:login/main.dart';
 
 class TwoAuthenticationForResetPassword extends StatefulWidget {
   void Function() changeToPassChange;
-
+  Notif? _currentNotif;
   TwoAuthenticationForResetPassword({
     required this.changeToPassChange,
     super.key,
@@ -133,7 +133,13 @@ class _TwoAuthenticationForResetPasswordState
             widget.changeToPassChange();
           }
         } else {
-          Notif(text: 'Login Failed', color: Color(0xFFD2C3D8));
+          Notif(
+            finalize: () {
+              widget._currentNotif = null;
+            },
+            text: 'Login Failed',
+            color: Color(0xFFD2C3D8),
+          );
           // می‌توانید یک پیام خطا به کاربر نمایش دهید
         }
       };
@@ -309,6 +315,11 @@ class _TwoAuthenticationForResetPasswordState
                             }
                           } else {
                             Notif(
+                              finalize: () {
+                                setState(() {
+                                  widget._currentNotif = null;
+                                });
+                              },
                               text: 'Login Failed',
                               color: Color(0xFFD2C3D8),
                             );
@@ -383,6 +394,7 @@ class _TwoAuthenticationForResetPasswordState
                   onReturn: _onReturn,
                 ),
               ),
+            if (widget._currentNotif != null) widget._currentNotif!,
           ],
         ),
       ),

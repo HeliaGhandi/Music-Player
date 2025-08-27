@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:login/content-display.dart';
 
 class RecentsMusicsButton extends StatelessWidget {
   double size;
   String name;
   String? cover;
+  bool isDark;
   RecentsMusicsButton({
+    required this.isDark,
     required this.size,
     super.key,
     required this.name,
@@ -36,7 +39,7 @@ class RecentsMusicsButton extends StatelessWidget {
           Text(
             name,
             style: GoogleFonts.poppins(
-              color: Colors.white,
+              color: (isDark ? darkTheme.focusColor : lightTheme.focusColor),
               fontSize: 10.5,
               decoration: TextDecoration.none,
             ),

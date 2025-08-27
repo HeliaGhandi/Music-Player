@@ -1,0 +1,75 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:login/ios-keyboard.dart';
+
+class ChatMessageTextField extends StatefulWidget {
+  final controller;
+  String hint;
+  Color color;
+
+  void Function() onTap;
+  ChatMessageTextField({
+    required this.hint,
+    required this.color,
+
+    required this.controller,
+    required this.onTap,
+    super.key,
+  });
+  @override
+  State<StatefulWidget> createState() {
+    return _ChatMessageTextFieldState();
+  }
+}
+
+class _ChatMessageTextFieldState extends State<ChatMessageTextField> {
+  bool _isPasswordVisible = false;
+
+  @override
+  Widget build(BuildContext context) {
+    String hint = widget.hint;
+    Color color = widget.color;
+
+    return Container(
+      child: SizedBox(
+        height: 55,
+        child: TextFormField(
+          showCursor: true,
+          readOnly: true,
+          onTap: () {
+            // This now calls the onTap callback from the parent widget
+            widget.onTap();
+          },
+          controller: widget.controller,
+
+          cursorColor: const Color.fromARGB(227, 160, 157, 236),
+          style: GoogleFonts.lato(
+            color: const Color.fromARGB(248, 255, 255, 255),
+          ),
+          decoration: InputDecoration(
+            suffixIcon: IconButton(
+              onPressed: () {
+                setState(() {
+                  _isPasswordVisible = !_isPasswordVisible; // Update state
+                });
+              },
+              icon: Icon(Icons.send),
+            ),
+            hintText: hint,
+            hintStyle: GoogleFonts.lato(
+              color: const Color.fromARGB(213, 255, 255, 255),
+            ),
+            filled: true,
+            fillColor: color,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(25),
+              borderSide: BorderSide.none,
+            ),
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+          keyboardType: TextInputType.text,
+        ),
+      ),
+    );
+  }
+}

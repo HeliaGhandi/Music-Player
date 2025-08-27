@@ -5,13 +5,24 @@ import 'package:login/made-for-you-musics-button.dart';
 import 'package:login/scrollable-section.dart';
 import 'package:login/navigation-bar.dart';
 import 'package:login/music-bar.dart';
+import 'package:login/content-display.dart';
+import 'package:login/main.dart';
+import 'package:login/musics.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:login/cached_music_player.dart';
 
 class HomeScreen extends StatefulWidget {
   void Function() changeToBrowse;
   void Function() changeToHome;
   void Function() changeToMusicScreen;
   void Function() changeToSettingScreen;
+  void Function() changeToLibrary;
+  void Function() changeToDirect;
+  late bool? isDark;
   HomeScreen({
+    this.isDark,
+    required this.changeToDirect,
+    required this.changeToLibrary,
     required this.changeToBrowse,
     required this.changeToHome,
     required this.changeToMusicScreen,
@@ -37,7 +48,12 @@ class _HomeScreenWidget extends State<HomeScreen> {
             width: deviceWidth,
             height: deviceHeight,
             alignment: Alignment.center,
-            decoration: BoxDecoration(color: Colors.black),
+            decoration: BoxDecoration(
+              color:
+                  (UserInfo.isDark ?? true
+                      ? darkTheme.scaffoldBackgroundColor
+                      : lightTheme.scaffoldBackgroundColor),
+            ),
           ),
           Column(
             children: [
@@ -52,6 +68,9 @@ class _HomeScreenWidget extends State<HomeScreen> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.grey,
+                        image: DecorationImage(
+                          image: AssetImage(UserInfo.profilePictureURL),
+                        ),
                       ),
                     ),
                     onTap: () {
@@ -61,14 +80,23 @@ class _HomeScreenWidget extends State<HomeScreen> {
                   SizedBox(width: deviceWidth - 120),
 
                   GestureDetector(
-                    child: Image.asset("assets/icons/icon.png", width: 35),
-                    onTap: () {},
+                    child: Image.asset(
+                      "assets/icons/icon.png",
+                      color:
+                          (UserInfo.isDark ?? true
+                              ? darkTheme.primaryColor
+                              : lightTheme.primaryColor),
+                      width: 35,
+                    ),
+                    onTap: () {
+                      widget.changeToDirect();
+                    },
                   ),
                 ],
               ),
               SizedBox(height: 40),
               SizedBox(
-                height: deviceHeight - 150,
+                height: deviceHeight - 320,
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: Column(
@@ -79,7 +107,10 @@ class _HomeScreenWidget extends State<HomeScreen> {
                           Text(
                             "Recents",
                             style: GoogleFonts.lato(
-                              color: Colors.white,
+                              color:
+                                  (UserInfo.isDark ?? true
+                                      ? darkTheme.focusColor
+                                      : lightTheme.focusColor),
                               decoration: TextDecoration.none,
                               fontSize: 30,
                             ),
@@ -91,18 +122,21 @@ class _HomeScreenWidget extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           RecentsMusicsButton(
+                            isDark: UserInfo.isDark ?? true,
                             size: 100,
                             name: "AM",
                             cover: "assets/covers/am.jpg",
                           ),
                           SizedBox(width: 25),
                           RecentsMusicsButton(
+                            isDark: UserInfo.isDark ?? true,
                             size: 100,
                             name: "EBI",
                             cover: "assets/covers/ebi.jpg",
                           ),
                           SizedBox(width: 25),
                           RecentsMusicsButton(
+                            isDark: UserInfo.isDark ?? true,
                             size: 100,
                             name: "Googoosh",
                             cover: "assets/covers/googoosh.jpg",
@@ -114,18 +148,21 @@ class _HomeScreenWidget extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           RecentsMusicsButton(
+                            isDark: UserInfo.isDark ?? true,
                             size: 100,
                             name: "EILISH",
                             cover: "assets/covers/billie.jpg",
                           ),
                           SizedBox(width: 25),
                           RecentsMusicsButton(
+                            isDark: UserInfo.isDark ?? true,
                             size: 100,
                             name: "HIRA",
                             cover: "assets/covers/shayea.jpeg",
                           ),
                           SizedBox(width: 25),
                           RecentsMusicsButton(
+                            isDark: UserInfo.isDark ?? true,
                             size: 100,
                             name: "heli",
                             cover: "assets/covers/heliyom.jpg",
@@ -134,18 +171,106 @@ class _HomeScreenWidget extends State<HomeScreen> {
                       ),
                       SizedBox(height: 30),
                       ScrollableSection(
-                        topic: "Made For You",
+                        topic: "Liked Songs",
                         size: 100,
                         space: 20,
+                        content: [
+                          for (int i = 0; i < Musics.likedSongs.length; i++)
+                            MadeForYouMusicsButton(
+                              size: 100,
+                              space: 20,
+                              name:
+                                  Musics.likedSongs[i].name ??
+                                  "YOU HAVENT LIKED ANY MUSIC YET",
+                              url:
+                                  Musics.likedSongs[i].URL ??
+                                  "YOU HAVENT LIKED ANY MUSIC YET",
+                              cover: "assets/covers/questions-mark.png",
+                            ),
+                        ],
                       ),
                       SizedBox(height: 30),
                       ScrollableSection(
-                        topic: "New Released",
+                        content: [
+                          for (int i = 0; i < Musics.sharedSongs.length; i++)
+                            MadeForYouMusicsButton(
+                              size: 100,
+                              space: 20,
+                              name:
+                                  Musics.sharedSongs[i].name ??
+                                  "No one likes youuuu, go cry",
+                              url:
+                                  Musics.sharedSongs[i].URL ??
+                                  "No one likes youuuu, go cry",
+                              cover: "assets/covers/questions-mark.png",
+                            ),
+                        ],
+                        topic: "Shared With You",
                         size: 150,
                         space: 25,
                       ),
                       SizedBox(height: 30),
-                      ScrollableSection(topic: "On Fire", size: 100, space: 20),
+                      ScrollableSection(
+                        topic: "All Server Musics",
+                        size: 100,
+                        space: 0,
+                        content: [
+                          for (int i = 0; i < Musics.musics.length; i++)
+                            MadeForYouMusicsButton(
+                              size: 100,
+                              space: 20,
+                              name: Musics.musics[i].name ?? "yoohoo",
+                              url: Musics.musics[i].URL ?? "yoohoo",
+                            ),
+                        ],
+                      ),
+                      SizedBox(height: 30),
+                      // New: All Device Musics section with + button
+                      Row(
+                        children: [
+                          SizedBox(width: 20),
+                          Text(
+                            "All Device Musics",
+                            style: GoogleFonts.lato(
+                              color:
+                                  (UserInfo.isDark ?? true
+                                      ? darkTheme.focusColor
+                                      : lightTheme.focusColor),
+                              decoration: TextDecoration.none,
+                              fontSize: 24,
+                            ),
+                          ),
+                          Spacer(),
+                          IconButton(
+                            icon: Icon(Icons.add_circle_outline, size: 28),
+                            color:
+                                (UserInfo.isDark ?? true
+                                    ? darkTheme.focusColor
+                                    : lightTheme.focusColor),
+                            onPressed: () async {
+                              final result = await FilePicker.platform
+                                  .pickFiles(
+                                    type: FileType.custom,
+                                    allowedExtensions: [
+                                      "mp3",
+                                      "wav",
+                                      "m4a",
+                                      "aac",
+                                      "flac",
+                                    ],
+                                  );
+                              if (result != null &&
+                                  result.files.single.path != null) {
+                                final path = result.files.single.path!;
+                                // Play local file
+                                await CachedMusicPlayer().playLocalFile(path);
+                              }
+                            },
+                          ),
+                          SizedBox(width: 20),
+                        ],
+                      ),
+                      SizedBox(height: 12),
                     ],
                   ),
                 ),
@@ -163,8 +288,10 @@ class _HomeScreenWidget extends State<HomeScreen> {
               SizedBox(height: 5),
               NavigationBari(
                 select: 1,
+                changeToLibrary: widget.changeToLibrary,
                 changeToBrowse: widget.changeToBrowse,
                 changeToHome: widget.changeToHome,
+                //
               ),
             ],
           ),
