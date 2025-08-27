@@ -1,0 +1,680 @@
+Index: src/com/lattestudio/musicplayer/db/users.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[\n{\n  \"username\": \"admin\",\n  \"firstname\": \"admin\",\n  \"lastname\": \"admin\",\n  \"email\": \"admin@admin.com\",\n  \"password\": \"admin\",\n  \"profilePictureURL\": \"PROFILE PICTURE NOT SET YET\",\n  \"isVerified\": false,\n  \"canShareSongWithUser\": true,\n  \"is2faVerified\": false,\n  \"isAccountPrivate\": false,\n  \"rememberMe\": true,\n  \"musics\": [],\n  \"playlists\": [],\n  \"likedSongs\": [],\n  \"likedPlayLists\": [],\n  \"queue\": [],\n  \"followers\": [],\n  \"followings\": [],\n  \"playedSongs\": [],\n  \"likedGenres\": [],\n  \"theme\": \"LIGHT\",\n  \"lastUsernameChangeTime\": \"2025-08-11T13:40:04.391955\",\n  \"joinedDate\": \"2025-08-11T13:40:04.39192\",\n  \"totalListeningDuration\": \"00:00:00\",\n  \"numberOfFailLoginAttempts\": 0\n}\n,\n{\n  \"username\": \"a\",\n  \"firstname\": \"helia\",\n  \"lastname\": \"ghandi\",\n  \"email\": \"heliaghandi85@gmail.com\",\n  \"password\": \"a\",\n  \"profilePictureURL\": \"PROFILE PICTURE NOT SET YET\",\n  \"isVerified\": false,\n  \"canShareSongWithUser\": true,\n  \"is2faVerified\": false,\n  \"isAccountPrivate\": false,\n  \"rememberMe\": true,\n  \"musics\": [],\n  \"playlists\": [],\n  \"likedSongs\": [\n    {\n      \"name\": \"ahle naa ahli\",\n      \"icon\": \"ICON NOT SET YET!\",\n      \"QRCode\": \"QR Code NOT SET YET\",\n      \"lyrics\": \"LYRICS NOT SET YET\",\n      \"url\": \"ahle-naa-ahli!shayea.mp3\",\n      \"artist\": \"shayea\",\n      \"isPaused\": true,\n      \"duration\": \"00:00:00\",\n      \"dateSongAddedToDataBase\": \"2025-08-27T08:29:57.330558\",\n      \"likedCount\": 2,\n      \"genres\": [],\n      \"artists\": [],\n      \"comments\": {}\n    }\n  ],\n  \"likedPlayLists\": [],\n  \"queue\": [\n    {\n      \"name\": \"ahle naa ahli\",\n      \"icon\": \"ICON NOT SET YET!\",\n      \"QRCode\": \"QR Code NOT SET YET\",\n      \"lyrics\": \"LYRICS NOT SET YET\",\n      \"url\": \"ahle-naa-ahli!shayea.mp3\",\n      \"artist\": \"shayea\",\n      \"isPaused\": true,\n      \"duration\": \"00:00:00\",\n      \"dateSongAddedToDataBase\": \"2025-08-27T08:28:36.145692\",\n      \"likedCount\": 0,\n      \"genres\": [],\n      \"artists\": [],\n      \"comments\": {}\n    }\n  ],\n  \"followers\": [],\n  \"followings\": [],\n  \"playedSongs\": [],\n  \"likedGenres\": [],\n  \"theme\": \"LIGHT\",\n  \"lastUsernameChangeTime\": \"2025-08-27T08:18:59.991896\",\n  \"joinedDate\": \"2025-08-27T08:18:59.991877\",\n  \"totalListeningDuration\": \"00:00:00\",\n  \"numberOfFailLoginAttempts\": 0\n}\n]
+===================================================================
+diff --git a/src/com/lattestudio/musicplayer/db/users.json b/src/com/lattestudio/musicplayer/db/users.json
+--- a/src/com/lattestudio/musicplayer/db/users.json	(revision 574869cc068c12c489f7f8ff8fb1fbcaca207bc3)
++++ b/src/com/lattestudio/musicplayer/db/users.json	(date 1756314197916)
+@@ -13,9 +13,41 @@
+   "rememberMe": true,
+   "musics": [],
+   "playlists": [],
+-  "likedSongs": [],
++  "likedSongs": [
++    {
++      "name": "ahle naa ahli",
++      "icon": "ICON NOT SET YET!",
++      "QRCode": "QR Code NOT SET YET",
++      "lyrics": "LYRICS NOT SET YET",
++      "url": "ahle-naa-ahli!shayea.mp3",
++      "artist": "shayea",
++      "isPaused": true,
++      "duration": "00:00:00",
++      "dateSongAddedToDataBase": "2025-08-27T20:00:40.765876",
++      "likedCount": 2,
++      "genres": [],
++      "artists": [],
++      "comments": {}
++    }
++  ],
+   "likedPlayLists": [],
+-  "queue": [],
++  "queue": [
++    {
++      "name": "fogholade",
++      "icon": "ICON NOT SET YET!",
++      "QRCode": "QR Code NOT SET YET",
++      "lyrics": "LYRICS NOT SET YET",
++      "url": "fogholade!sijal-jj.mp3",
++      "artist": "sijal jj",
++      "isPaused": true,
++      "duration": "00:00:00",
++      "dateSongAddedToDataBase": "2025-08-27T20:03:11.893055",
++      "likedCount": 0,
++      "genres": [],
++      "artists": [],
++      "comments": {}
++    }
++  ],
+   "followers": [],
+   "followings": [],
+   "playedSongs": [],
+@@ -31,7 +63,7 @@
+   "username": "a",
+   "firstname": "helia",
+   "lastname": "ghandi",
+-  "email": "heliaghandi85@gmail.com",
++  "email": "a",
+   "password": "a",
+   "profilePictureURL": "PROFILE PICTURE NOT SET YET",
+   "isVerified": false,
+@@ -86,4 +118,32 @@
+   "totalListeningDuration": "00:00:00",
+   "numberOfFailLoginAttempts": 0
+ }
++,
++{
++  "username": "rrrrrr",
++  "firstname": "eee",
++  "lastname": "qqqqqq",
++  "email": "ttt@ggggg.ccc",
++  "password": "ASas@9988",
++  "profilePictureURL": "PROFILE PICTURE NOT SET YET",
++  "isVerified": false,
++  "canShareSongWithUser": true,
++  "is2faVerified": false,
++  "isAccountPrivate": false,
++  "rememberMe": false,
++  "musics": [],
++  "playlists": [],
++  "likedSongs": [],
++  "likedPlayLists": [],
++  "queue": [],
++  "followers": [],
++  "followings": [],
++  "playedSongs": [],
++  "likedGenres": [],
++  "theme": "LIGHT",
++  "lastUsernameChangeTime": "2025-08-27T19:56:23.757495",
++  "joinedDate": "2025-08-27T19:56:23.757477",
++  "totalListeningDuration": "00:00:00",
++  "numberOfFailLoginAttempts": 0
++}
+ ]
+\ No newline at end of file
+Index: src/com/lattestudio/musicplayer/db/log.txt
+===================================================================
+diff --git a/src/com/lattestudio/musicplayer/db/log.txt b/src/com/lattestudio/musicplayer/db/log.txt
+--- a/src/com/lattestudio/musicplayer/db/log.txt	(revision 574869cc068c12c489f7f8ff8fb1fbcaca207bc3)
++++ b/src/com/lattestudio/musicplayer/db/log.txt	(date 1756314777834)
+@@ -13738,3 +13738,483 @@
+   "success": true,
+   "message": "[ahle-naa-ahli!shayea.mp3]"
+ }
++2025-Aug-27 19:56:19 - [SERVER]: USERS RESTORED : 
++2025-Aug-27 19:56:19 - [SERVER]: USERNAMES RESTORED : [admin, a]
++2025-Aug-27 19:56:19 - [SERVER]: EMAILS RESTORED :[admin@admin.com, heliaghandi85@gmail.com]
++2025-Aug-27 19:56:19 - [SERVER]: SONG NAMES RESTORED : [ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]
++2025-Aug-27 19:56:19 - [SERVER]: Music Server is running on :127.0.0.1:9090
++2025-Aug-27 19:56:23 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 19:56:23 - [SERVER]: JSON RECEIVED:
++{"command":"sign_up","firstname":"eee","lastname":"qqqqqq","username":"rrrrrr","email":"ttt@ggggg.ccc","password":"ASas@9988","rememberMe":"true"}
++2025-Aug-27 19:56:23 - [SERVER]: JSON SENT : 
++{
++  "success": true
++}
++2025-Aug-27 19:56:23 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 19:56:23 - [SERVER]: JSON RECEIVED:
++{"command":"two_authentication","email":"ttt@ggggg.ccc"}
++2025-Aug-27 19:56:27 - [SERVER]: Verification code sent: 5214
++2025-Aug-27 19:56:27 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "5214"
++}
++2025-Aug-27 19:59:24 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 19:59:24 - [SERVER]: JSON RECEIVED:
++{"command":"ALZHEIMER","email":"a"}
++2025-Aug-27 19:59:24 - [SERVER]: JSON SENT : 
++{
++  "success": false,
++  "message": "Email does not exist"
++}
++2025-Aug-27 19:59:25 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 19:59:25 - [SERVER]: JSON RECEIVED:
++{"command":"ALZHEIMER","email":"a"}
++2025-Aug-27 19:59:25 - [SERVER]: JSON SENT : 
++{
++  "success": false,
++  "message": "Email does not exist"
++}
++2025-Aug-27 19:59:25 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 19:59:25 - [SERVER]: JSON RECEIVED:
++{"command":"ALZHEIMER","email":"a"}
++2025-Aug-27 19:59:25 - [SERVER]: JSON SENT : 
++{
++  "success": false,
++  "message": "Email does not exist"
++}
++2025-Aug-27 19:59:30 - [SERVER]: USERS RESTORED : 
++2025-Aug-27 19:59:30 - [SERVER]: USERNAMES RESTORED : [admin, a, rrrrrr]
++2025-Aug-27 19:59:30 - [SERVER]: EMAILS RESTORED :[admin@admin.com, a, ttt@ggggg.ccc]
++2025-Aug-27 19:59:30 - [SERVER]: SONG NAMES RESTORED : [ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]
++2025-Aug-27 19:59:30 - [SERVER]: Music Server is running on :127.0.0.1:9090
++2025-Aug-27 19:59:32 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 19:59:32 - [SERVER]: JSON RECEIVED:
++{"command":"ALZHEIMER","email":"a"}
++2025-Aug-27 19:59:32 - [SERVER]: JSON SENT : 
++{
++  "success": true
++}
++2025-Aug-27 19:59:32 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 19:59:32 - [SERVER]: JSON RECEIVED:
++{"command":"two_authentication_recovery","email":"a"}
++2025-Aug-27 19:59:34 - [SERVER]: JSON SENT : 
++{
++  "success": false,
++  "message": "Invalid Addresses"
++}
++2025-Aug-27 19:59:53 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 19:59:53 - [SERVER]: JSON RECEIVED:
++{"command":"GET_ALL_MUSICS"}
++2025-Aug-27 19:59:53 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
++}
++2025-Aug-27 19:59:53 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 19:59:53 - [SERVER]: JSON RECEIVED:
++{"command":"GET_ALL_MUSICS"}
++2025-Aug-27 19:59:53 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 19:59:53 - [SERVER]: JSON RECEIVED:
++{"command":"USER_LIST","filter":""}
++2025-Aug-27 19:59:53 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
++}
++2025-Aug-27 19:59:53 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[admin, a, rrrrrr]"
++}
++2025-Aug-27 19:59:53 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 19:59:53 - [SERVER]: JSON RECEIVED:
++{"command":"USER_LIST","filter":""}
++2025-Aug-27 19:59:53 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[admin, a, rrrrrr]"
++}
++2025-Aug-27 20:00:16 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:00:16 - [SERVER]: JSON RECEIVED:
++{"command":"ALZHEIMER","email":"ttt@ggggg.ccc"}
++2025-Aug-27 20:00:16 - [SERVER]: JSON SENT : 
++{
++  "success": true
++}
++2025-Aug-27 20:00:16 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:00:16 - [SERVER]: JSON RECEIVED:
++{"command":"two_authentication_recovery","email":"ttt@ggggg.ccc"}
++2025-Aug-27 20:00:19 - [SERVER]: Verification code sent: 7667
++2025-Aug-27 20:00:19 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "7667"
++}
++2025-Aug-27 20:00:40 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:00:40 - [SERVER]: JSON RECEIVED:
++{"command":"GET_ALL_MUSICS"}
++2025-Aug-27 20:00:40 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
++}
++2025-Aug-27 20:00:40 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:00:40 - [SERVER]: JSON RECEIVED:
++{"command":"GET_ALL_MUSICS"}
++2025-Aug-27 20:00:40 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:00:40 - [SERVER]: JSON RECEIVED:
++{"command":"USER_LIST","filter":""}
++2025-Aug-27 20:00:40 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[admin, a, rrrrrr]"
++}
++2025-Aug-27 20:00:40 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:00:40 - [SERVER]: JSON RECEIVED:
++{"command":"USER_LIST","filter":""}
++2025-Aug-27 20:00:40 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[admin, a, rrrrrr]"
++}
++2025-Aug-27 20:00:47 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:00:47 - [SERVER]: JSON RECEIVED:
++{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
++2025-Aug-27 20:00:47 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "Login successfully with Username(Remember)"
++}
++2025-Aug-27 20:00:47 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:00:47 - [SERVER]: JSON RECEIVED:
++{"command":"COMPLETE_INFO","auth":"a"}
++2025-Aug-27 20:00:47 - [SERVER]: JSON SENT : 
++{
++  "firstname": "helia",
++  "lastname": "ghandi",
++  "username": "a",
++  "email": "a",
++  "success": true
++}
++2025-Aug-27 20:00:47 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:00:47 - [SERVER]: JSON RECEIVED:
++{"command":"GET_LIKED_MUSICS","username":"a"}
++2025-Aug-27 20:00:47 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3]"
++}
++2025-Aug-27 20:00:47 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:00:47 - [SERVER]: JSON RECEIVED:
++{"command":"GET_QUEUE","username":"a"}
++2025-Aug-27 20:00:47 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3]"
++}
++2025-Aug-27 20:01:48 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:01:48 - [SERVER]: JSON RECEIVED:
++{"command":"login","loginCredit":"admin","password":"admin","rememberMe":"true"}
++2025-Aug-27 20:01:48 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "Login successfully with Username(Remember)"
++}
++2025-Aug-27 20:01:48 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:01:48 - [SERVER]: JSON RECEIVED:
++{"command":"COMPLETE_INFO","auth":"admin"}
++2025-Aug-27 20:01:48 - [SERVER]: JSON SENT : 
++{
++  "firstname": "admin",
++  "lastname": "admin",
++  "username": "admin",
++  "email": "admin@admin.com",
++  "success": true
++}
++2025-Aug-27 20:01:48 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:01:48 - [SERVER]: JSON RECEIVED:
++{"command":"GET_LIKED_MUSICS","username":"admin"}
++2025-Aug-27 20:01:48 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[]"
++}
++2025-Aug-27 20:01:48 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:01:48 - [SERVER]: JSON RECEIVED:
++{"command":"GET_QUEUE","username":"admin"}
++2025-Aug-27 20:01:48 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[]"
++}
++2025-Aug-27 20:02:46 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:02:46 - [SERVER]: JSON RECEIVED:
++{"command":"like_music","username":"admin","musicUrl":"ahle-naa-ahli!shayea.mp3"}
++2025-Aug-27 20:02:46 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "new like count : 2"
++}
++2025-Aug-27 20:02:46 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:02:46 - [SERVER]: JSON RECEIVED:
++{"command":"GET_LIKED_MUSICS","username":"admin"}
++2025-Aug-27 20:02:46 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3]"
++}
++2025-Aug-27 20:02:46 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:02:46 - [SERVER]: JSON RECEIVED:
++{"command":"GET_ALL_MUSICS"}
++2025-Aug-27 20:02:46 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
++}
++2025-Aug-27 20:03:04 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:03:04 - [SERVER]: JSON RECEIVED:
++{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
++2025-Aug-27 20:03:04 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "Login successfully with Username(Remember)"
++}
++2025-Aug-27 20:03:04 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:03:04 - [SERVER]: JSON RECEIVED:
++{"command":"COMPLETE_INFO","auth":"a"}
++2025-Aug-27 20:03:04 - [SERVER]: JSON SENT : 
++{
++  "firstname": "helia",
++  "lastname": "ghandi",
++  "username": "a",
++  "email": "a",
++  "success": true
++}
++2025-Aug-27 20:03:04 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:03:04 - [SERVER]: JSON RECEIVED:
++{"command":"GET_LIKED_MUSICS","username":"a"}
++2025-Aug-27 20:03:04 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3]"
++}
++2025-Aug-27 20:03:04 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:03:04 - [SERVER]: JSON RECEIVED:
++{"command":"GET_QUEUE","username":"a"}
++2025-Aug-27 20:03:04 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3]"
++}
++2025-Aug-27 20:03:11 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:03:11 - [SERVER]: JSON RECEIVED:
++{"command":"MUSIC_REQUEST","musicName":"fogholade!sijal-jj.mp3"}
++2025-Aug-27 20:03:17 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:03:17 - [SERVER]: JSON RECEIVED:
++{"command":"share_music","fromUsername":"a","toUsername":"admin","musicURL":"fogholade!sijal-jj.mp3"}
++2025-Aug-27 20:03:17 - [SERVER]: JSON SENT : 
++{
++  "success": true
++}
++2025-Aug-27 20:03:19 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:03:19 - [SERVER]: JSON RECEIVED:
++{"command":"GET_ALL_MUSICS"}
++2025-Aug-27 20:03:19 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
++}
++2025-Aug-27 20:03:29 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:03:29 - [SERVER]: JSON RECEIVED:
++{"command":"login","loginCredit":"admin","password":"admin","rememberMe":"true"}
++2025-Aug-27 20:03:29 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "Login successfully with Username(Remember)"
++}
++2025-Aug-27 20:03:29 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:03:29 - [SERVER]: JSON RECEIVED:
++{"command":"COMPLETE_INFO","auth":"admin"}
++2025-Aug-27 20:03:29 - [SERVER]: JSON SENT : 
++{
++  "firstname": "admin",
++  "lastname": "admin",
++  "username": "admin",
++  "email": "admin@admin.com",
++  "success": true
++}
++2025-Aug-27 20:03:29 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:03:29 - [SERVER]: JSON RECEIVED:
++{"command":"GET_LIKED_MUSICS","username":"admin"}
++2025-Aug-27 20:03:29 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3]"
++}
++2025-Aug-27 20:03:29 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:03:29 - [SERVER]: JSON RECEIVED:
++{"command":"GET_QUEUE","username":"admin"}
++2025-Aug-27 20:03:29 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[fogholade!sijal-jj.mp3]"
++}
++2025-Aug-27 20:05:16 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:05:16 - [SERVER]: JSON RECEIVED:
++{"command":"GET_ALL_MUSICS"}
++2025-Aug-27 20:05:16 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
++}
++2025-Aug-27 20:05:16 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:05:16 - [SERVER]: JSON RECEIVED:
++{"command":"GET_ALL_MUSICS"}
++2025-Aug-27 20:05:16 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
++}
++2025-Aug-27 20:05:16 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:05:16 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:05:16 - [SERVER]: JSON RECEIVED:
++{"command":"USER_LIST","filter":""}
++2025-Aug-27 20:05:16 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[admin, a, rrrrrr]"
++}
++2025-Aug-27 20:05:16 - [SERVER]: JSON RECEIVED:
++{"command":"USER_LIST","filter":""}
++2025-Aug-27 20:05:16 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[admin, a, rrrrrr]"
++}
++2025-Aug-27 20:05:27 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:05:27 - [SERVER]: JSON RECEIVED:
++{"command":"login","loginCredit":"admin","password":"admin","rememberMe":"true"}
++2025-Aug-27 20:05:27 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "Login successfully with Username(Remember)"
++}
++2025-Aug-27 20:05:27 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:05:27 - [SERVER]: JSON RECEIVED:
++{"command":"COMPLETE_INFO","auth":"admin"}
++2025-Aug-27 20:05:27 - [SERVER]: JSON SENT : 
++{
++  "firstname": "admin",
++  "lastname": "admin",
++  "username": "admin",
++  "email": "admin@admin.com",
++  "success": true
++}
++2025-Aug-27 20:05:27 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:05:27 - [SERVER]: JSON RECEIVED:
++{"command":"GET_LIKED_MUSICS","username":"admin"}
++2025-Aug-27 20:05:27 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3]"
++}
++2025-Aug-27 20:05:27 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:05:27 - [SERVER]: JSON RECEIVED:
++{"command":"GET_QUEUE","username":"admin"}
++2025-Aug-27 20:05:27 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[fogholade!sijal-jj.mp3]"
++}
++2025-Aug-27 20:05:42 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:05:42 - [SERVER]: JSON RECEIVED:
++{"command":"GET_ALL_MUSICS"}
++2025-Aug-27 20:05:42 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
++}
++2025-Aug-27 20:05:58 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:05:58 - [SERVER]: JSON RECEIVED:
++{"command":"GET_ALL_MUSICS"}
++2025-Aug-27 20:05:58 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
++}
++2025-Aug-27 20:12:29 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:12:29 - [SERVER]: JSON RECEIVED:
++{"command":"GET_ALL_MUSICS"}
++2025-Aug-27 20:12:29 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
++}
++2025-Aug-27 20:12:29 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:12:29 - [SERVER]: JSON RECEIVED:
++{"command":"GET_ALL_MUSICS"}
++2025-Aug-27 20:12:29 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
++}
++2025-Aug-27 20:12:29 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:12:29 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:12:29 - [SERVER]: JSON RECEIVED:
++{"command":"USER_LIST","filter":""}
++2025-Aug-27 20:12:29 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[admin, a, rrrrrr]"
++}
++2025-Aug-27 20:12:29 - [SERVER]: JSON RECEIVED:
++{"command":"USER_LIST","filter":""}
++2025-Aug-27 20:12:29 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[admin, a, rrrrrr]"
++}
++2025-Aug-27 20:12:47 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:12:47 - [SERVER]: JSON RECEIVED:
++{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
++2025-Aug-27 20:12:47 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "Login successfully with Username(Remember)"
++}
++2025-Aug-27 20:12:47 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:12:47 - [SERVER]: JSON RECEIVED:
++{"command":"COMPLETE_INFO","auth":"a"}
++2025-Aug-27 20:12:47 - [SERVER]: JSON SENT : 
++{
++  "firstname": "helia",
++  "lastname": "ghandi",
++  "username": "a",
++  "email": "a",
++  "success": true
++}
++2025-Aug-27 20:12:47 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:12:47 - [SERVER]: JSON RECEIVED:
++{"command":"GET_LIKED_MUSICS","username":"a"}
++2025-Aug-27 20:12:47 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3]"
++}
++2025-Aug-27 20:12:47 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:12:47 - [SERVER]: JSON RECEIVED:
++{"command":"GET_QUEUE","username":"a"}
++2025-Aug-27 20:12:47 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3]"
++}
++2025-Aug-27 20:12:57 - [SERVER]: New client connected: /127.0.0.1
++2025-Aug-27 20:12:57 - [SERVER]: JSON RECEIVED:
++{"command":"GET_ALL_MUSICS"}
++2025-Aug-27 20:12:57 - [SERVER]: JSON SENT : 
++{
++  "success": true,
++  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
++}
+Index: src/com/lattestudio/musicplayer/db/musics.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[\n{\n  \"name\": \"ahle naa ahli\",\n  \"icon\": \"ICON NOT SET YET!\",\n  \"QRCode\": \"QR Code NOT SET YET\",\n  \"lyrics\": \"LYRICS NOT SET YET\",\n  \"url\": \"ahle-naa-ahli!shayea.mp3\",\n  \"artist\": \"shayea\",\n  \"isPaused\": true,\n  \"duration\": \"00:00:00\",\n  \"dateSongAddedToDataBase\": \"2025-08-27T17:14:51.695191\",\n  \"likedCount\": 0,\n  \"genres\": [],\n  \"artists\": [],\n  \"comments\": {}\n}\n,\n{\n  \"name\": \"mordab\",\n  \"icon\": \"ICON NOT SET YET!\",\n  \"QRCode\": \"QR Code NOT SET YET\",\n  \"lyrics\": \"LYRICS NOT SET YET\",\n  \"url\": \"mordab!googoosh.mp3\",\n  \"artist\": \"googoosh\",\n  \"isPaused\": true,\n  \"duration\": \"00:00:00\",\n  \"dateSongAddedToDataBase\": \"2025-08-27T17:14:51.695576\",\n  \"likedCount\": 0,\n  \"genres\": [],\n  \"artists\": [],\n  \"comments\": {}\n}\n,\n{\n  \"name\": \"chikar kardi ba delam wy\",\n  \"icon\": \"ICON NOT SET YET!\",\n  \"QRCode\": \"QR Code NOT SET YET\",\n  \"lyrics\": \"LYRICS NOT SET YET\",\n  \"url\": \"chikar-kardi-ba-delam-wy!heliyom.mp3\",\n  \"artist\": \"heliyom\",\n  \"isPaused\": true,\n  \"duration\": \"00:00:00\",\n  \"dateSongAddedToDataBase\": \"2025-08-27T17:14:51.695805\",\n  \"likedCount\": 0,\n  \"genres\": [],\n  \"artists\": [],\n  \"comments\": {}\n}\n,\n{\n  \"name\": \"setare haye sorbi\",\n  \"icon\": \"ICON NOT SET YET!\",\n  \"QRCode\": \"QR Code NOT SET YET\",\n  \"lyrics\": \"LYRICS NOT SET YET\",\n  \"url\": \"setare-haye-sorbi!ebi.mp3\",\n  \"artist\": \"ebi\",\n  \"isPaused\": true,\n  \"duration\": \"00:00:00\",\n  \"dateSongAddedToDataBase\": \"2025-08-27T17:14:51.696024\",\n  \"likedCount\": 0,\n  \"genres\": [],\n  \"artists\": [],\n  \"comments\": {}\n}\n,\n{\n  \"name\": \"to kharab kardi\",\n  \"icon\": \"ICON NOT SET YET!\",\n  \"QRCode\": \"QR Code NOT SET YET\",\n  \"lyrics\": \"LYRICS NOT SET YET\",\n  \"url\": \"to-kharab-kardi!golzar.mp3\",\n  \"artist\": \"golzar\",\n  \"isPaused\": true,\n  \"duration\": \"00:00:00\",\n  \"dateSongAddedToDataBase\": \"2025-08-27T17:14:51.696247\",\n  \"likedCount\": 0,\n  \"genres\": [],\n  \"artists\": [],\n  \"comments\": {}\n}\n,\n{\n  \"name\": \"i wanna be yours\",\n  \"icon\": \"ICON NOT SET YET!\",\n  \"QRCode\": \"QR Code NOT SET YET\",\n  \"lyrics\": \"LYRICS NOT SET YET\",\n  \"url\": \"i-wanna-be-yours!arctic-monkeys.mp3\",\n  \"artist\": \"arctic monkeys\",\n  \"isPaused\": true,\n  \"duration\": \"00:00:00\",\n  \"dateSongAddedToDataBase\": \"2025-08-27T17:14:51.696456\",\n  \"likedCount\": 0,\n  \"genres\": [],\n  \"artists\": [],\n  \"comments\": {}\n}\n,\n{\n  \"name\": \"fogholade\",\n  \"icon\": \"ICON NOT SET YET!\",\n  \"QRCode\": \"QR Code NOT SET YET\",\n  \"lyrics\": \"LYRICS NOT SET YET\",\n  \"url\": \"fogholade!sijal-jj.mp3\",\n  \"artist\": \"sijal jj\",\n  \"isPaused\": true,\n  \"duration\": \"00:00:00\",\n  \"dateSongAddedToDataBase\": \"2025-08-27T17:14:51.696639\",\n  \"likedCount\": 0,\n  \"genres\": [],\n  \"artists\": [],\n  \"comments\": {}\n}\n,\n{\n  \"name\": \"happir than ever\",\n  \"icon\": \"ICON NOT SET YET!\",\n  \"QRCode\": \"QR Code NOT SET YET\",\n  \"lyrics\": \"LYRICS NOT SET YET\",\n  \"url\": \"happir-than-ever!billie-eilish.mp3\",\n  \"artist\": \"billie eilish\",\n  \"isPaused\": true,\n  \"duration\": \"00:00:00\",\n  \"dateSongAddedToDataBase\": \"2025-08-27T17:14:51.696821\",\n  \"likedCount\": 0,\n  \"genres\": [],\n  \"artists\": [],\n  \"comments\": {}\n}\n]
+===================================================================
+diff --git a/src/com/lattestudio/musicplayer/db/musics.json b/src/com/lattestudio/musicplayer/db/musics.json
+--- a/src/com/lattestudio/musicplayer/db/musics.json	(revision 574869cc068c12c489f7f8ff8fb1fbcaca207bc3)
++++ b/src/com/lattestudio/musicplayer/db/musics.json	(date 1756314777834)
+@@ -8,7 +8,7 @@
+   "artist": "shayea",
+   "isPaused": true,
+   "duration": "00:00:00",
+-  "dateSongAddedToDataBase": "2025-08-27T17:14:51.695191",
++  "dateSongAddedToDataBase": "2025-08-27T20:12:57.825043",
+   "likedCount": 0,
+   "genres": [],
+   "artists": [],
+@@ -24,7 +24,7 @@
+   "artist": "googoosh",
+   "isPaused": true,
+   "duration": "00:00:00",
+-  "dateSongAddedToDataBase": "2025-08-27T17:14:51.695576",
++  "dateSongAddedToDataBase": "2025-08-27T20:12:57.831019",
+   "likedCount": 0,
+   "genres": [],
+   "artists": [],
+@@ -40,7 +40,7 @@
+   "artist": "heliyom",
+   "isPaused": true,
+   "duration": "00:00:00",
+-  "dateSongAddedToDataBase": "2025-08-27T17:14:51.695805",
++  "dateSongAddedToDataBase": "2025-08-27T20:12:57.831614",
+   "likedCount": 0,
+   "genres": [],
+   "artists": [],
+@@ -56,7 +56,7 @@
+   "artist": "ebi",
+   "isPaused": true,
+   "duration": "00:00:00",
+-  "dateSongAddedToDataBase": "2025-08-27T17:14:51.696024",
++  "dateSongAddedToDataBase": "2025-08-27T20:12:57.831964",
+   "likedCount": 0,
+   "genres": [],
+   "artists": [],
+@@ -72,7 +72,7 @@
+   "artist": "golzar",
+   "isPaused": true,
+   "duration": "00:00:00",
+-  "dateSongAddedToDataBase": "2025-08-27T17:14:51.696247",
++  "dateSongAddedToDataBase": "2025-08-27T20:12:57.832334",
+   "likedCount": 0,
+   "genres": [],
+   "artists": [],
+@@ -88,7 +88,7 @@
+   "artist": "arctic monkeys",
+   "isPaused": true,
+   "duration": "00:00:00",
+-  "dateSongAddedToDataBase": "2025-08-27T17:14:51.696456",
++  "dateSongAddedToDataBase": "2025-08-27T20:12:57.83266",
+   "likedCount": 0,
+   "genres": [],
+   "artists": [],
+@@ -104,7 +104,7 @@
+   "artist": "sijal jj",
+   "isPaused": true,
+   "duration": "00:00:00",
+-  "dateSongAddedToDataBase": "2025-08-27T17:14:51.696639",
++  "dateSongAddedToDataBase": "2025-08-27T20:12:57.833147",
+   "likedCount": 0,
+   "genres": [],
+   "artists": [],
+@@ -120,7 +120,7 @@
+   "artist": "billie eilish",
+   "isPaused": true,
+   "duration": "00:00:00",
+-  "dateSongAddedToDataBase": "2025-08-27T17:14:51.696821",
++  "dateSongAddedToDataBase": "2025-08-27T20:12:57.833741",
+   "likedCount": 0,
+   "genres": [],
+   "artists": [],
+Index: src/com/lattestudio/musicplayer/db/adminLog.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>2025-Aug-16 22:58:31 - [ADMIN ACTION]: Reloading users...\n2025-Aug-16 22:58:31 - [ADMIN ACTION]: Users reloaded: [admin, helia, aryamoein, iliya]\n2025-Aug-16 22:59:16 - [ADMIN ACTION]: Reloading users...\n2025-Aug-16 22:59:16 - [ADMIN ACTION]: Users reloaded: [admin, helia, aryamoein, iliya]\n2025-Aug-16 23:04:27 - [ADMIN ACTION]: Reloading users...\n2025-Aug-16 23:04:27 - [ADMIN ACTION]: Users reloaded: [admin, helia, aryamoein, iliya]\n2025-Aug-16 23:04:56 - [ADMIN ACTION]: Reloading users...\n2025-Aug-16 23:04:56 - [ADMIN ACTION]: Users reloaded: [admin, helia, aryamoein, iliya]\n2025-Aug-16 23:05:01 - [ADMIN ACTION]: Showing logs...\n2025-Aug-16 23:05:11 - [ADMIN ACTION]: Pinged server at 127.0.0.1:9090\n2025-Aug-16 23:05:14 - [ADMIN ACTION]: Songs: [e.mp3, to_kharab_kardi_golzar.mp3]\n2025-Aug-16 23:14:23 - [ADMIN ACTION]: Pinged server at 127.0.0.1:9090\nServer is Online and working properly\n2025-Aug-16 23:27:48 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:28:32 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:28:54 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:30:25 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:30:52 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:32:01 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:32:47 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:32:57 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:33:21 - [ADMIN ACTION]: Reloading users...\n2025-Aug-16 23:33:21 - [ADMIN ACTION]: Users reloaded: [admin, helia, aryamoein, iliya]\n2025-Aug-16 23:33:50 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:36:16 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:36:26 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:36:44 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:37:21 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:37:38 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:37:46 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:38:01 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:38:07 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:38:48 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:39:00 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:41:59 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:44:25 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:48:50 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:52:25 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:52:42 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:54:01 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:54:23 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-16 23:54:44 - [ADMIN ACTION]: Resetting server...\n2025-Aug-16 23:54:45 - [ADMIN ACTION]: Reloading users...\n2025-Aug-16 23:54:45 - [ADMIN ACTION]: Users reloaded: [admin, helia, aryamoein, iliya]\n2025-Aug-17 00:11:55 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 00:12:02 - [ADMIN ACTION]: Reloading users...\n2025-Aug-17 00:12:02 - [ADMIN ACTION]: Users reloaded: [admin, helia, aryamoein, iliya]\n2025-Aug-17 00:13:18 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 00:18:04 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 00:18:56 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 00:21:10 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 00:31:13 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 00:40:18 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 00:42:00 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 00:43:37 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 00:43:51 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 00:44:22 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 00:48:40 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 00:49:37 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 00:52:09 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 16:03:43 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 16:04:46 - [ADMIN ACTION]: Songs reloaded.\n2025-Aug-17 16:04:47 - [ADMIN ACTION]: Songs reloaded.\n2025-Aug-17 16:05:30 - [ADMIN ACTION]: Users reloaded.\n2025-Aug-17 16:05:31 - [ADMIN ACTION]: Users reloaded.\n2025-Aug-17 16:12:21 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 16:18:27 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 16:19:03 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 16:23:34 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 16:28:39 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 16:34:19 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 16:37:17 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 16:40:30 - [ADMIN ACTION]: Users reloaded.\n2025-Aug-17 16:40:37 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 16:40:44 - [ADMIN ACTION]: Reloading users...\n2025-Aug-17 16:40:44 - [ADMIN ACTION]: Users reloaded: [admin, helia, aryamoein, iliya, bardia]\n2025-Aug-17 16:42:49 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 16:43:05 - [ADMIN ACTION]: Server is online.\n2025-Aug-17 16:44:19 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 16:46:22 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 16:46:33 - [ADMIN ACTION]: ALL USERS WERE DELETED!\n2025-Aug-17 16:46:49 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 16:49:16 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 17:01:01 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 17:01:17 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 17:01:30 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 17:12:12 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 17:12:35 - [ADMIN ACTION]: Reloading users...\n2025-Aug-17 17:12:35 - [ADMIN ACTION]: Users reloaded: [admin, helia, iliya, bardia]\n2025-Aug-17 17:14:55 - [ADMIN ACTION]: Server is online.\n2025-Aug-17 17:16:35 - [ADMIN ACTION]: Reloading users...\n2025-Aug-17 17:16:35 - [ADMIN ACTION]: Users reloaded: [admin, iliya, helia]\n2025-Aug-17 17:16:49 - [ADMIN ACTION]: Users Loaded:[]\n2025-Aug-17 17:16:49 - [ADMIN ACTION]: ALL USERS WERE DELETED!\n2025-Aug-17 17:17:44 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 17:17:59 - [ADMIN ACTION]: Server is online.\n2025-Aug-17 17:18:13 - [ADMIN ACTION]: Songs reloaded.\n2025-Aug-17 17:33:25 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 17:33:26 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 17:34:57 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 18:06:38 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 18:15:43 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 18:16:00 - [ADMIN ACTION]: Server is online.\n2025-Aug-17 18:16:03 - [ADMIN ACTION]: Songs reloaded.\n2025-Aug-17 18:16:06 - [ADMIN ACTION]: Reloading users...\n2025-Aug-17 18:16:06 - [ADMIN ACTION]: Users reloaded: [admin, helia, bardia]\n2025-Aug-17 18:19:25 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 18:22:39 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 18:25:19 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 20:11:19 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-17 20:15:47 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-18 16:56:36 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-18 17:57:28 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-18 17:59:38 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-18 18:34:25 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-18 18:35:32 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-18 18:36:57 - [ADMIN ACTION]: SONGS : [com.lattestudio.musicplayer.model.Music@c842d5d1, com.lattestudio.musicplayer.model.Music@e5c658b4, com.lattestudio.musicplayer.model.Music@53216030, com.lattestudio.musicplayer.model.Music@89c63105, com.lattestudio.musicplayer.model.Music@fd2125b6, com.lattestudio.musicplayer.model.Music@e7d278ee, com.lattestudio.musicplayer.model.Music@96af0820]\n2025-Aug-18 18:36:57 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-18 18:37:28 - [ADMIN ACTION]: SONGS : [Music{name='ahlenaaahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikarkardibadelamwy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setarehayesorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='tokharabkardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='iwannabeyours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arcticmonkeys'}, Music{name='happirthanever', url='happir-than-ever!billie-eilish.mp3', artist='billieeilish'}]\n2025-Aug-18 18:37:28 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-18 18:38:07 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-18 18:38:07 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-18 18:45:24 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-18 18:45:24 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-18 18:54:23 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-18 18:54:23 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-19 04:04:09 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-19 04:04:09 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-19 13:54:40 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-19 13:54:40 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-19 14:07:41 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-19 14:07:41 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-19 14:08:31 - [ADMIN ACTION]: Reloading users...\n2025-Aug-19 14:08:31 - [ADMIN ACTION]: Users reloaded: [admin, helia, a, ParhamAkaza]\n2025-Aug-20 13:24:07 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-20 13:24:07 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-20 15:36:06 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-20 15:36:06 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-20 18:44:59 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-20 18:44:59 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-23 11:39:45 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-23 11:39:45 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-24 09:29:45 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-24 09:29:45 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-24 10:51:45 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-24 10:51:45 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-24 11:14:07 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-24 11:14:07 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-25 10:41:23 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-25 10:41:23 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-25 16:27:45 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-25 16:27:46 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-25 16:38:55 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-25 16:38:55 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-25 16:39:58 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-25 16:39:58 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-25 17:56:25 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-25 17:56:25 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 13:08:14 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 13:08:14 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 14:23:47 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 14:23:47 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 14:24:02 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 14:24:02 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 14:27:54 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 14:27:54 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 14:34:33 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 14:34:33 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 14:35:15 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 14:35:15 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 14:36:09 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 14:36:09 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 14:36:23 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 14:36:23 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 14:36:36 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 14:36:36 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 14:36:49 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 14:36:49 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 14:37:08 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 14:37:08 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 14:37:26 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 14:37:26 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 15:03:29 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 15:03:29 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 15:04:35 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 15:04:35 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 15:05:14 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 15:05:14 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 15:05:51 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 15:05:51 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 15:14:33 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 15:14:33 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 15:14:47 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 15:14:47 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 15:14:54 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 15:14:54 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 15:15:24 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 15:15:24 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 15:15:56 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 15:15:56 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 15:16:18 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 15:16:18 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 15:57:20 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 15:57:20 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 15:58:07 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 15:58:07 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 16:00:16 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 16:00:16 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 16:01:17 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 16:01:17 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 16:01:46 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 16:01:46 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 16:03:01 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 16:03:01 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 16:03:48 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 16:03:48 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 16:06:15 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 16:06:15 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 16:07:32 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 16:07:32 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 16:08:56 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 16:08:56 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 16:10:58 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 16:10:58 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 16:12:03 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 16:12:03 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 16:57:41 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 16:57:41 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 16:57:55 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 16:57:55 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 16:58:35 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 16:58:36 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 16:58:43 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 16:58:43 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 16:59:49 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 16:59:49 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-26 17:01:54 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-26 17:01:54 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 01:29:11 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 01:29:12 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 01:33:58 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 01:33:59 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 01:46:00 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 01:46:00 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 01:49:16 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 01:49:16 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 03:02:13 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 03:02:13 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 03:07:59 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 03:07:59 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 03:09:17 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 03:09:18 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 03:10:40 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 03:10:40 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 03:12:29 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 03:12:30 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 03:14:42 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 03:14:42 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 03:18:41 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 03:18:41 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 03:19:41 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 03:19:41 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 03:20:21 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 03:20:21 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 03:21:29 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 03:21:29 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 03:21:42 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 03:21:42 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 03:22:24 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 03:22:24 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 06:49:59 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 06:49:59 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 06:50:51 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 06:50:51 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 07:03:29 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 07:03:29 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 07:04:29 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 07:04:29 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 07:07:25 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 07:07:25 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 07:41:39 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 07:41:39 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 07:42:17 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 07:42:17 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 07:42:51 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 07:42:51 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 07:45:54 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 07:45:54 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 08:12:27 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 08:12:27 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 08:18:52 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 08:18:52 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 08:34:52 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='fogholade', url='fogholade!sijal-jj.mp3', artist='sijal jj'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 08:34:52 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 08:49:50 - [ADMIN ACTION]: Reloading users...\n2025-Aug-27 08:49:50 - [ADMIN ACTION]: Users reloaded: [admin, helia]\n2025-Aug-27 09:02:56 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='fogholade', url='fogholade!sijal-jj.mp3', artist='sijal jj'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 09:02:56 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 09:03:44 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='fogholade', url='fogholade!sijal-jj.mp3', artist='sijal jj'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 09:03:44 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 16:49:42 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='fogholade', url='fogholade!sijal-jj.mp3', artist='sijal jj'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 16:49:42 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n2025-Aug-27 17:06:01 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='fogholade', url='fogholade!sijal-jj.mp3', artist='sijal jj'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]\n2025-Aug-27 17:06:01 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...\n
+===================================================================
+diff --git a/src/com/lattestudio/musicplayer/db/adminLog.txt b/src/com/lattestudio/musicplayer/db/adminLog.txt
+--- a/src/com/lattestudio/musicplayer/db/adminLog.txt	(revision 574869cc068c12c489f7f8ff8fb1fbcaca207bc3)
++++ b/src/com/lattestudio/musicplayer/db/adminLog.txt	(date 1756313970136)
+@@ -302,3 +302,7 @@
+ 2025-Aug-27 16:49:42 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...
+ 2025-Aug-27 17:06:01 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='fogholade', url='fogholade!sijal-jj.mp3', artist='sijal jj'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]
+ 2025-Aug-27 17:06:01 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...
++2025-Aug-27 19:56:19 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='fogholade', url='fogholade!sijal-jj.mp3', artist='sijal jj'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]
++2025-Aug-27 19:56:19 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...
++2025-Aug-27 19:59:30 - [ADMIN ACTION]: SONGS : [Music{name='ahle naa ahli', url='ahle-naa-ahli!shayea.mp3', artist='shayea'}, Music{name='mordab', url='mordab!googoosh.mp3', artist='googoosh'}, Music{name='chikar kardi ba delam wy', url='chikar-kardi-ba-delam-wy!heliyom.mp3', artist='heliyom'}, Music{name='setare haye sorbi', url='setare-haye-sorbi!ebi.mp3', artist='ebi'}, Music{name='to kharab kardi', url='to-kharab-kardi!golzar.mp3', artist='golzar'}, Music{name='i wanna be yours', url='i-wanna-be-yours!arctic-monkeys.mp3', artist='arctic monkeys'}, Music{name='fogholade', url='fogholade!sijal-jj.mp3', artist='sijal jj'}, Music{name='happir than ever', url='happir-than-ever!billie-eilish.mp3', artist='billie eilish'}]
++2025-Aug-27 19:59:30 - [ADMIN ACTION]: ADMINISTRATOR PANEL IS STARTING:...
