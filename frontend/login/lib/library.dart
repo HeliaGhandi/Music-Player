@@ -8,29 +8,33 @@ import 'package:login/music-bar.dart';
 import 'package:login/content-display.dart';
 import 'package:login/main.dart';
 import 'package:login/content-display.dart';
+import 'package:login/music.dart';
+import 'package:login/musics.dart';
 
-class Library extends StatefulWidget {
+class LibraryScreen extends StatefulWidget {
   void Function() changeToBrowse;
   void Function() changeToHome;
   void Function() changeToMusicScreen;
   void Function() changeToLibrary;
+  void Function(PlayList) changeToPLayListScreen;
 
   late bool? isDark;
-  Library({
+  LibraryScreen({
     this.isDark,
     required this.changeToBrowse,
-    required this.changeToLibrary , 
+    required this.changeToLibrary,
     required this.changeToHome,
     required this.changeToMusicScreen,
+    required this.changeToPLayListScreen,
     super.key,
   });
 
-  State<Library> createState() {
-    return _LibraryState();
+  State<LibraryScreen> createState() {
+    return _LibraryScreenState();
   }
 }
 
-class _LibraryState extends State<Library> {
+class _LibraryScreenState extends State<LibraryScreen> {
   @override
   Widget build(BuildContext context) {
     double madeForYouSpace = 20;
@@ -72,9 +76,32 @@ class _LibraryState extends State<Library> {
               SizedBox(height: 40),
               Column(
                 children: [
-                  LibraryCard(playlistName: "aa"),
+                  LibraryCard(
+                    changeToPlayListScreen: widget.changeToPLayListScreen,
+                    playList: PlayList(
+                      libraryName: "All Server Songs",
+                      numberOfMusics: Musics.musics.length,
+                      content: Musics.musics,
+                    ),
+                  ),
                   SizedBox(height: 10),
-                  LibraryCard(playlistName: "lilk"),
+                  LibraryCard(
+                    changeToPlayListScreen: widget.changeToPLayListScreen,
+                    playList: PlayList(
+                      libraryName: "Liked Songs",
+                      numberOfMusics: Musics.likedSongs.length,
+                      content: Musics.likedSongs,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  LibraryCard(
+                    changeToPlayListScreen: widget.changeToPLayListScreen,
+                    playList: PlayList(
+                      libraryName: "Shared With You",
+                      numberOfMusics: Musics.sharedSongs.length,
+                      content: Musics.sharedSongs,
+                    ),
+                  ),
                 ],
               ),
               SizedBox(height: 40),
@@ -115,72 +142,92 @@ class _LibraryState extends State<Library> {
 //   }
 // }
 class LibraryCard extends StatelessWidget {
-  String playlistName;
-  LibraryCard({required this.playlistName});
+  PlayList playList;
+  void Function(PlayList) changeToPlayListScreen;
+  LibraryCard({required this.playList, required this.changeToPlayListScreen});
 
   @override
   Widget build(BuildContext context) {
     double? deviceWidth = MediaQuery.of(context).size.width;
     double? deviceHeight = MediaQuery.of(context).size.height;
 
-    return SizedBox(
-      width: deviceWidth - 20,
-      height: 100,
+    return GestureDetector(
+      onTap: () {
+        changeToPlayListScreen(playList);
+      },
+      child: SizedBox(
+        width: deviceWidth - 20,
+        height: 100,
 
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(25),
-          color:
-              UserInfo.isDark
-                  ? darkTheme.primaryColor
-                  : const Color.fromRGBO(19, 75, 147, 1),
-        ),
-        child: Column(
-          children: [
-            SizedBox(height: 14.5),
-            Row(
-              children: [
-                SizedBox(width: 20),
-                Container(
-                  width: 70,
-                  height: 70,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    color: Colors.grey,
-                    image: DecorationImage(
-                      image: AssetImage("assets/covers/am.jpg"),
-                      fit: BoxFit.cover,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25),
+            color:
+                UserInfo.isDark
+                    ? darkTheme.primaryColor
+                    : const Color.fromRGBO(19, 75, 147, 1),
+          ),
+          child: Column(
+            children: [
+              SizedBox(height: 14.5),
+              Row(
+                children: [
+                  SizedBox(width: 20),
+                  Container(
+                    width: 70,
+                    height: 70,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.rectangle,
+                      color: Colors.grey,
+                      image: DecorationImage(
+                        image: AssetImage("assets/covers/am.jpg"),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(width: 12),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      playlistName,
-                      style: GoogleFonts.lato(
-                        fontSize: 24,
-                        decoration: TextDecoration.none,
-                        color: Colors.white,
+                  SizedBox(width: 12),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        playList.libraryName,
+                        style: GoogleFonts.lato(
+                          fontSize: 24,
+                          decoration: TextDecoration.none,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    Text(
-                      "26 songs",
-                      style: GoogleFonts.lato(
-                        fontSize: 14,
-                        decoration: TextDecoration.none,
-                        color: const Color.fromRGBO(158, 227, 245, 1),
+                      Text(
+                        playList.numberOfMusics.toString() + " songs",
+                        style: GoogleFonts.lato(
+                          fontSize: 14,
+                          decoration: TextDecoration.none,
+                          color:
+                              UserInfo.isDark
+                                  ? const Color.fromARGB(255, 8, 0, 255)
+                                  : const Color.fromRGBO(158, 227, 245, 1),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ],
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
+}
+
+class PlayList {
+  String libraryName;
+  int numberOfMusics;
+  List<Music> content;
+  PlayList({
+    required this.libraryName,
+    required this.numberOfMusics,
+    required this.content,
+  });
 }

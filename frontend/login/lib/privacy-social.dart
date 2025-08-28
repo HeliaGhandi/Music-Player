@@ -4,6 +4,7 @@ import 'package:login/content-display.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:math';
 import 'package:login/json-handler.dart';
+
 class PrivacySocial extends StatefulWidget {
   void Function() changeToSetting;
   PrivacySocial({required this.changeToSetting});
@@ -114,24 +115,23 @@ class _PrivacySocialState extends State<PrivacySocial> {
                           //focusColor: Colors.greenAccent,
                           //activeColor: const Color.fromARGB(255, 0, 255, 8),
                           value: UserInfo.isPrivate,
-                          onChanged: (bool) async {
-                            setState(()async {
+                          onChanged: (bool) {
+                            setState(() {
                               UserInfo.isPrivate = !UserInfo.isPrivate;
+                            });
+                            setState(() async {
                               Map<String, String> request = {
-                          "command": "PRIVATE_ACCOUNT",
-                          "username" : UserInfo.username,
-                          "makePrivate" : (!UserInfo.isPrivate? "true" : "false") ,
-                         
-                        };
-                        // یک نمونه از JsonHandler ایجاد کرده و متد sendTestRequest را فراخوانی می‌کنیم
-                        // و منتظر پاسخ آن می‌مانیم.
-                         Map<String, dynamic> response =
-                            await JsonHandler(
-                              json: request,
-                            ).sendTestRequest(); // <--- تغییر اصلی
-                        print(
-                          'Server Response: $response',
-                        ); 
+                                "command": "PRIVATE_ACCOUNT",
+                                "username": UserInfo.username,
+                                "makePrivate":
+                                    (UserInfo.isPrivate ? "true" : "false"),
+                              };
+                             
+                              Map<String, dynamic> response =
+                                  await JsonHandler(
+                                    json: request,
+                                  ).sendTestRequest(); 
+                              print('Server Response: $response');
                             });
                           },
                         ),

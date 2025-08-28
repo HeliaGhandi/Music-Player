@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:login/music.dart';
 import 'package:login/playlist-music-bar.dart';
 import 'package:login/recents-musics-button.dart';
 import 'package:login/made-for-you-musics-button.dart';
@@ -9,16 +10,20 @@ import 'package:login/music-bar.dart';
 import 'package:login/content-display.dart';
 import 'package:login/main.dart';
 import 'package:login/content-display.dart';
+import 'package:login/library.dart';
 
-class Playlist extends StatefulWidget {
+class PlaylistScreen extends StatefulWidget {
+  PlayList playList;
+  void Function() backToLibrary;
+  PlaylistScreen({required this.playList, required this.backToLibrary});
   @override
-  State<Playlist> createState() {
+  State<PlaylistScreen> createState() {
     // TODO: implement createState
-    return _PlaylistState();
+    return _PlaylistScreenState();
   }
 }
 
-class _PlaylistState extends State<Playlist> {
+class _PlaylistScreenState extends State<PlaylistScreen> {
   @override
   Widget build(BuildContext context) {
     double? deviceWidth = MediaQuery.of(context).size.width;
@@ -56,7 +61,9 @@ class _PlaylistState extends State<Playlist> {
                       splashFactory: NoSplash.splashFactory,
                       foregroundColor: Colors.white,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      widget.backToLibrary();
+                    },
                     child: Icon(
                       Icons.arrow_back_ios,
                       size: 30,
@@ -89,9 +96,10 @@ class _PlaylistState extends State<Playlist> {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 18),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "playlist name",
+                      widget.playList.libraryName,
                       style: GoogleFonts.lato(
                         fontSize: 25,
                         color:
@@ -102,39 +110,44 @@ class _PlaylistState extends State<Playlist> {
                         decoration: TextDecoration.none,
                       ),
                     ),
-                    SizedBox(width: 145),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Icon(
-                        Icons.filter_list_alt,
-                        color:
-                            UserInfo.isDark
-                                ? darkTheme.primaryColor
-                                : const Color.fromRGBO(11, 2, 175, 1),
-                      ),
-                    ),
-                    SizedBox(width: 4),
-                    GestureDetector(
-                      child: Image.asset(
-                        "assets/icons/shuffle.png",
-                        width: 23,
-                        height: 23,
 
-                        color:
-                            UserInfo.isDark
-                                ? darkTheme.primaryColor
-                                : const Color.fromRGBO(11, 2, 175, 1),
-                      ),
-                    ),
-                    SizedBox(width: 4),
-                    GestureDetector(
-                      child: Icon(
-                        Icons.favorite_outline_outlined,
-                        color:
-                            UserInfo.isDark
-                                ? darkTheme.primaryColor
-                                : const Color.fromRGBO(11, 2, 175, 1),
-                      ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        GestureDetector(
+                          onTap: () {},
+                          child: Icon(
+                            Icons.filter_list_alt,
+                            color:
+                                UserInfo.isDark
+                                    ? darkTheme.primaryColor
+                                    : const Color.fromRGBO(11, 2, 175, 1),
+                          ),
+                        ),
+                        SizedBox(width: 4),
+                        GestureDetector(
+                          child: Image.asset(
+                            "assets/icons/shuffle.png",
+                            width: 23,
+                            height: 23,
+
+                            color:
+                                UserInfo.isDark
+                                    ? darkTheme.primaryColor
+                                    : const Color.fromRGBO(11, 2, 175, 1),
+                          ),
+                        ),
+                        SizedBox(width: 4),
+                        GestureDetector(
+                          child: Icon(
+                            Icons.favorite_outline_outlined,
+                            color:
+                                UserInfo.isDark
+                                    ? darkTheme.primaryColor
+                                    : const Color.fromRGBO(11, 2, 175, 1),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -142,10 +155,20 @@ class _PlaylistState extends State<Playlist> {
 
               SizedBox(height: 20),
 
-              // Divider(thickness: 2),
-              PlaylistMusicBar(),
-              SizedBox(height: 0.8),
-              PlaylistMusicBar(),
+              SizedBox(
+                height: deviceHeight - 500,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ...widget.playList.content.map((music) {
+                        return PlaylistMusicBar(music: music);
+                      }),
+                    ],
+                  ),
+                ),
+              ),
+
+              // PlaylistMusicBar(music: Music(name: "yoohoo", singer: "yoohoo")),
             ],
           ),
         ],

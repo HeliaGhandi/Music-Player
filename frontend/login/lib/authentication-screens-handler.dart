@@ -13,6 +13,7 @@ import 'package:login/direct.dart';
 import 'package:login/home-screen.dart';
 import 'package:login/library.dart';
 import 'package:login/main.dart';
+import 'package:login/playlist.dart';
 import 'package:login/privacy-social.dart';
 import 'package:login/profile.dart';
 import 'package:login/reset-password.dart';
@@ -183,11 +184,21 @@ class _AuthenticationScreenHandlerState
 
   void changeToLibrary() {
     setState(() {
-      widget.activeScreen = Library(
+      widget.activeScreen = LibraryScreen(
         changeToLibrary: changeToLibrary,
         changeToBrowse: changeScreenToBrowse,
         changeToHome: changeScreenToHome,
         changeToMusicScreen: changeScreenToMusicScreen,
+        changeToPLayListScreen: changeToPlayListScreen,
+      );
+    });
+  }
+
+  void changeToPlayListScreen(PlayList playlist) {
+    setState(() {
+      widget.activeScreen = PlaylistScreen(
+        backToLibrary: changeToLibrary,
+        playList: playlist
       );
     });
   }
