@@ -13738,3 +13738,2739 @@ Successfully changed their password to : HEliiii23@
   "success": true,
   "message": "[ahle-naa-ahli!shayea.mp3]"
 }
+2025-Aug-28 12:25:26 - [SERVER]: USERS RESTORED : 
+2025-Aug-28 12:25:26 - [SERVER]: USERNAMES RESTORED : [admin, a]
+2025-Aug-28 12:25:26 - [SERVER]: EMAILS RESTORED :[admin@admin.com, heliaghandi85@gmail.com]
+2025-Aug-28 12:25:26 - [SERVER]: SONG NAMES RESTORED : [ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]
+2025-Aug-28 12:25:26 - [SERVER]: Music Server is running on :127.0.0.1:9090
+2025-Aug-28 12:42:03 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:42:03 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:42:03 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:42:08 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:42:08 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 12:42:08 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 12:42:08 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:42:08 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 12:42:08 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 12:42:08 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:42:08 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 12:42:08 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:42:08 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:42:08 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 12:42:08 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:45:45 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:45:45 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:45:45 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:45:45 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:45:45 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:45:45 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:45:45 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:45:45 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:45:45 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:45:45 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:45:46 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:45:46 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:46:29 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:46:29 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:46:29 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:46:29 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:46:29 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:46:29 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:46:29 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:46:29 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:46:29 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:46:29 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:46:29 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:48:15 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:48:15 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 12:48:15 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 12:48:15 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:48:15 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 12:48:15 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 12:48:15 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:48:15 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 12:48:15 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:48:15 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:48:15 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 12:48:15 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:48:20 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:48:20 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 12:48:20 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to false"
+}
+2025-Aug-28 12:50:42 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:50:42 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:50:42 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:50:42 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:50:42 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:50:42 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:50:42 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:50:42 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:50:42 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:50:42 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:50:43 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:50:43 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:50:48 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:50:48 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 12:50:48 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 12:50:48 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:50:48 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 12:50:48 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 12:50:48 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:50:48 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 12:50:48 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:50:48 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:50:48 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 12:50:48 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:51:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:51:49 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:51:49 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:51:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:51:49 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:51:49 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:51:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:51:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:51:49 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:51:49 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:51:49 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:51:49 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:51:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:51:54 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 12:51:54 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 12:51:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:51:54 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 12:51:54 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 12:51:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:51:54 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 12:51:54 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:51:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:51:54 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 12:51:54 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:52:00 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:00 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 12:52:00 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to false"
+}
+2025-Aug-28 12:52:00 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:00 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:52:00 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to true"
+}
+2025-Aug-28 12:52:07 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:07 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 12:52:07 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to false"
+}
+2025-Aug-28 12:52:23 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:23 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:52:23 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:52:23 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:23 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:52:23 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:52:23 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:23 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:23 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:52:23 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:52:23 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:52:29 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:29 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:52:29 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:52:29 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:29 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:52:29 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:52:29 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:29 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:29 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:52:29 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:52:29 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:52:29 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:52:33 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:33 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 12:52:33 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 12:52:33 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:33 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 12:52:33 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 12:52:33 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:33 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 12:52:33 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:52:33 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:33 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 12:52:33 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:52:37 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:37 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 12:52:37 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to false"
+}
+2025-Aug-28 12:52:38 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:38 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:52:38 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to true"
+}
+2025-Aug-28 12:52:41 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:41 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 12:52:41 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to false"
+}
+2025-Aug-28 12:52:42 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:42 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:52:42 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to true"
+}
+2025-Aug-28 12:52:43 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:43 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 12:52:43 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to false"
+}
+2025-Aug-28 12:52:43 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:43 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:52:43 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to true"
+}
+2025-Aug-28 12:52:44 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:44 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 12:52:44 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to false"
+}
+2025-Aug-28 12:52:44 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:44 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:52:44 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to true"
+}
+2025-Aug-28 12:52:45 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:45 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 12:52:45 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to false"
+}
+2025-Aug-28 12:52:45 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:45 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:52:45 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to true"
+}
+2025-Aug-28 12:52:46 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:46 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 12:52:46 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to false"
+}
+2025-Aug-28 12:52:46 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:52:46 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:52:46 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:aSuccessfully changed their privacy status to true"
+}
+2025-Aug-28 12:53:29 - [SERVER]: USERS RESTORED : 
+2025-Aug-28 12:53:29 - [SERVER]: USERNAMES RESTORED : [admin, a]
+2025-Aug-28 12:53:29 - [SERVER]: EMAILS RESTORED :[admin@admin.com, heliaghandi85@gmail.com]
+2025-Aug-28 12:53:29 - [SERVER]: SONG NAMES RESTORED : [ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]
+2025-Aug-28 12:53:29 - [SERVER]: Music Server is running on :127.0.0.1:9090
+2025-Aug-28 12:53:29 - [SERVER]: USERS RESTORED : 
+2025-Aug-28 12:53:29 - [SERVER]: USERNAMES RESTORED : [admin, a]
+2025-Aug-28 12:53:29 - [SERVER]: EMAILS RESTORED :[admin@admin.com, heliaghandi85@gmail.com]
+2025-Aug-28 12:53:29 - [SERVER]: SONG NAMES RESTORED : [ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]
+2025-Aug-28 12:53:29 - [SERVER]: IO EXCEPTION ON CREATING SERVER SOCKET
+2025-Aug-28 12:53:29 - [SERVER]: YOU ARE COOKED!
+2025-Aug-28 12:53:36 - [SERVER]: USERS RESTORED : 
+2025-Aug-28 12:53:36 - [SERVER]: USERNAMES RESTORED : [admin, a]
+2025-Aug-28 12:53:36 - [SERVER]: EMAILS RESTORED :[admin@admin.com, heliaghandi85@gmail.com]
+2025-Aug-28 12:53:36 - [SERVER]: SONG NAMES RESTORED : [ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]
+2025-Aug-28 12:53:36 - [SERVER]: Music Server is running on :127.0.0.1:9090
+2025-Aug-28 12:55:02 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:02 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:55:02 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:55:02 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:02 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:55:02 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:55:02 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:02 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:02 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:55:02 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:55:02 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:55:07 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:07 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 12:55:07 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 12:55:07 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:07 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 12:55:07 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 12:55:07 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:07 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 12:55:07 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:55:07 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:07 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 12:55:07 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:55:11 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:11 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:55:11 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to true"
+}
+2025-Aug-28 12:55:11 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:11 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:55:11 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to true"
+}
+2025-Aug-28 12:55:12 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:12 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:55:12 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to true"
+}
+2025-Aug-28 12:55:15 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:15 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:55:15 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to true"
+}
+2025-Aug-28 12:55:15 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:15 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:55:15 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to true"
+}
+2025-Aug-28 12:55:16 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:16 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:55:16 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to true"
+}
+2025-Aug-28 12:55:16 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:16 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:55:16 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to true"
+}
+2025-Aug-28 12:55:17 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:55:17 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:55:17 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to true"
+}
+2025-Aug-28 12:58:15 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:58:15 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:58:15 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:58:15 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:58:15 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:58:15 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:58:15 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:58:15 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:58:15 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:58:16 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:58:16 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:58:16 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:58:21 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:58:21 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 12:58:21 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 12:58:21 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:58:21 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 12:58:21 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 12:58:21 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:58:21 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 12:58:21 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:58:21 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:58:21 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 12:58:21 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:58:57 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:58:57 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:58:57 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:58:57 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:58:57 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:58:57 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:58:57 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:58:57 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:58:57 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:58:57 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:58:57 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:58:57 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:59:02 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:02 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 12:59:02 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 12:59:02 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:02 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 12:59:02 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 12:59:02 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:02 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 12:59:02 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:59:02 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:02 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 12:59:02 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:59:06 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:06 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 12:59:06 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to false"
+}
+2025-Aug-28 12:59:10 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:10 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:59:10 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to true"
+}
+2025-Aug-28 12:59:11 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:11 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 12:59:11 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to false"
+}
+2025-Aug-28 12:59:12 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:12 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:59:12 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to true"
+}
+2025-Aug-28 12:59:13 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:13 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 12:59:13 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to false"
+}
+2025-Aug-28 12:59:14 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:14 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:59:14 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to true"
+}
+2025-Aug-28 12:59:14 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:14 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 12:59:14 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to false"
+}
+2025-Aug-28 12:59:15 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:15 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:59:15 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to true"
+}
+2025-Aug-28 12:59:39 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:39 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:59:39 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:59:39 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:39 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 12:59:39 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 12:59:39 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:39 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:39 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:59:39 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:59:39 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 12:59:39 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 12:59:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:49 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 12:59:49 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 12:59:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:49 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 12:59:49 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 12:59:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:49 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 12:59:49 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:59:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:49 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 12:59:49 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 12:59:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 12:59:54 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 12:59:54 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to true"
+}
+2025-Aug-28 13:00:03 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:00:03 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:00:03 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:00:03 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:00:03 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:00:03 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:00:03 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:00:03 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:00:03 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:00:03 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:00:03 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:00:03 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:00:08 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:00:08 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 13:00:08 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to false"
+}
+2025-Aug-28 13:00:16 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:00:16 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:00:16 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:00:16 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:00:16 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:00:16 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:00:16 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:00:16 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:00:16 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:00:16 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:00:16 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:00:16 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:01:47 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:01:47 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:01:47 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:01:47 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:01:47 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:01:47 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:01:47 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:01:47 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:01:47 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:01:47 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:01:47 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:01:47 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:01:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:01:54 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 13:01:54 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to true"
+}
+2025-Aug-28 13:02:03 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:02:03 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:02:03 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:02:03 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:02:03 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:02:03 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:02:03 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:02:03 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:02:03 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:02:03 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:02:03 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:02:03 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:02:07 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:02:07 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 13:02:07 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to false"
+}
+2025-Aug-28 13:02:13 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:02:13 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:02:13 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:02:13 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:02:13 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:02:13 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:02:13 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:02:13 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:02:13 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:02:13 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:02:13 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:02:13 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:11:22 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:11:22 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:11:22 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:11:22 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:11:22 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:11:22 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:11:22 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:11:22 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:11:22 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:11:22 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:11:22 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:11:22 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:11:28 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:11:28 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:11:28 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:11:28 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:11:28 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:11:28 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:11:28 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:11:28 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:11:28 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:11:28 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:11:28 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:11:28 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:13:42 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:13:42 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:13:42 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:13:42 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:13:42 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:13:42 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:13:42 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:13:42 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:13:42 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:13:42 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:13:42 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:13:42 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:13:50 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:13:50 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:13:50 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:13:50 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:13:50 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:13:50 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:13:50 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:13:50 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:13:50 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:13:50 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:13:50 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:13:50 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:16:13 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:16:13 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:16:13 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:16:13 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:16:13 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:16:13 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:16:13 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:16:13 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:16:13 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:16:13 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:16:13 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:16:13 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:16:20 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:16:20 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:16:20 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:16:20 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:16:20 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:16:20 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:16:20 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:16:20 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:16:20 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:16:20 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:16:20 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:16:20 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:19:09 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:09 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:09 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:19:09 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:19:09 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:19:09 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:19:09 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:09 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:09 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:19:09 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:19:09 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:19:09 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:19:14 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:14 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:19:14 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:19:14 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:14 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:19:14 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:19:14 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:14 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:19:14 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:19:14 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:14 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:19:14 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:19:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:49 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:19:49 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:19:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:49 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:19:49 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:19:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:49 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:19:49 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:19:49 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:19:49 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:19:55 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:55 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:19:55 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:19:55 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:55 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:19:55 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:19:55 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:55 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:19:55 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:19:55 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:19:55 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:19:55 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:20:17 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:20:17 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"true"}
+2025-Aug-28 13:20:17 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to true"
+}
+2025-Aug-28 13:20:17 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:20:17 - [SERVER]: JSON RECEIVED:
+{"command":"PRIVATE_ACCOUNT","username":"a","makePrivate":"false"}
+2025-Aug-28 13:20:17 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "USER:a Successfully changed their privacy status to false"
+}
+2025-Aug-28 13:20:53 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:20:53 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:20:53 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:20:53 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:20:53 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:20:53 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:20:53 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:20:53 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:20:53 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:20:53 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:20:53 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:20:53 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:20:58 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:20:58 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:20:58 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:20:58 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:20:58 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:20:58 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:20:58 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:20:58 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:20:58 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:20:58 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:20:58 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:20:58 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:21:37 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:21:37 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:21:37 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:21:37 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:21:37 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:21:37 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:21:37 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:21:37 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:21:37 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:21:37 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:21:37 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:21:37 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:21:41 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:21:41 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:21:41 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:21:41 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:21:41 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:21:41 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:21:41 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:21:41 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:21:41 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:21:41 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:21:41 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:21:41 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:34:12 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:34:12 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:34:12 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:34:12 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:34:12 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:34:12 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:34:12 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:34:12 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:34:12 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:34:12 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:34:12 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:34:12 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:34:22 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:34:22 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:34:22 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:34:22 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:34:22 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:34:22 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:34:22 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:34:22 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:34:22 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:34:22 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:34:22 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:34:22 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:36:12 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:36:12 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:36:12 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:36:12 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:36:12 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:36:12 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:36:12 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:36:12 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:36:12 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:36:12 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:36:12 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:36:12 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:36:19 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:36:19 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:36:19 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:36:19 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:36:19 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:36:19 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:36:19 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:36:19 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:36:19 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:36:19 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:36:19 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:36:19 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:38:00 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:00 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:38:00 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:38:00 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:00 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:38:00 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:38:00 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:00 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:00 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:38:00 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:38:00 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:38:00 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:38:05 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:05 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:38:05 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:38:05 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:05 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:38:05 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:38:05 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:05 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:38:05 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:38:05 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:05 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:38:05 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:38:41 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:41 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:38:41 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:38:42 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:42 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:38:42 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:38:42 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:42 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:42 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:38:42 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:38:42 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:38:42 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:38:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:49 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:38:49 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:38:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:49 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:38:49 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:38:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:49 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:38:49 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:38:49 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:38:49 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:38:49 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:39:29 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:39:29 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:39:29 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:39:29 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:39:29 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:39:29 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:39:29 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:39:29 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:39:29 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:39:29 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:39:29 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:39:29 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:39:35 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:39:35 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:39:35 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:39:35 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:39:35 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:39:35 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:39:35 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:39:35 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:39:35 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:39:35 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:39:35 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:39:35 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:44:13 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:44:13 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:44:13 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:44:13 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:44:13 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:44:13 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:44:13 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:44:13 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:44:13 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:44:13 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:44:13 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:44:13 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:44:20 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:44:20 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:44:20 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:44:20 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:44:20 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:44:20 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:44:20 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:44:20 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:44:20 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:44:20 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:44:20 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:44:20 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:48:39 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:48:39 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:48:39 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:48:39 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:48:39 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:48:39 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:48:39 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:48:39 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:48:39 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:48:39 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:48:39 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:48:39 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:48:45 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:48:45 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:48:45 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:48:45 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:48:45 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:48:45 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:48:45 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:48:45 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:48:45 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:48:45 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:48:45 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:48:45 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:49:01 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:49:01 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:49:01 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:49:01 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:49:01 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:49:01 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:49:01 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:49:01 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:49:01 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:49:01 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:49:01 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:49:01 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:49:07 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:49:07 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:49:07 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:49:07 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:49:07 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:49:07 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:49:07 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:49:07 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:49:07 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:49:07 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:49:07 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:49:07 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:50:19 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:50:19 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:50:19 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:50:19 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:50:19 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 13:50:19 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 13:50:19 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:50:19 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:50:19 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:50:19 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:50:19 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 13:50:19 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 13:50:26 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:50:26 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 13:50:26 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 13:50:26 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:50:26 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 13:50:26 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 13:50:26 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:50:26 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 13:50:26 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 13:50:26 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 13:50:26 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 13:50:26 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:04:16 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:04:16 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:04:16 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:04:16 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:04:16 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:04:16 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:04:16 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:04:16 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:04:16 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:04:16 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:04:16 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:04:16 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:04:23 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:04:23 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 14:04:23 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 14:04:23 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:04:23 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 14:04:23 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 14:04:23 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:04:23 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 14:04:23 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:04:23 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:04:23 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 14:04:23 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:21:46 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:21:46 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:21:46 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:21:46 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:21:46 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:21:46 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:21:46 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:21:46 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:21:46 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:21:46 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:21:46 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:21:46 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:21:52 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:21:52 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 14:21:52 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 14:21:52 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:21:52 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 14:21:52 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 14:21:52 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:21:52 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 14:21:52 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:21:52 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:21:52 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 14:21:52 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:22:46 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:22:46 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:22:46 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:22:47 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:22:47 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:22:47 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:22:47 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:22:47 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:22:47 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:22:47 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:22:47 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:22:47 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:22:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:22:54 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 14:22:54 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 14:22:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:22:54 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 14:22:54 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 14:22:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:22:54 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 14:22:54 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:22:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:22:54 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 14:22:54 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:23:24 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:24 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:23:24 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:23:24 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:24 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:23:24 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:23:24 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:24 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:24 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:23:24 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:23:24 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:23:24 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:23:32 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:32 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 14:23:32 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 14:23:32 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:32 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 14:23:32 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 14:23:32 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:32 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 14:23:32 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:23:32 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:32 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 14:23:32 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:23:46 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:46 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:23:46 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:23:46 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:46 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:23:46 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:23:46 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:46 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:46 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:23:46 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:23:46 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:23:46 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:23:51 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:51 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 14:23:51 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 14:23:51 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:51 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 14:23:51 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 14:23:51 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:51 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 14:23:51 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:23:51 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:23:51 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 14:23:51 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:25:59 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:25:59 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:25:59 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:25:59 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:25:59 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:25:59 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:25:59 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:25:59 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:25:59 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:25:59 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:25:59 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:25:59 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:26:09 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:26:09 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 14:26:09 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 14:26:09 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:26:09 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 14:26:09 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 14:26:09 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:26:09 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 14:26:09 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:26:09 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:26:09 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 14:26:09 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:26:48 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:26:48 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:26:48 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:26:48 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:26:48 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:26:48 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:26:48 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:26:48 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:26:48 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:26:48 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:26:48 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:26:48 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:26:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:26:54 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 14:26:54 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 14:26:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:26:54 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 14:26:54 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 14:26:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:26:54 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 14:26:54 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:26:54 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:26:54 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 14:26:54 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:27:04 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:27:04 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:27:04 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:27:04 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:27:04 - [SERVER]: JSON RECEIVED:
+{"command":"GET_ALL_MUSICS"}
+2025-Aug-28 14:27:04 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3, mordab!googoosh.mp3, chikar-kardi-ba-delam-wy!heliyom.mp3, setare-haye-sorbi!ebi.mp3, to-kharab-kardi!golzar.mp3, i-wanna-be-yours!arctic-monkeys.mp3, fogholade!sijal-jj.mp3, happir-than-ever!billie-eilish.mp3]"
+}
+2025-Aug-28 14:27:04 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:27:04 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:27:04 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:27:04 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:27:04 - [SERVER]: JSON RECEIVED:
+{"command":"USER_LIST","filter":""}
+2025-Aug-28 14:27:04 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[admin, a]"
+}
+2025-Aug-28 14:27:10 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:27:10 - [SERVER]: JSON RECEIVED:
+{"command":"login","loginCredit":"a","password":"a","rememberMe":"true"}
+2025-Aug-28 14:27:10 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "Login successfully with Username(Remember)"
+}
+2025-Aug-28 14:27:10 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:27:10 - [SERVER]: JSON RECEIVED:
+{"command":"COMPLETE_INFO","auth":"a"}
+2025-Aug-28 14:27:10 - [SERVER]: JSON SENT : 
+{
+  "firstname": "helia",
+  "lastname": "ghandi",
+  "username": "a",
+  "email": "heliaghandi85@gmail.com",
+  "success": true
+}
+2025-Aug-28 14:27:10 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:27:10 - [SERVER]: JSON RECEIVED:
+{"command":"GET_LIKED_MUSICS","username":"a"}
+2025-Aug-28 14:27:10 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}
+2025-Aug-28 14:27:10 - [SERVER]: New client connected: /127.0.0.1
+2025-Aug-28 14:27:10 - [SERVER]: JSON RECEIVED:
+{"command":"GET_QUEUE","username":"a"}
+2025-Aug-28 14:27:10 - [SERVER]: JSON SENT : 
+{
+  "success": true,
+  "message": "[ahle-naa-ahli!shayea.mp3]"
+}

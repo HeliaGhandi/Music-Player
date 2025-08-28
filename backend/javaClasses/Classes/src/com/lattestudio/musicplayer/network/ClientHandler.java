@@ -306,7 +306,7 @@ public class ClientHandler implements Runnable {
         }
         User user = DataBase.getUsers().get(indexOfUser);
         user.setAccountPrivate(privacyChangeRequest.isPrivate());
-        return new Response(true , "USER:" + user.getUsername() + "Successfully changed their privacy status to " + privacyChangeRequest.isPrivate());
+        return new Response(true , "USER:" + user.getUsername() + " Successfully changed their privacy status to " + privacyChangeRequest.isPrivate());
 
     }
 
