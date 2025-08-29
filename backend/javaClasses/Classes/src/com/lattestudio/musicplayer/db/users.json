@@ -12,7 +12,188 @@
   "isAccountPrivate": false,
   "rememberMe": true,
   "musics": [],
-  "playlists": [],
+  "playlists": [
+    {
+      "name": "a",
+      "QRCode": "QR Code NOT SET YET",
+      "playlistCoverURL": "NOT SET YET",
+      "description": "WRITE DESCRIPTION HERE",
+      "likeCount": 0,
+      "isPrivate": false,
+      "totalDuration": "00:00:00",
+      "creationDate": "2025-08-29T10:33:59.937763",
+      "musicList": [
+        {
+          "name": "ahle naa ahli",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "ahle-naa-ahli!shayea.mp3",
+          "artist": "shayea",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-27T08:29:57.330558",
+          "likedCount": 2,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        },
+        {
+          "name": "NAME NOT SET!",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "chikar-kardi-ba-delam-wy!heliyom.mp3",
+          "artist": "heliyom",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-29T18:27:34.570861",
+          "likedCount": 0,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        }
+      ]
+    },
+    {
+      "name": "a",
+      "QRCode": "QR Code NOT SET YET",
+      "playlistCoverURL": "NOT SET YET",
+      "description": "WRITE DESCRIPTION HERE",
+      "likeCount": 0,
+      "isPrivate": false,
+      "totalDuration": "00:00:00",
+      "creationDate": "2025-08-29T10:33:59.937763",
+      "musicList": [
+        {
+          "name": "ahle naa ahli",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "ahle-naa-ahli!shayea.mp3",
+          "artist": "shayea",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-27T08:29:57.330558",
+          "likedCount": 2,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        },
+        {
+          "name": "NAME NOT SET!",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "chikar-kardi-ba-delam-wy!heliyom.mp3",
+          "artist": "heliyom",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-29T18:27:34.570861",
+          "likedCount": 0,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        }
+      ]
+    },
+    {
+      "name": "ab",
+      "QRCode": "QR Code NOT SET YET",
+      "playlistCoverURL": "NOT SET YET",
+      "description": "WRITE DESCRIPTION HERE",
+      "likeCount": 0,
+      "isPrivate": false,
+      "totalDuration": "00:00:00",
+      "creationDate": "2025-08-29T10:41:43.486512",
+      "musicList": [
+        {
+          "name": "NAME NOT SET!",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "chikar-kardi-ba-delam-wy!heliyom.mp3",
+          "artist": "heliyom",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-29T18:27:45.562515",
+          "likedCount": 0,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        }
+      ]
+    },
+    {
+      "name": "ab",
+      "QRCode": "QR Code NOT SET YET",
+      "playlistCoverURL": "NOT SET YET",
+      "description": "WRITE DESCRIPTION HERE",
+      "likeCount": 0,
+      "isPrivate": false,
+      "totalDuration": "00:00:00",
+      "creationDate": "2025-08-29T10:41:43.486512",
+      "musicList": [
+        {
+          "name": "NAME NOT SET!",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "chikar-kardi-ba-delam-wy!heliyom.mp3",
+          "artist": "heliyom",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-29T18:27:45.562515",
+          "likedCount": 0,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        }
+      ]
+    },
+    {
+      "name": "a",
+      "QRCode": "QR Code NOT SET YET",
+      "playlistCoverURL": "NOT SET YET",
+      "description": "WRITE DESCRIPTION HERE",
+      "likeCount": 0,
+      "isPrivate": false,
+      "totalDuration": "00:00:00",
+      "creationDate": "2025-08-29T10:33:59.937763",
+      "musicList": [
+        {
+          "name": "ahle naa ahli",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "ahle-naa-ahli!shayea.mp3",
+          "artist": "shayea",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-27T08:29:57.330558",
+          "likedCount": 2,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        },
+        {
+          "name": "NAME NOT SET!",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "chikar-kardi-ba-delam-wy!heliyom.mp3",
+          "artist": "heliyom",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-29T18:27:34.570861",
+          "likedCount": 0,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        }
+      ]
+    }
+  ],
   "likedSongs": [],
   "likedPlayLists": [],
   "queue": [],
@@ -39,8 +220,121 @@
   "is2faVerified": false,
   "isAccountPrivate": false,
   "rememberMe": true,
-  "musics": [],
-  "playlists": [],
+  "musics": [
+    {
+      "name": "ahle naa ahli",
+      "icon": "ICON NOT SET YET!",
+      "QRCode": "QR Code NOT SET YET",
+      "lyrics": "LYRICS NOT SET YET",
+      "url": "ahle-naa-ahli!shayea.mp3",
+      "artist": "shayea",
+      "isPaused": true,
+      "duration": "00:00:00",
+      "dateSongAddedToDataBase": "2025-08-27T08:29:57.330558",
+      "likedCount": 2,
+      "genres": [],
+      "artists": [],
+      "comments": {}
+    }
+  ],
+  "playlists": [
+    {
+      "name": "a",
+      "QRCode": "QR Code NOT SET YET",
+      "playlistCoverURL": "NOT SET YET",
+      "description": "WRITE DESCRIPTION HERE",
+      "likeCount": 0,
+      "isPrivate": false,
+      "totalDuration": "00:00:00",
+      "creationDate": "2025-08-29T10:33:59.937763",
+      "musicList": [
+        {
+          "name": "ahle naa ahli",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "ahle-naa-ahli!shayea.mp3",
+          "artist": "shayea",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-27T08:29:57.330558",
+          "likedCount": 2,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        },
+        {
+          "name": "NAME NOT SET!",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "chikar-kardi-ba-delam-wy!heliyom.mp3",
+          "artist": "heliyom",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-29T18:27:34.570861",
+          "likedCount": 0,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        }
+      ]
+    },
+    {
+      "name": "ab",
+      "QRCode": "QR Code NOT SET YET",
+      "playlistCoverURL": "NOT SET YET",
+      "description": "WRITE DESCRIPTION HERE",
+      "likeCount": 0,
+      "isPrivate": false,
+      "totalDuration": "00:00:00",
+      "creationDate": "2025-08-29T10:41:43.486512",
+      "musicList": [
+        {
+          "name": "NAME NOT SET!",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "chikar-kardi-ba-delam-wy!heliyom.mp3",
+          "artist": "heliyom",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-29T18:27:45.562515",
+          "likedCount": 0,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        }
+      ]
+    },
+    {
+      "name": "ab",
+      "QRCode": "QR Code NOT SET YET",
+      "playlistCoverURL": "NOT SET YET",
+      "description": "WRITE DESCRIPTION HERE",
+      "likeCount": 0,
+      "isPrivate": false,
+      "totalDuration": "00:00:00",
+      "creationDate": "2025-08-29T10:41:43.486512",
+      "musicList": [
+        {
+          "name": "NAME NOT SET!",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "chikar-kardi-ba-delam-wy!heliyom.mp3",
+          "artist": "heliyom",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-29T18:27:45.562515",
+          "likedCount": 0,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        }
+      ]
+    }
+  ],
   "likedSongs": [
     {
       "name": "ahle naa ahli",
@@ -53,6 +347,21 @@
       "duration": "00:00:00",
       "dateSongAddedToDataBase": "2025-08-27T08:29:57.330558",
       "likedCount": 2,
+      "genres": [],
+      "artists": [],
+      "comments": {}
+    },
+    {
+      "name": "mordab",
+      "icon": "ICON NOT SET YET!",
+      "QRCode": "QR Code NOT SET YET",
+      "lyrics": "LYRICS NOT SET YET",
+      "url": "mordab!googoosh.mp3",
+      "artist": "googoosh",
+      "isPaused": true,
+      "duration": "00:00:00",
+      "dateSongAddedToDataBase": "2025-08-28T14:58:31.628223",
+      "likedCount": 1,
       "genres": [],
       "artists": [],
       "comments": {}
@@ -74,6 +383,21 @@
       "genres": [],
       "artists": [],
       "comments": {}
+    },
+    {
+      "name": "mordab",
+      "icon": "ICON NOT SET YET!",
+      "QRCode": "QR Code NOT SET YET",
+      "lyrics": "LYRICS NOT SET YET",
+      "url": "mordab!googoosh.mp3",
+      "artist": "googoosh",
+      "isPaused": true,
+      "duration": "00:00:00",
+      "dateSongAddedToDataBase": "2025-08-28T15:01:32.752861",
+      "likedCount": 0,
+      "genres": [],
+      "artists": [],
+      "comments": {}
     }
   ],
   "followers": [],
@@ -83,6 +407,348 @@
   "theme": "LIGHT",
   "lastUsernameChangeTime": "2025-08-27T08:18:59.991896",
   "joinedDate": "2025-08-27T08:18:59.991877",
+  "totalListeningDuration": "00:00:00",
+  "numberOfFailLoginAttempts": 0
+}
+,
+{
+  "username": "b",
+  "firstname": "b",
+  "lastname": "b",
+  "email": "b",
+  "password": "b",
+  "profilePictureURL": "PROFILE PICTURE NOT SET YET",
+  "isVerified": false,
+  "canShareSongWithUser": true,
+  "is2faVerified": false,
+  "isAccountPrivate": false,
+  "rememberMe": true,
+  "musics": [],
+  "playlists": [
+    {
+      "name": "abc",
+      "QRCode": "QR Code NOT SET YET",
+      "playlistCoverURL": "NOT SET YET",
+      "description": "WRITE DESCRIPTION HERE",
+      "likeCount": 0,
+      "isPrivate": false,
+      "totalDuration": "00:00:00",
+      "creationDate": "2025-08-29T19:05:48.898501",
+      "musicList": [
+        {
+          "name": "NAME NOT SET!",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "mordab!googoosh.mp3",
+          "artist": "googoosh",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-29T19:06:13.226846",
+          "likedCount": 0,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        }
+      ]
+    }
+  ],
+  "likedSongs": [],
+  "likedPlayLists": [],
+  "queue": [
+    {
+      "name": "ahle naa ahli",
+      "icon": "ICON NOT SET YET!",
+      "QRCode": "QR Code NOT SET YET",
+      "lyrics": "LYRICS NOT SET YET",
+      "url": "ahle-naa-ahli!shayea.mp3",
+      "artist": "shayea",
+      "isPaused": true,
+      "duration": "00:00:00",
+      "dateSongAddedToDataBase": "2025-08-29T19:04:10.567718",
+      "likedCount": 0,
+      "genres": [],
+      "artists": [],
+      "comments": {}
+    }
+  ],
+  "followers": [],
+  "followings": [],
+  "playedSongs": [],
+  "likedGenres": [],
+  "theme": "LIGHT",
+  "lastUsernameChangeTime": "2025-08-29T18:56:13.62765",
+  "joinedDate": "2025-08-29T18:56:13.627623",
+  "totalListeningDuration": "00:00:00",
+  "numberOfFailLoginAttempts": 0
+}
+,
+{
+  "username": "c",
+  "firstname": "c",
+  "lastname": "c",
+  "email": "c",
+  "password": "c",
+  "profilePictureURL": "PROFILE PICTURE NOT SET YET",
+  "isVerified": false,
+  "canShareSongWithUser": true,
+  "is2faVerified": false,
+  "isAccountPrivate": false,
+  "rememberMe": true,
+  "musics": [],
+  "playlists": [
+    {
+      "name": "abc",
+      "QRCode": "QR Code NOT SET YET",
+      "playlistCoverURL": "NOT SET YET",
+      "description": "WRITE DESCRIPTION HERE",
+      "likeCount": 0,
+      "isPrivate": false,
+      "totalDuration": "00:00:00",
+      "creationDate": "2025-08-29T19:05:48.898501",
+      "musicList": [
+        {
+          "name": "NAME NOT SET!",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "mordab!googoosh.mp3",
+          "artist": "googoosh",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-29T19:06:13.226846",
+          "likedCount": 0,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        }
+      ]
+    }
+  ],
+  "likedSongs": [
+    {
+      "name": "to kharab kardi",
+      "icon": "ICON NOT SET YET!",
+      "QRCode": "QR Code NOT SET YET",
+      "lyrics": "LYRICS NOT SET YET",
+      "url": "to-kharab-kardi!golzar.mp3",
+      "artist": "golzar",
+      "isPaused": true,
+      "duration": "00:00:00",
+      "dateSongAddedToDataBase": "2025-08-29T19:02:27.14495",
+      "likedCount": 1,
+      "genres": [],
+      "artists": [],
+      "comments": {}
+    }
+  ],
+  "likedPlayLists": [],
+  "queue": [],
+  "followers": [],
+  "followings": [],
+  "playedSongs": [],
+  "likedGenres": [],
+  "theme": "LIGHT",
+  "lastUsernameChangeTime": "2025-08-29T18:56:13.62765",
+  "joinedDate": "2025-08-29T18:56:13.627623",
+  "totalListeningDuration": "00:00:00",
+  "numberOfFailLoginAttempts": 0
+}
+,
+{
+  "username": "d",
+  "firstname": "d",
+  "lastname": "d",
+  "email": "d",
+  "password": "d",
+  "profilePictureURL": "PROFILE PICTURE NOT SET YET",
+  "isVerified": false,
+  "canShareSongWithUser": true,
+  "is2faVerified": false,
+  "isAccountPrivate": false,
+  "rememberMe": true,
+  "musics": [],
+  "playlists": [
+    {
+      "name": "test",
+      "QRCode": "QR Code NOT SET YET",
+      "playlistCoverURL": "NOT SET YET",
+      "description": "WRITE DESCRIPTION HERE",
+      "likeCount": 0,
+      "isPrivate": false,
+      "totalDuration": "00:00:00",
+      "creationDate": "2025-08-29T19:18:09.509854",
+      "musicList": [
+        {
+          "name": "NAME NOT SET!",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "mordab!googoosh.mp3",
+          "artist": "googoosh",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-29T19:18:24.254474",
+          "likedCount": 0,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        }
+      ]
+    },
+    {
+      "name": "test2",
+      "QRCode": "QR Code NOT SET YET",
+      "playlistCoverURL": "NOT SET YET",
+      "description": "WRITE DESCRIPTION HERE",
+      "likeCount": 0,
+      "isPrivate": false,
+      "totalDuration": "00:00:00",
+      "creationDate": "2025-08-29T19:19:49.767838",
+      "musicList": [
+        {
+          "name": "NAME NOT SET!",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "setare-haye-sorbi!ebi.mp3",
+          "artist": "ebi",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-29T19:19:59.13048",
+          "likedCount": 0,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        }
+      ]
+    }
+  ],
+  "likedSongs": [
+    {
+      "name": "ahle naa ahli",
+      "icon": "ICON NOT SET YET!",
+      "QRCode": "QR Code NOT SET YET",
+      "lyrics": "LYRICS NOT SET YET",
+      "url": "ahle-naa-ahli!shayea.mp3",
+      "artist": "shayea",
+      "isPaused": true,
+      "duration": "00:00:00",
+      "dateSongAddedToDataBase": "2025-08-29T19:16:37.636263",
+      "likedCount": 2,
+      "genres": [],
+      "artists": [],
+      "comments": {}
+    }
+  ],
+  "likedPlayLists": [],
+  "queue": [],
+  "followers": [],
+  "followings": [],
+  "playedSongs": [],
+  "likedGenres": [],
+  "theme": "LIGHT",
+  "lastUsernameChangeTime": "2025-08-29T19:14:22.519697",
+  "joinedDate": "2025-08-29T19:14:22.519696",
+  "totalListeningDuration": "00:00:00",
+  "numberOfFailLoginAttempts": 0
+}
+,
+{
+  "username": "e",
+  "firstname": "e",
+  "lastname": "e",
+  "email": "e",
+  "password": "e",
+  "profilePictureURL": "PROFILE PICTURE NOT SET YET",
+  "isVerified": false,
+  "canShareSongWithUser": true,
+  "is2faVerified": false,
+  "isAccountPrivate": false,
+  "rememberMe": true,
+  "musics": [],
+  "playlists": [
+    {
+      "name": "test",
+      "QRCode": "QR Code NOT SET YET",
+      "playlistCoverURL": "NOT SET YET",
+      "description": "WRITE DESCRIPTION HERE",
+      "likeCount": 0,
+      "isPrivate": false,
+      "totalDuration": "00:00:00",
+      "creationDate": "2025-08-29T19:18:09.509854",
+      "musicList": [
+        {
+          "name": "NAME NOT SET!",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "mordab!googoosh.mp3",
+          "artist": "googoosh",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-29T19:18:24.254474",
+          "likedCount": 0,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        }
+      ]
+    },
+    {
+      "name": "test2",
+      "QRCode": "QR Code NOT SET YET",
+      "playlistCoverURL": "NOT SET YET",
+      "description": "WRITE DESCRIPTION HERE",
+      "likeCount": 0,
+      "isPrivate": false,
+      "totalDuration": "00:00:00",
+      "creationDate": "2025-08-29T19:19:49.767838",
+      "musicList": [
+        {
+          "name": "NAME NOT SET!",
+          "icon": "ICON NOT SET YET!",
+          "QRCode": "QR Code NOT SET YET",
+          "lyrics": "LYRICS NOT SET YET",
+          "url": "setare-haye-sorbi!ebi.mp3",
+          "artist": "ebi",
+          "isPaused": true,
+          "duration": "00:00:00",
+          "dateSongAddedToDataBase": "2025-08-29T19:19:59.13048",
+          "likedCount": 0,
+          "genres": [],
+          "artists": [],
+          "comments": {}
+        }
+      ]
+    }
+  ],
+  "likedSongs": [],
+  "likedPlayLists": [],
+  "queue": [
+    {
+      "name": "chikar kardi ba delam wy",
+      "icon": "ICON NOT SET YET!",
+      "QRCode": "QR Code NOT SET YET",
+      "lyrics": "LYRICS NOT SET YET",
+      "url": "chikar-kardi-ba-delam-wy!heliyom.mp3",
+      "artist": "heliyom",
+      "isPaused": true,
+      "duration": "00:00:00",
+      "dateSongAddedToDataBase": "2025-08-29T19:18:28.436644",
+      "likedCount": 0,
+      "genres": [],
+      "artists": [],
+      "comments": {}
+    }
+  ],
+  "followers": [],
+  "followings": [],
+  "playedSongs": [],
+  "likedGenres": [],
+  "theme": "LIGHT",
+  "lastUsernameChangeTime": "2025-08-29T19:14:22.519697",
+  "joinedDate": "2025-08-29T19:14:22.519696",
   "totalListeningDuration": "00:00:00",
   "numberOfFailLoginAttempts": 0
 }

@@ -14,16 +14,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.Arrays;
-import java.util.Base64;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 import com.lattestudio.musicplayer.db.DataBase;
 import com.lattestudio.musicplayer.model.Music;
+import com.lattestudio.musicplayer.model.Playlist;
 import com.lattestudio.musicplayer.model.User;
 import com.lattestudio.musicplayer.network.blueprints.*;
 import com.lattestudio.musicplayer.util.Mail;
@@ -78,7 +76,10 @@ public class ClientHandler implements Runnable {
     private static final String SHARE_MUSIC = "SHARE_MUSIC";
     private static final String GET_QUEUE = "GET_QUEUE" ;
     private static final String PRIVATE_ACCOUNT = "PRIVATE_ACCOUNT" ;
-
+    private static final String CREATE_PLAYLIST = "CREATE_PLAYLIST" ;
+    private static final String GET_ALL_USERS_PLAYLISTS = "GET_ALL_USERS_PLAYLISTS" ;
+    private static final String ADD_MUSIC_TO_PLAYLIST = "ADD_MUSIC_TO_PLAYLIST" ;
+    private static final String SHARE_PLAYLIST = "SHARE_PLAYLIST" ;
 
     //Constructors :
 
@@ -285,6 +286,18 @@ public class ClientHandler implements Runnable {
             case PRIVATE_ACCOUNT:{
                 return privacyAccountHandler();
             }
+            case CREATE_PLAYLIST:{
+                return createPlaylistHandeler();
+            }
+            case GET_ALL_USERS_PLAYLISTS:{
+                return getAllUsersPlayLists();
+            }
+            case ADD_MUSIC_TO_PLAYLIST:{
+                return addMusicToPlayListHandler();
+            }
+            case SHARE_PLAYLIST:{
+                return sharePlayListHandler();
+            }
             default: {
                 return new Response(false, "WRONG JSON SYNTAX");
             }
@@ -292,7 +305,141 @@ public class ClientHandler implements Runnable {
         }
 
     }
+    private Response sharePlayListHandler(){
+        SharePlaylistRequest sharePlaylistRequest;
+        try {
+            sharePlaylistRequest = gson.fromJson(jsonRequest , SharePlaylistRequest.class);
+        } catch (IllegalArgumentException iae) {
+            return new Response(false , "Bad argument for SHARE SONG REQUEST");
+        }
+        int indexOfFromUser = DataBase.getUsernames().indexOf(sharePlaylistRequest.getFromUsername());
+        User fromUser = DataBase.getUsers().get(indexOfFromUser);
 
+        int indexOfToUser = DataBase.getUsernames().indexOf(sharePlaylistRequest.getToUsername());
+        User toUser = DataBase.getUsers().get(indexOfToUser);
+        String playListname = sharePlaylistRequest.getPlayListName();
+        if(indexOfFromUser == -1){
+            return new Response(false , "SESSION ENDED");
+        }
+        if(indexOfToUser == -1){
+            return new Response(false , "username that you are trying to share the playlist with is either private or not found in our data base");
+        }
+        int indexOfPlayList = DataBase.loadAllPlaylists().indexOf(new Playlist(playListname));
+        if(indexOfPlayList == -1){
+            return new Response(false , "playlist named : " + sharePlaylistRequest.getPlayListName() + " not found in our data base" );
+        }
+        Playlist playlist = DataBase.loadAllPlaylists().get(indexOfPlayList);
+        toUser.getPlaylists().add(playlist);
+        DataBase.clearUsersJson();
+        try{
+            for(int i = 0 ; i < DataBase.getUsers().size() ; i++){
+                try{
+                    DataBase.writeToUsersJson(DataBase.getUsers().get(i) , gson , false);
+                }catch (Exception e){
+                    throw new RuntimeException(e.getMessage());
+                }
+            }
+
+
+        }catch (Exception e){
+            return new Response(false);
+        }
+        return new Response(true);
+
+
+
+    }
+    private Response addMusicToPlayListHandler(){
+        AddMusicToPlayListRequest addMusicToPlayListRequest;
+        try {
+            addMusicToPlayListRequest = gson.fromJson(jsonRequest, AddMusicToPlayListRequest.class);
+        } catch (IllegalArgumentException iae) {
+            return new Response(false , "Bad argument for PRIVACY REQUEST");
+        }
+        int indexOfUser = DataBase.getUsernames().indexOf(addMusicToPlayListRequest.getUsername());
+        if(indexOfUser == -1){
+            return new Response(false , "user not found!");
+        }
+        User user = DataBase.getUsers().get(indexOfUser);
+        int indexOfPlayList = user.getPlaylists().indexOf(new Playlist(addMusicToPlayListRequest.getPlayListName()));
+        Playlist playlist = user.getPlaylists().get(indexOfPlayList);
+        String musicURL = addMusicToPlayListRequest.getMusicURL();
+        Music music = AddMusicToPlayListRequest.fromUrl(musicURL);
+        playlist.addMusicToPlaylist(music);
+        DataBase.clearUsersJson();
+        try {
+            for (int i = 0; i < DataBase.getUsers().size(); i++) {
+                try {
+                    DataBase.writeToUsersJson(DataBase.getUsers().get(i), gson, false);
+                } catch (Exception e) {
+                    throw new RuntimeException(e.getMessage());
+                }
+            }
+        }catch (Exception e){
+            return new Response(false , e.getLocalizedMessage());
+        }
+            return new Response(true );
+    }
+    private Response getAllUsersPlayLists(){
+        GetPlaylistListRequest getPlaylistListRequest;
+        try {
+            getPlaylistListRequest = gson.fromJson(jsonRequest, GetPlaylistListRequest.class);
+        } catch (IllegalArgumentException iae) {
+            return new Response(false , "Bad argument for PRIVACY REQUEST");
+        }
+        int indexOfUser = DataBase.getUsernames().indexOf(getPlaylistListRequest.getUsername());
+        if(indexOfUser == -1){
+            return new Response(false , "user not found!");
+        }
+        User user = DataBase.getUsers().get(indexOfUser);
+        Map<String , List<String>> playlists = new HashMap<>();
+        for(Playlist playlist : user.getPlaylists()){
+            List<String> musicURLS = new LinkedList<>();
+            for(Music music : playlist.getMusicList()){
+                musicURLS.add(music.getUrl());
+            }
+            playlists.put(playlist.getName() , musicURLS);
+
+        }
+        return new PlaylistResponse(true , playlists);
+    }
+    private Response createPlaylistHandeler(){
+        CreatePlaylistRequest createPlaylistRequest;
+        try {
+            createPlaylistRequest = gson.fromJson(jsonRequest, CreatePlaylistRequest.class);
+        } catch (IllegalArgumentException iae) {
+            return new Response(false , "Bad argument for PRIVACY REQUEST");
+        }
+        int indexOfUser = DataBase.getUsernames().indexOf(createPlaylistRequest.getUsername());
+        if(indexOfUser == -1){
+            return new Response(false , "user not found!");
+        }
+        User user = DataBase.getUsers().get(indexOfUser);
+        Playlist playlist = new Playlist(createPlaylistRequest.getPlaylistName());
+
+        for(User u : DataBase.getUsers()){
+            if(u.getPlaylists().contains(playlist)){
+                return new Response(false , "playlist name already exists\nOwner: " + u.getUsername()) ;
+            }
+        }
+        user.getPlaylists().add(playlist);
+        DataBase.clearUsersJson();
+        for(int i = 0 ; i < DataBase.getUsers().size() ; i++){
+            try{
+                DataBase.writeToUsersJson(DataBase.getUsers().get(i) , gson , false);
+            }catch (Exception e){
+                throw new RuntimeException(e.getMessage());
+            }
+        }
+        try{
+            DataBase.loadUsers();
+        }catch (Exception e){
+            Message.redServerMessage("ERR Reloading Users\n" + e.getLocalizedMessage());
+            throw new RuntimeException("ERR Reloading Users\n" + e.getLocalizedMessage());
+        }
+        return new Response(true , "USER:" + user.getUsername() + " Successfully created a playlist named : " + createPlaylistRequest.getPlaylistName());
+
+    }
     private Response privacyAccountHandler(){
         PrivacyChangeRequest privacyChangeRequest;
         try {

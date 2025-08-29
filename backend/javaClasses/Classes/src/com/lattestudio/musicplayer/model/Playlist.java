@@ -142,12 +142,12 @@ public class Playlist implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Playlist playlist)) return false;
-        return Objects.equals(name, playlist.name) && Objects.equals(author, playlist.author);
+        return Objects.equals(name, playlist.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, author);
+        return Objects.hashCode(name);
     }
 
 

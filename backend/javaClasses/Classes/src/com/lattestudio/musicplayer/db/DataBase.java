@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.lattestudio.musicplayer.model.Music;
+import com.lattestudio.musicplayer.model.Playlist;
 import com.lattestudio.musicplayer.model.User;
 import com.lattestudio.musicplayer.util.Message;
 import com.lattestudio.musicplayer.util.adapter.LocalDateTimeAdapter;
@@ -172,6 +173,13 @@ public class DataBase {
     }
 
 
+    public static List<Playlist> loadAllPlaylists(){
+        List<Playlist> allPlaylists = new LinkedList<>();
+        for(User user : DataBase.getUsers()){
+            allPlaylists.addAll(user.getPlaylists());
+        }
+        return allPlaylists;
+    }
     public static int computeLikeCountFor(Music target) {
         return (int) DataBase.getUsers().stream()
                 .filter(u -> u.getLikedSongs().contains(target))

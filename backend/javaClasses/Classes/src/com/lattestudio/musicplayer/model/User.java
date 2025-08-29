@@ -42,7 +42,7 @@ public class User  implements Serializable {
     private List<Music> likedSongs;
     //private List<Music> sharedWithSongs;
     private List<Playlist> likedPlayLists;
-    private List<Music> queue;
+    private Set<Music> queue;
     private List<User> followers;
     private List<User> followings;
     private List<Music> playedSongs; // اونایی که اینبار گوش داده
@@ -98,7 +98,7 @@ public class User  implements Serializable {
         this.likedGenres = new ArrayList<>();
         //this.sharedWithSongs = new ArrayList<>();
         this.playedSongs = new LinkedList<>();
-        this.queue = new LinkedList<>();
+        this.queue = new HashSet<>();
         this.musics = new TreeSet<>();
     }
 
@@ -497,7 +497,7 @@ public class User  implements Serializable {
         return musics;
     }
 
-    public List<Music> getQueue() {
+    public Set<Music> getQueue() {
         return queue;
     }
 

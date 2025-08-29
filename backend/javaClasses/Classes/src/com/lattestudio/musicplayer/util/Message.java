@@ -182,7 +182,7 @@ public class Message {
         try{
             fileWriter.write(formattedStringNoColor);
         } catch (IOException e) {
-            throw new RuntimeException("COULD NOT WRITE TO LOG FILE!");
+            throw new RuntimeException("COULD NOT WRITE TO LOG FILE!" + e.getLocalizedMessage());
         }
         shutDown();
     }
