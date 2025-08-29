@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:login/cached_music_player.dart';
-import 'dart:async'; // Added for StreamSubscription
-import 'package:just_audio/just_audio.dart';
 import 'package:login/main.dart';
-import 'package:login/content-display.dart';
-import 'dart:math';
 import 'package:login/music.dart';
 
 class PlaylistMusicBar extends StatefulWidget {
-  Music music;
+  final Music music;
   PlaylistMusicBar({required this.music, super.key});
   @override
   State<PlaylistMusicBar> createState() {
@@ -18,10 +14,10 @@ class PlaylistMusicBar extends StatefulWidget {
 }
 
 class _PlaylistMusicBarState extends State<PlaylistMusicBar> {
+  bool playing = false;
   @override
   Widget build(BuildContext context) {
     double? deviceWidth = MediaQuery.of(context).size.width;
-    double? deviceHeight = MediaQuery.of(context).size.height;
     return Column(
       children: [
         Container(
@@ -94,23 +90,47 @@ class _PlaylistMusicBarState extends State<PlaylistMusicBar> {
                             const SizedBox(width: 18),
                             // Play/Pause button
                             GestureDetector(
-                              onTap: () {
-                                //  _togglePlayPause();
-                                //CachedMusicPlayer.togglePlayingState();
-                                //100
-                              },
-                              child: ValueListenableBuilder(
-                                valueListenable: CachedMusicPlayer.isPlaying,
-                                builder: (cntx, val, _) {
-                                  return Icon(
-                                    val
-                                        ? Icons.pause_circle
-                                        : Icons.play_circle,
-                                    size: 35,
-                                    color: Colors.white,
+                              onTap: () async {
+                                playing = !playing;
+                                final String? url = widget.music.URL;
+                                if (url == null || url.isEmpty) {
+                                  return;
+                                }
+                                try {
+                                  // Set the current music URL so other widgets (e.g., music bar) can display it
+                                  UserInfo.currentMusicUrl = url;
+
+                                  // Trigger play/pause for this track
+                                  await CachedMusicPlayer().togglePlayPause(
+                                    musicName: url,
+                                    onDone: () {
+                                      if (mounted) setState(() {});
+                                    },
+                                    onError: (error) {
+                                      if (mounted) setState(() {});
+                                    },
                                   );
-                                },
+                                } catch (_) {
+                                  if (mounted) setState(() {});
+                                }
+                              },
+                              child: Icon(
+                                (!playing == true
+                                    ? Icons.play_circle
+                                    : Icons.pause_circle),
                               ),
+                              // child: ValueListenableBuilder(
+                              //   valueListenable: CachedMusicPlayer.isPlaying,
+                              //   builder: (cntx, val, _) {
+                              //     return Icon(
+                              //       val
+                              //           ? Icons.pause_circle
+                              //           : Icons.play_circle,
+                              //       size: 35,
+                              //       color: Colors.white,
+                              //     );
+                              //   },
+                              // ),
                             ),
                           ],
                         ),

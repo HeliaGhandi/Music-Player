@@ -10,6 +10,8 @@ import 'package:login/main.dart';
 import 'package:login/content-display.dart';
 import 'package:login/music.dart';
 import 'package:login/musics.dart';
+import 'package:login/create-playlist.dart';
+import 'package:login/json-handler.dart';
 
 class LibraryScreen extends StatefulWidget {
   void Function() changeToBrowse;
@@ -17,7 +19,7 @@ class LibraryScreen extends StatefulWidget {
   void Function() changeToMusicScreen;
   void Function() changeToLibrary;
   void Function(PlayList) changeToPLayListScreen;
-
+  Widget? createNewPlaylist;
   late bool? isDark;
   LibraryScreen({
     this.isDark,
@@ -35,6 +37,90 @@ class LibraryScreen extends StatefulWidget {
 }
 
 class _LibraryScreenState extends State<LibraryScreen> {
+  List<PlayList> serverSavedPlaylists = [];
+  TextEditingController? newPlayListController;
+  bool _showCustomKeyboard = false;
+  bool _isPasswordField = false;
+  @override
+  void initState() {
+    super.initState();
+    newPlayListController = TextEditingController();
+    _loadPlaylists();
+  }
+
+  Future<void> _loadPlaylists() async {
+    Map<String, String> request = {
+      "command": "GET_ALL_USERS_PLAYLISTS",
+      "username": UserInfo.username,
+    };
+    try {
+      Map<String, dynamic> response =
+          await JsonHandler(json: request).sendTestRequest();
+      print('Server Response: $response');
+
+      if (response.containsKey("playlists") && response["playlists"] is Map) {
+        serverSavedPlaylists.clear();
+        // Use the Map's keys to iterate over the playlists
+        Map<String, dynamic> playlistsMap = response["playlists"];
+        playlistsMap.forEach((playlistName, content) {
+          PlayList playList = PlayList(
+            libraryName: playlistName,
+            numberOfMusics: (content as List).length,
+            content: createMusicListFromUrlList(
+              content as List,
+            ), // Populate this with music data if available
+          );
+          serverSavedPlaylists.add(playList);
+        });
+      }
+
+      setState(() {});
+    } catch (e) {
+      print("Error loading playlists: $e");
+    }
+  }
+
+  List<Music> createMusicListFromUrlList(List<dynamic> urls) {
+    List<Music> musicList = [];
+    final RegExp regex = RegExp(r'(.*)!(.*)\.mp3');
+    for (String url in urls) {
+      final Match? match = regex.firstMatch(url.trim());
+      if (match != null && match.groupCount >= 2) {
+        String name = match.group(1)!;
+        String artist = match.group(2)!;
+        name = name.replaceAll("-", " ");
+        artist = artist.replaceAll("-", " ");
+        Music music = Music();
+        music.URL = url;
+        music.name = name;
+        music.singer = artist;
+        musicList.add(music);
+      }
+    }
+    return musicList;
+  }
+
+  void _onKeyTap(String value) {
+    final controller = newPlayListController;
+    controller!.text += value;
+  }
+
+  void _onBackspace() {
+    final controller = newPlayListController;
+    if (controller!.text.isNotEmpty) {
+      controller.text = controller.text.substring(
+        0,
+        controller.text.length - 1,
+      );
+    }
+  }
+
+  void _onReturn() {
+    setState(() {
+      _showCustomKeyboard = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double madeForYouSpace = 20;
@@ -84,7 +170,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                       content: Musics.musics,
                     ),
                   ),
-                  SizedBox(height: 10),
+
                   LibraryCard(
                     changeToPlayListScreen: widget.changeToPLayListScreen,
                     playList: PlayList(
@@ -93,7 +179,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                       content: Musics.likedSongs,
                     ),
                   ),
-                  SizedBox(height: 10),
+
                   LibraryCard(
                     changeToPlayListScreen: widget.changeToPLayListScreen,
                     playList: PlayList(
@@ -102,6 +188,12 @@ class _LibraryScreenState extends State<LibraryScreen> {
                       content: Musics.sharedSongs,
                     ),
                   ),
+                  ...serverSavedPlaylists.map((playlist) {
+                    return LibraryCard(
+                      changeToPlayListScreen: widget.changeToPLayListScreen,
+                      playList: playlist,
+                    );
+                  }),
                 ],
               ),
               SizedBox(height: 40),
@@ -114,7 +206,42 @@ class _LibraryScreenState extends State<LibraryScreen> {
           Column(
             children: [
               SizedBox(height: 14.5),
-              SizedBox(height: deviceHeight - 180),
+              SizedBox(height: deviceHeight - 260),
+              Row(
+                children: [
+                  SizedBox(width: deviceWidth - 80),
+                  GestureDetector(
+                    child: Container(
+                      width: 55,
+                      height: 55,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color:
+                            (UserInfo.isDark
+                                ? const Color.fromARGB(212, 52, 156, 241)
+                                : const Color.fromARGB(255, 1, 53, 96)),
+
+                        image: DecorationImage(
+                          image: AssetImage("assets/icons/add-library.png"),
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                      setState(() {
+                        widget.createNewPlaylist = CreatePlaylist(
+                          goToPlayListScreen: widget.changeToPLayListScreen,
+                          finalize: () {
+                            setState(() {
+                              widget.createNewPlaylist = null;
+                            });
+                          },
+                        );
+                      });
+                    },
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
               // Use CachedMusicBar for enhanced music playback with caching
               CachedMusicBar(changeToFullScreen: widget.changeToMusicScreen),
               // Or use the original MusicBar for JSON-based streaming:
@@ -128,19 +255,13 @@ class _LibraryScreenState extends State<LibraryScreen> {
               ),
             ],
           ),
+          if (widget.createNewPlaylist != null) widget.createNewPlaylist!,
         ],
       ),
     );
   }
 }
 
-// class MusicCard extends StatelessWidget{
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(color: ,)
-
-//   }
-// }
 class LibraryCard extends StatelessWidget {
   PlayList playList;
   void Function(PlayList) changeToPlayListScreen;
@@ -151,72 +272,77 @@ class LibraryCard extends StatelessWidget {
     double? deviceWidth = MediaQuery.of(context).size.width;
     double? deviceHeight = MediaQuery.of(context).size.height;
 
-    return GestureDetector(
-      onTap: () {
-        changeToPlayListScreen(playList);
-      },
-      child: SizedBox(
-        width: deviceWidth - 20,
-        height: 100,
+    return Column(
+      children: [
+        GestureDetector(
+          onTap: () {
+            changeToPlayListScreen(playList);
+          },
+          child: SizedBox(
+            width: deviceWidth - 20,
+            height: 100,
 
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25),
-            color:
-                UserInfo.isDark
-                    ? darkTheme.primaryColor
-                    : const Color.fromRGBO(19, 75, 147, 1),
-          ),
-          child: Column(
-            children: [
-              SizedBox(height: 14.5),
-              Row(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                color:
+                    UserInfo.isDark
+                        ? darkTheme.primaryColor
+                        : const Color.fromRGBO(19, 75, 147, 1),
+              ),
+              child: Column(
                 children: [
-                  SizedBox(width: 20),
-                  Container(
-                    width: 70,
-                    height: 70,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      color: Colors.grey,
-                      image: DecorationImage(
-                        image: AssetImage("assets/covers/am.jpg"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
+                  SizedBox(height: 14.5),
+                  Row(
                     children: [
-                      Text(
-                        playList.libraryName,
-                        style: GoogleFonts.lato(
-                          fontSize: 24,
-                          decoration: TextDecoration.none,
-                          color: Colors.white,
+                      SizedBox(width: 20),
+                      Container(
+                        width: 70,
+                        height: 70,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          color: Colors.grey,
+                          image: DecorationImage(
+                            image: AssetImage("assets/covers/am.jpg"),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                      Text(
-                        playList.numberOfMusics.toString() + " songs",
-                        style: GoogleFonts.lato(
-                          fontSize: 14,
-                          decoration: TextDecoration.none,
-                          color:
-                              UserInfo.isDark
-                                  ? const Color.fromARGB(255, 8, 0, 255)
-                                  : const Color.fromRGBO(158, 227, 245, 1),
-                        ),
+                      SizedBox(width: 12),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            playList.libraryName,
+                            style: GoogleFonts.lato(
+                              fontSize: 24,
+                              decoration: TextDecoration.none,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            playList.numberOfMusics.toString() + " songs",
+                            style: GoogleFonts.lato(
+                              fontSize: 14,
+                              decoration: TextDecoration.none,
+                              color:
+                                  UserInfo.isDark
+                                      ? const Color.fromARGB(255, 8, 0, 255)
+                                      : const Color.fromRGBO(158, 227, 245, 1),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
                 ],
               ),
-            ],
+            ),
           ),
         ),
-      ),
+        SizedBox(height: 10),
+      ],
     );
   }
 }

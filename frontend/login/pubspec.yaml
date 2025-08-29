@@ -92,6 +92,7 @@ flutter:
     - assets/user/dark-background.jpg
     - assets/icons/search.png
     - assets/icons/repeat.png
+    - assets/icons/add-library.png
     - assets/icons/shuffle.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

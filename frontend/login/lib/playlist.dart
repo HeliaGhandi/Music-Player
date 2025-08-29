@@ -11,11 +11,18 @@ import 'package:login/content-display.dart';
 import 'package:login/main.dart';
 import 'package:login/content-display.dart';
 import 'package:login/library.dart';
+import 'package:login/sharePlayList.dart';
 
 class PlaylistScreen extends StatefulWidget {
   PlayList playList;
+  SharePlayList? sharePlayList;
   void Function() backToLibrary;
-  PlaylistScreen({required this.playList, required this.backToLibrary});
+  void Function() changeToMusicScreen;
+  PlaylistScreen({
+    required this.playList,
+    required this.backToLibrary,
+    required this.changeToMusicScreen,
+  });
   @override
   State<PlaylistScreen> createState() {
     // TODO: implement createState
@@ -115,6 +122,25 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              widget.sharePlayList = SharePlayList(
+                                finalize: () {
+                                  widget.sharePlayList = null;
+                                },
+                                playListName: widget.playList.libraryName,
+                              );
+                            });
+                          },
+                          child: Icon(
+                            Icons.ios_share,
+                            color:
+                                UserInfo.isDark
+                                    ? darkTheme.primaryColor
+                                    : const Color.fromRGBO(11, 2, 175, 1),
+                          ),
+                        ),
+                        GestureDetector(
                           onTap: () {},
                           child: Icon(
                             Icons.filter_list_alt,
@@ -137,6 +163,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                                     : const Color.fromRGBO(11, 2, 175, 1),
                           ),
                         ),
+
                         SizedBox(width: 4),
                         GestureDetector(
                           child: Icon(
@@ -171,6 +198,14 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
               // PlaylistMusicBar(music: Music(name: "yoohoo", singer: "yoohoo")),
             ],
           ),
+          Column(
+            children: [
+              SizedBox(height: deviceHeight - 100),
+
+              CachedMusicBar(changeToFullScreen: widget.changeToMusicScreen),
+            ],
+          ),
+          if (widget.sharePlayList != null) widget.sharePlayList!,
         ],
       ),
     );

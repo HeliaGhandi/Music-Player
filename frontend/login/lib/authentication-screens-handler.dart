@@ -197,8 +197,9 @@ class _AuthenticationScreenHandlerState
   void changeToPlayListScreen(PlayList playlist) {
     setState(() {
       widget.activeScreen = PlaylistScreen(
+        changeToMusicScreen: changeScreenToMusicScreen,
         backToLibrary: changeToLibrary,
-        playList: playlist
+        playList: playlist,
       );
     });
   }

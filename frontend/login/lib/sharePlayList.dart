@@ -9,15 +9,15 @@ import 'package:login/json-handler.dart';
 import 'package:login/playlist.dart';
 import 'package:login/library.dart';
 
-class Share extends StatefulWidget {
+class SharePlayList extends StatefulWidget {
   void Function() finalize;
-  bool? hidePlayLists;
-  Share({super.key, required this.finalize, this.hidePlayLists});
+  String playListName;
+  SharePlayList({super.key, required this.finalize, required this.playListName});
   @override
-  State<Share> createState() => _ShareState();
+  State<SharePlayList> createState() => _SharePlayListState();
 }
 
-class _ShareState extends State<Share> {
+class _SharePlayListState extends State<SharePlayList> {
   List<PlayList> serverSavedPlaylists = [];
   List<String> serverSavedPlaylistNames = [];
   bool _isVisible = true;
@@ -36,7 +36,6 @@ class _ShareState extends State<Share> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _loadPlaylists();
   }
 
   @override
@@ -44,38 +43,6 @@ class _ShareState extends State<Share> {
     // You should also cancel the timer here if it's still active.
     // For this simple example, we'll assume the timer will always complete.
     super.dispose();
-  }
-
-  Future<void> _loadPlaylists() async {
-    Map<String, String> request = {
-      "command": "GET_ALL_USERS_PLAYLISTS",
-      "username": UserInfo.username,
-    };
-    try {
-      Map<String, dynamic> response =
-          await JsonHandler(json: request).sendTestRequest();
-      print('Server Response: $response');
-
-      if (response.containsKey("playlists") && response["playlists"] is Map) {
-        serverSavedPlaylists.clear();
-        serverSavedPlaylistNames.clear();
-        // Use the Map's keys to iterate over the playlists
-        Map<String, dynamic> playlistsMap = response["playlists"];
-        playlistsMap.forEach((playlistName, content) {
-          serverSavedPlaylistNames.add(playlistName);
-          PlayList playList = PlayList(
-            libraryName: playlistName,
-            numberOfMusics: (content as List).length,
-            content: [],
-          );
-          serverSavedPlaylists.add(playList);
-        });
-      }
-
-      setState(() {});
-    } catch (e) {
-      print("Error loading playlists: $e");
-    }
   }
 
   @override
@@ -151,7 +118,7 @@ class _ShareState extends State<Share> {
                         ...UserInfo.usernamesThatIVEAlreadySharedASongWith.map((
                           username,
                         ) {
-                          return UserProfileGerdali(username: username);
+                          return UserProfileGerdali(username: username , playlistName: widget.playListName,);
                         }),
                         Column(
                           children: [
@@ -187,51 +154,7 @@ class _ShareState extends State<Share> {
               ],
             ),
             SizedBox(height: 15),
-            Row(
-              children: [
-                SizedBox(width: 35),
-                SizedBox(
-                  width: deviceWidth - 70,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        ...serverSavedPlaylistNames.map((name) {
-                          return PlaylistGerdali(playlistName: name);
-                        }),
-                        Column(
-                          children: [
-                            Container(
-                              width: 60,
-                              height: 60,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.grey,
-                              ),
-                              child: Icon(
-                                Icons.search,
-                                size: 35,
-                                color: const Color.fromARGB(255, 68, 67, 67),
-                              ),
-                            ),
-                            Text(
-                              "search",
-                              style: GoogleFonts.lato(
-                                fontSize: 15,
-                                color:
-                                    UserInfo.isDark
-                                        ? darkTheme.focusColor
-                                        : lightTheme.focusColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            Row(children: [SizedBox(width: 35)]),
           ],
         ),
       ],
@@ -241,7 +164,8 @@ class _ShareState extends State<Share> {
 
 class UserProfileGerdali extends StatefulWidget {
   String username;
-  UserProfileGerdali({required this.username, super.key});
+  String playlistName;
+  UserProfileGerdali({required this.username,required this.playlistName, super.key});
   @override
   State<StatefulWidget> createState() {
     return _UserProfileGerdaliState();
@@ -256,10 +180,10 @@ class _UserProfileGerdaliState extends State<UserProfileGerdali> {
         GestureDetector(
           onTap: () async {
             Map<String, String> request = {
-              "command": "share_music",
+              "command": "share_playlist",
               "fromUsername": UserInfo.username,
               "toUsername": widget.username,
-              "musicURL": UserInfo.currentMusicUrl,
+              "playListName": widget.playlistName,
             };
             // یک نمونه از JsonHandler ایجاد کرده و متد sendTestRequest را فراخوانی می‌کنیم
             // و منتظر پاسخ آن می‌مانیم.
@@ -288,72 +212,6 @@ class _UserProfileGerdaliState extends State<UserProfileGerdali> {
                 (widget.username.length > 6)
                     ? (widget.username.substring(0, 5) + "...")
                     : widget.username,
-                style: GoogleFonts.lato(
-                  fontSize: 15,
-                  color:
-                      UserInfo.isDark
-                          ? darkTheme.focusColor
-                          : lightTheme.focusColor,
-                ),
-              ),
-            ],
-          ),
-        ),
-        SizedBox(width: 10),
-      ],
-    );
-  }
-}
-
-class PlaylistGerdali extends StatefulWidget {
-  String playlistName;
-  PlaylistGerdali({required this.playlistName, super.key});
-  @override
-  State<StatefulWidget> createState() {
-    return _PlaylistGerdaliState();
-  }
-}
-
-class _PlaylistGerdaliState extends State<PlaylistGerdali> {
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        GestureDetector(
-          onTap: () async {
-            Map<String, String> request = {
-              "command": "ADD_MUSIC_TO_PLAYLIST",
-              "username": UserInfo.username,
-              "playListName": widget.playlistName,
-              "musicURL": UserInfo.currentMusicUrl,
-            };
-            // یک نمونه از JsonHandler ایجاد کرده و متد sendTestRequest را فراخوانی می‌کنیم
-            // و منتظر پاسخ آن می‌مانیم.
-            Map<String, dynamic> response =
-                await JsonHandler(
-                  json: request,
-                ).sendTestRequest(); // <--- تغییر اصلی
-            print(
-              'Server Response: $response',
-            ); // <--- می‌توانید پاسخ سرور را اینجا چ
-          },
-          child: Column(
-            children: [
-              Container(
-                width: 60,
-                height: 60,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(UserInfo.profilePictureURL),
-                  ),
-                  shape: BoxShape.circle,
-                  color: Colors.grey,
-                ),
-              ),
-              Text(
-                (widget.playlistName.length > 6)
-                    ? (widget.playlistName.substring(0, 5) + "...")
-                    : widget.playlistName,
                 style: GoogleFonts.lato(
                   fontSize: 15,
                   color:
